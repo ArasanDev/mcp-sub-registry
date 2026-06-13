@@ -27,7 +27,7 @@ export interface GatewayCatalogItem {
   contentHash: string;
   tags: string[];
   qualityLabel: string | null;
-  gatewayCompatibility: GatewayCompatibility;
+  gateway_compatibility: GatewayCompatibility;
   readiness: Record<string, JsonValue>;
   requiredSecrets: string[];
   requiredConfig: string[];
@@ -49,6 +49,18 @@ export interface GatewayCatalogResponse {
 
 const defaultLimit = 50;
 const maxLimit = 100;
+
+export async function getGatewayCatalogItem(
+  db: Database,
+  catalogItemId: string
+): Promise<GatewayCatalogItem | null> {
+  const catalog = await getCatalog(db);
+  const row = catalog.servers
+    .filter((r) => lifecycleMeta(r).status !== "deleted")
+    .find((r) => stableCatalogItemId(r.server.name, r.server.version) === catalogItemId);
+  if (!row) return null;
+  return projectItem(db, row);
+}
 
 export async function getGatewayCatalog(
   db: Database,
@@ -110,7 +122,7 @@ async function projectItem(db: Database, row: ServerResponse): Promise<GatewayCa
     contentHash: `sha256:${hashJson(itemWithoutHash)}`,
     tags,
     qualityLabel,
-    gatewayCompatibility,
+    gateway_compatibility: gatewayCompatibility,
     readiness,
     requiredSecrets: arrayOfStrings(readiness.requiredSecrets),
     requiredConfig: arrayOfStrings(readiness.requiredConfig),
@@ -302,10 +314,6 @@ function lifecycleMeta(row: ServerResponse) {
 
 function objectMeta(value: unknown): Record<string, JsonValue> {
   return isRecord(value) ? (value as Record<string, JsonValue>) : {};
-}
-
-function arrayOfStrings(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
