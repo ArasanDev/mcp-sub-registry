@@ -5,14 +5,32 @@ Hostinger VPS with managed Postgres. Companion to [DEPLOYMENT.md](./DEPLOYMENT.m
 covers the container, env, backup/restore, and launch gate). Execution is **gated**: the
 orchestrator pauses for owner go-ahead at each step marked **[GATE]**.
 
+## Target host (confirmed 2026-06-15)
+
+An existing Hostinger VPS is available — **deploy here, no new VPS needed**:
+
+```
+VPS id 947510 · srv947510.hstgr.cloud · 148.135.136.137
+KVM 4 — 4 vCPU / 16 GB RAM / 200 GB · Ubuntu 24.04 LTS · running
+firewall_group_id 284643 · data_center_id 13
+```
+
+Co-locate the registry as a separate unit alongside whatever already runs here (likely the
+gateway), per the three-service topology — separate containers, separate hostname, never
+merged. DNS: `registry.toolhost.online` A → `148.135.136.137`.
+
 ## Target shape
 
 ```
 registry.toolhost.online            (private; public read endpoints only if intended)
-  → edge reverse proxy (Caddy/Traefik, TLS)        on the VPS
-    → mcp-sub-registry container (Hono API, :8080)  on the VPS
-      → managed Postgres (Neon) via DATABASE_URL
+  → edge reverse proxy (Caddy/Traefik, TLS)        on VPS 947510
+    → mcp-sub-registry container (Hono API, :8080)  on VPS 947510
+      → Postgres: docker-compose.prod.yml's own Postgres for first preview;
+        migrate to managed Postgres (Neon) via DATABASE_URL when hardening
 ```
+
+`docker-compose.prod.yml` already bundles a Postgres service, so the first private preview
+is self-contained on the VPS — managed Postgres is a later step, not a blocker.
 
 One code path for all environments: the app depends only on `DATABASE_URL`,
 `ADMIN_API_KEY`, `PORT`, `NODE_ENV`. No host-specific code. Keep `:8080` private behind the
