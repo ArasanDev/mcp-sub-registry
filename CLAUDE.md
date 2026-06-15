@@ -211,12 +211,15 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   the gateway + Caddy. Updated to current `master` on 2026-06-15 (code live, db preserved,
   gateway untouched). **HTTP public works; HTTPS pending** a one-line Caddy fix (owner action —
   see `subregistry-deploy`). Update via `ssh hostinger-vps` + `subregistry-deploy`.
-- **Catalog:** 17 approved/public remote servers (`data/default-curated-servers.json`). Last
-  curate run 2026-06-15 (commit `85278d5`): added `com.exa/mcp` (Exa web search) and
-  `com.context7/mcp` (Context7 docs, by Upstash) — both live-verified HTTP 403. Skipped Brave
-  Search (stdio-only, no remote endpoint) and Perplexity (moving away from MCP; endpoint dead).
-  Servers added since last deploy: Stripe, Vercel, Asana, Webflow, Exa, Context7 — not yet live
-  on VPS (running image baked the earlier seed) — publish via `subregistry-deploy`.
+- **Catalog:** 19 approved/public remote servers (`data/default-curated-servers.json`). Last
+  curate run 2026-06-15 (commit `7b4c8bd`): added `com.aws/mcp-knowledge` (AWS Knowledge MCP,
+  no-auth public endpoint, live-verified HTTP 200 MCP initialize) and `com.aws/mcp` (AWS MCP
+  Server, IAM SigV4 via mcp-proxy-for-aws, live-verified HTTP 200 MCP initialize). Previous
+  run (commit `85278d5`): added `com.exa/mcp` and `com.context7/mcp`. Skipped: HubSpot MCP
+  (mcp.hubspot.com — blocked by environment egress, external verification pending), Google Cloud
+  MCP (no single universal endpoint), Salesforce + Azure DevOps (org-specific URLs).
+  Servers added since last VPS deploy: Stripe, Vercel, Asana, Webflow, Exa, Context7, AWS
+  Knowledge MCP, AWS MCP Server — not yet live on VPS — publish via `subregistry-deploy`.
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run). Fixed stale warning assertion in curated-validation.test.ts
   (sentry confirmed verified by 2026-06-15 audit; no longer warns).
@@ -240,13 +243,15 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
      `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
      `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
-  2. Seed the 17-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  3. Set up a weekly `subregistry-audit` cadence; expand the catalog group-by-group via
-     `subregistry-curate` (backlog in the playbook: Cloud/devops next).
-  4. Next `subregistry-audit`: set `com.sentry/mcp` `verification.status` → `verified`
+  2. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
+  3. Set up a weekly `subregistry-audit` cadence; next curate group: Comms & support (Intercom,
+     PayPal, Zapier) or Data & analytics (Hugging Face, Snowflake, MongoDB).
+  4. Verify HubSpot MCP externally (mcp.hubspot.com/mcp, GA April 2026, OAuth 2.1 + PKCE) —
+     blocked by this environment's egress; add once confirmed live from outside the container.
+  5. Next `subregistry-audit`: set `com.sentry/mcp` `verification.status` → `verified`
      (endpoint confirmed `mcp.sentry.dev/mcp`, OAuth 2.0). Also verify auth model for
      `com.supabase/mcp` and `com.neon/mcp` (database-backend MCPs; flagged by Akamai class).
-  5. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+  6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
 </content>
 </invoke>
