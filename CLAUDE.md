@@ -189,17 +189,23 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   and pushed:** `github.com/AI-with-Tamil/mcp-sub-registry` (default branch `master`).
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run).
-- **Build state:** gateway catalog (`/v0.1/gateway/catalog` + single-item lookup) and
-  gateway-compatibility metadata are the most recent code; uncommitted local edits exist
-  in `gateway-compatibility.ts` and three tests — verify and commit them.
+- **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
+  + full suite on a Postgres service for every push/PR. Verified green on the runner.
+- **Daily routine:** created (`trig_01Qcs8v4NSi57NncffqQxBQN`, 06:03 IST) but a manual test
+  run returned `github_repo_access_denied`. **Blocked until GitHub is re-authorized for the
+  cloud agent** (claude.ai settings / `/web-setup` / Claude GitHub App). This is a
+  claude.ai↔GitHub OAuth grant only the account owner can do — not fixable via local `gh`.
+  After re-auth, re-fire with `RemoteTrigger run` and confirm it pushes a research commit.
 - **Research:** first landscape + top-10 ranking in `docs/research/`. Key thesis
   validation: clean `discovered != approved != enabled` separation is rare in the market
   (only Obot and Lunar.dev MCPX do it cleanly per 2026 surveys) — this is the product's
   defensible niche.
 - **Next actions (ordered):**
-  1. Stand up the daily research routine (scheduled cloud agent → `docs/research/`).
-  2. Plan + execute the private hosted deploy (Hostinger VPS + managed Postgres →
-     `registry.toolhost.online`).
-  3. Wire CI on the remote (typecheck + test gate on push).
+  1. Owner: re-authorize GitHub for the cloud agent, then re-fire the daily routine and
+     confirm it produces + pushes a research report end-to-end.
+  2. Execute the private hosted deploy per `docs/DEPLOY_RUNBOOK.md` — needs owner gate
+     answers (new/existing Hostinger VPS, Neon vs other Postgres, public vs private exposure).
+  3. Verify + commit the pending gateway-compatibility edits (now part of the committed
+     baseline; review the diff against intent).
 </content>
 </invoke>
