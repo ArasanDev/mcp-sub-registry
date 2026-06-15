@@ -223,14 +223,18 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
   + full suite on a Postgres service for every push/PR. Verified green on the runner.
 - **Daily routine:** PROVEN working (`trig_01Qcs8v4NSi57NncffqQxBQN`, daily 06:03 IST,
-  Sonnet 4.6). A manual test run on 2026-06-15 researched, wrote a 49-citation dated report
-  (`docs/research/2026-06-15-mcp-ecosystem-update.md`), updated the ranking, and pushed
-  (commit `9634758`) — fully autonomous, end-to-end. GitHub access + network egress both
-  confirmed. The loop is self-sustaining; review its commits each session.
-- **Research:** first landscape + top-10 ranking in `docs/research/`. Key thesis
-  validation: clean `discovered != approved != enabled` separation is rare in the market
-  (only Obot and Lunar.dev MCPX do it cleanly per 2026 surveys) — this is the product's
-  defensible niche.
+  Sonnet 4.6). First scheduled test run on 2026-06-15 wrote a 49-citation dated report and
+  updated the ranking (commit `9634758`). A second scheduled test run (same date) appended
+  new findings: NSA MCP security guidance (May 20), VIPER-MCP 106 zero-days, Akamai database
+  flaws (one unpatched by Alibaba), Runlayer $11M raise + MCP founder consulting, AWS Agent
+  Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
+  services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
+  confirmed across both runs. The loop is self-sustaining; review its commits each session.
+- **Research:** landscape + top-11 ranking in `docs/research/`. Runlayer elevated to #10
+  (was watch list) on strength of $11M seed + MCP-founder consulting. NSA guidance (May 20,
+  2026) independently validates the `discovered != approved != enabled` model — strongest
+  external signal yet. Key thesis: clean separation is rare; Obot and Lunar.dev MCPX do it
+  cleanly; Runlayer + Docker MCP Catalog + AWS Agent Registry are the newest credible entrants.
 - **Next actions (ordered):**
   1. **Owner:** apply the one-line Caddy fix to serve `registry.toolhost.online` over HTTPS
      (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
@@ -239,7 +243,10 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   2. Seed the 17-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   3. Set up a weekly `subregistry-audit` cadence; expand the catalog group-by-group via
      `subregistry-curate` (backlog in the playbook: Cloud/devops next).
-  4. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+  4. Next `subregistry-audit`: set `com.sentry/mcp` `verification.status` → `verified`
+     (endpoint confirmed `mcp.sentry.dev/mcp`, OAuth 2.0). Also verify auth model for
+     `com.supabase/mcp` and `com.neon/mcp` (database-backend MCPs; flagged by Akamai class).
+  5. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
 </content>
 </invoke>
