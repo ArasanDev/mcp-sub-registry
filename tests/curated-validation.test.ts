@@ -4,13 +4,17 @@ import { validateCuratedSeed } from "../apps/api/src/services/curated-validation
 
 describe("curated seed validation", () => {
   it("validates the default curated seed with actionable warnings", async () => {
-    const result = validateCuratedSeed(await loadCuratedSeed());
+    const seed = await loadCuratedSeed();
+    const result = validateCuratedSeed(seed);
+    // Derive counts from the seed so the test survives catalog growth.
+    // Invariant: every default-curated record is approved, public, and remote-only.
+    const count = seed.servers.length;
 
     expect(result.valid).toBe(true);
     expect(result.summary).toMatchObject({
-      servers: 11,
-      approvedPublic: 11,
-      remoteServers: 11,
+      servers: count,
+      approvedPublic: count,
+      remoteServers: count,
       packageServers: 0
     });
     expect(result.warnings).toEqual(

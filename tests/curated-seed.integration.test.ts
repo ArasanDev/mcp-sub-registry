@@ -48,12 +48,14 @@ describeWithDatabase("default curated remote seed", () => {
   });
 
   it("seeds the handpicked remote catalog as approved public records", async () => {
-    const result = await applyCuratedSeed(db, await loadCuratedSeed());
+    const seed = await loadCuratedSeed();
+    const count = seed.servers.length; // derive so the test survives catalog growth
+    const result = await applyCuratedSeed(db, seed);
 
     expect(result).toMatchObject({
       sourceName: "default-curated-remote",
-      servers: 11,
-      approved: 11
+      servers: count,
+      approved: count
     });
 
     const app = createApp({ db });
@@ -61,17 +63,17 @@ describeWithDatabase("default curated remote seed", () => {
     const catalog = await catalogResponse.json();
 
     expect(catalogResponse.status).toBe(200);
-    expect(catalog.metadata.count).toBe(11);
+    expect(catalog.metadata.count).toBe(count);
     expect(catalog.servers.every((row: { server: { remotes: unknown[]; packages: unknown[] } }) =>
       row.server.remotes.length === 1 && row.server.packages.length === 0
     )).toBe(true);
 
-    const gatewayResponse = await app.request("/v0.1/gateway/catalog?limit=20");
+    const gatewayResponse = await app.request("/v0.1/gateway/catalog?limit=100");
     const gateway = await gatewayResponse.json();
     const gatewayText = JSON.stringify(gateway);
 
     expect(gatewayResponse.status).toBe(200);
-    expect(gateway.items).toHaveLength(11);
+    expect(gateway.items).toHaveLength(count);
     expect(gateway.items.map((item: { name: string }) => item.name)).toEqual(
       expect.arrayContaining([
         "com.deepwiki/mcp",
@@ -101,7 +103,11 @@ describeWithDatabase("default curated remote seed", () => {
         }) =>
           item.gateway_compatibility.hosted_gateway === true &&
           item.gateway_compatibility.requires_connector_runtime === false &&
-          item.gateway_compatibility.supported_transports.includes("streamable-http")      )
+          // Remote hosted candidates use streamable-http or sse (both are hosted-gateway transports).
+          item.gateway_compatibility.supported_transports.some(
+            (t) => t === "streamable-http" || t === "sse"
+          )
+      )
     ).toBe(true);
     expect(gateway.items.every((item: { remotes: unknown[]; packages: unknown[] }) =>
       item.remotes.length === 1 && item.packages.length === 0
