@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Secrets & env
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+apps/web/dist/
+coverage/
+
+# OS
+.DS_Store
+
+# Local working state — never committed (production repo shows only real, durable content).
+# Operating identity lives in CLAUDE.md; durable reference lives in docs/.
+ai_docs/
+rules/
+specs/
+changes/
+build.md
+image.png
+*.local.md
+
+# Other agent/tool configs (not part of this product)
+.codex/
+.agents/
+.antigravitycli/
+skills-lock.json
+</content>
