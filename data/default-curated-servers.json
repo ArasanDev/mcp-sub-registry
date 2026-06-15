@@ -666,6 +666,98 @@
         "remote",
         "oauth"
       ]
+    },
+    {
+      "server": {
+        "name": "com.exa/mcp",
+        "title": "Exa MCP",
+        "description": "Official Exa remote MCP server for AI-native web search and web crawling via the Exa Search API.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.exa.ai/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Exa API key as Bearer token (EXA_API_KEY).",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official Exa Labs hosted MCP endpoint. Streamable-HTTP; requires EXA_API_KEY as Authorization Bearer token.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://github.com/exa-labs/exa-mcp-server",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint live-verified 2026-06-15 (HTTP 403, auth required). Confirmed via exa-labs/exa-mcp-server README and exa.ai/docs/reference/exa-mcp."
+          }
+        }
+      },
+      "tags": [
+        "search",
+        "web-search",
+        "knowledge",
+        "developer-productivity",
+        "remote",
+        "api-key"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.context7/mcp",
+        "title": "Context7 MCP",
+        "description": "Official Context7 (by Upstash) remote MCP server providing up-to-date library and framework documentation for AI coding agents.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.context7.com/mcp",
+            "headers": [
+              {
+                "name": "CONTEXT7_API_KEY",
+                "description": "Context7 API key for higher rate limits (optional; obtain free key at context7.com/dashboard).",
+                "isRequired": false,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official Upstash/Context7 hosted MCP endpoint. Streamable-HTTP; API key optional (higher rate limits with key). Free tier available.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://github.com/upstash/context7",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint live-verified 2026-06-15 (HTTP 403, auth-gated). Confirmed via upstash/context7 README. API key passed via CONTEXT7_API_KEY header."
+          }
+        }
+      },
+      "tags": [
+        "search",
+        "knowledge",
+        "documentation",
+        "developer-productivity",
+        "remote",
+        "api-key"
+      ]
     }
   ]
 }

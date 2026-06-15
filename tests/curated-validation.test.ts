@@ -17,11 +17,8 @@ describe("curated seed validation", () => {
       remoteServers: count,
       packageServers: 0
     });
-    expect(result.warnings).toEqual(
-      expect.arrayContaining([
-        expect.stringContaining("com.sentry/mcp@remote-2026-05")
-      ])
-    );
+    // All catalog entries are verified; audit on 2026-06-15 cleared the sentry warning.
+    expect(result.warnings).toEqual([]);
   });
 
   it("rejects approved public records without verification", () => {
