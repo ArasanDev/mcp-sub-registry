@@ -14,7 +14,9 @@ The sub-registry will:
 - Expose MCP Registry-compatible read APIs.
 - Provide a simple curated catalog endpoint for downstream consumers.
 
-The initial API target is MCP Registry `v0.1`. New/manual records should target the `2025-12-11` `server.schema.json` shape where practical.
+The initial API target is MCP Registry `v0.1`. New/manual records should track the latest
+published `server.schema.json` from the official registry (verify the current version each
+research cycle — see [docs/research/](docs/research/), as it moves toward v1 GA).
 
 ## What This Does Not Build Initially
 
