@@ -758,6 +758,92 @@
         "remote",
         "api-key"
       ]
+    },
+    {
+      "server": {
+        "name": "com.aws/mcp-knowledge",
+        "title": "AWS Knowledge MCP",
+        "description": "Official AWS remote MCP server providing free, public access to AWS documentation, API references, What's New posts, and Well-Architected best practices for AI agents.",
+        "version": "remote-2025-10",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://knowledge-mcp.global.api.aws/mcp"
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official AWS (awslabs) hosted Knowledge MCP endpoint. No authentication required; publicly accessible, rate-limited. GA October 2025.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint live-verified 2026-06-15 (HTTP 200, MCP initialize accepted — serverInfo.name: AWSKnowledgeMCP, protocolVersion: 2025-03-26). No auth required. 5 tools: docs search, API reference, What's New, Well-Architected, regional availability."
+          }
+        }
+      },
+      "tags": [
+        "cloud",
+        "aws",
+        "knowledge",
+        "documentation",
+        "developer-productivity",
+        "remote",
+        "open"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.aws/mcp",
+        "title": "AWS MCP Server",
+        "description": "Official AWS remote MCP server (GA May 2026) giving AI agents full AWS API access — CloudWatch, IAM, and all AWS services — with IAM-based governance.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://aws-mcp.us-east-1.api.aws/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "AWS OAuth 2.1 Bearer token via mcp-proxy-for-aws (backed by IAM SigV4; requires AWS_ACCESS_KEY_ID + AWS_SECRET_ACCESS_KEY in environment).",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official AWS hosted MCP endpoint. Requires IAM credentials via mcp-proxy-for-aws (open-source SigV4→OAuth 2.1 bridge). Also available in eu-central-1. GA May 6, 2026.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint live-verified 2026-06-15 (HTTP 200, MCP initialize accepted — serverInfo.name: AWSMCP, protocolVersion: 2025-06-18). Auth required for tool calls via IAM SigV4 / mcp-proxy-for-aws. 31 CloudWatch + 29 IAM tools at GA."
+          }
+        }
+      },
+      "tags": [
+        "cloud",
+        "aws",
+        "cloud-devops",
+        "developer-productivity",
+        "remote",
+        "oauth",
+        "iam"
+      ]
     }
   ]
 }
