@@ -33,4 +33,11 @@ focused skill. Do NOT read all of `docs/`, the whole catalog, or every test on b
 - One slice per session. If you discover more work, record it in §13 as a next action rather
   than expanding the current slice.
 - The repo is the memory — durable state lives in `CLAUDE.md`, `docs/`, and git, not in chat.
+
+## Publishing safely (all skills)
+
+After committing, `git push origin master`. If the push is **rejected** (a concurrent
+autonomous run landed a commit first), run `git pull --rebase origin master` and push again
+(repeat once if needed). This keeps continuous and concurrent runs from losing each other's
+work. Never force-push.
 </content>
