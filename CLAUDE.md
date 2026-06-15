@@ -191,21 +191,22 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   no live Postgres in this run).
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
   + full suite on a Postgres service for every push/PR. Verified green on the runner.
-- **Daily routine:** created (`trig_01Qcs8v4NSi57NncffqQxBQN`, 06:03 IST) but a manual test
-  run returned `github_repo_access_denied`. **Blocked until GitHub is re-authorized for the
-  cloud agent** (claude.ai settings / `/web-setup` / Claude GitHub App). This is a
-  claude.ai↔GitHub OAuth grant only the account owner can do — not fixable via local `gh`.
-  After re-auth, re-fire with `RemoteTrigger run` and confirm it pushes a research commit.
+- **Daily routine:** PROVEN working (`trig_01Qcs8v4NSi57NncffqQxBQN`, daily 06:03 IST,
+  Sonnet 4.6). A manual test run on 2026-06-15 researched, wrote a 49-citation dated report
+  (`docs/research/2026-06-15-mcp-ecosystem-update.md`), updated the ranking, and pushed
+  (commit `9634758`) — fully autonomous, end-to-end. GitHub access + network egress both
+  confirmed. The loop is self-sustaining; review its commits each session.
 - **Research:** first landscape + top-10 ranking in `docs/research/`. Key thesis
   validation: clean `discovered != approved != enabled` separation is rare in the market
   (only Obot and Lunar.dev MCPX do it cleanly per 2026 surveys) — this is the product's
   defensible niche.
 - **Next actions (ordered):**
-  1. Owner: re-authorize GitHub for the cloud agent, then re-fire the daily routine and
-     confirm it produces + pushes a research report end-to-end.
-  2. Execute the private hosted deploy per `docs/DEPLOY_RUNBOOK.md` — needs owner gate
-     answers (new/existing Hostinger VPS, Neon vs other Postgres, public vs private exposure).
-  3. Verify + commit the pending gateway-compatibility edits (now part of the committed
-     baseline; review the diff against intent).
+  1. Execute the private hosted deploy per `docs/DEPLOY_RUNBOOK.md` onto existing VPS 947510
+     (`148.135.136.137`). Needs: SSH access to the VPS + owner go-ahead (the box likely
+     hosts the gateway), and the exposure choice (private-during-buildout vs public reads).
+  2. Act on the routine's findings: the 2026-07-28 spec RC adds mandatory `Mcp-Method` /
+     `Mcp-Name` headers and goes stateless (ships July 28) — no catalog schema change, but
+     note it in the gateway contract for the Gateway operator. Track newly-flagged CVEs.
+  3. Review the gateway-compatibility edits folded into the baseline against intent.
 </content>
 </invoke>
