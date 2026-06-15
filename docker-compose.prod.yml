@@ -1,0 +1,38 @@
+name: mcp-sub-registry
+
+services:
+  db:
+    image: postgres:17
+    container_name: mcp_sub_registry_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mcp_registry}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mcp_registry}
+      POSTGRES_DB: ${POSTGRES_DB:-mcp_registry}
+    volumes:
+      - mcp_sub_registry_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mcp_registry} -d ${POSTGRES_DB:-mcp_registry}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: mcp_sub_registry_api
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - DATABASE_URL=postgres://${POSTGRES_USER:-mcp_registry}:${POSTGRES_PASSWORD:-mcp_registry}@db:5432/${POSTGRES_DB:-mcp_registry}
+      - ADMIN_API_KEY=${ADMIN_API_KEY:?ADMIN_API_KEY must be set in .env}
+    ports:
+      - "8080:8080" # Publish on the host so a same-VPS reverse proxy container can reach the service; keep 8080 private with the VPS firewall.
+    command: >
+      sh -c "bun run db:migrate && bun run start"
+
+volumes:
+  mcp_sub_registry_pg_data:

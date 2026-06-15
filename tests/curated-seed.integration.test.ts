@@ -93,16 +93,15 @@ describeWithDatabase("default curated remote seed", () => {
     expect(
       gateway.items.every(
         (item: {
-          gatewayCompatibility: {
+          gateway_compatibility: {
             hosted_gateway: boolean;
             requires_connector_runtime: boolean;
             supported_transports: string[];
           };
         }) =>
-          item.gatewayCompatibility.hosted_gateway === true &&
-          item.gatewayCompatibility.requires_connector_runtime === false &&
-          item.gatewayCompatibility.supported_transports.includes("streamable-http")
-      )
+          item.gateway_compatibility.hosted_gateway === true &&
+          item.gateway_compatibility.requires_connector_runtime === false &&
+          item.gateway_compatibility.supported_transports.includes("streamable-http")      )
     ).toBe(true);
     expect(gateway.items.every((item: { remotes: unknown[]; packages: unknown[] }) =>
       item.remotes.length === 1 && item.packages.length === 0

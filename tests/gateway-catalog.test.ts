@@ -250,7 +250,7 @@ describeWithDatabase("gateway catalog projection", () => {
       lifecycleStatus: "active",
       tags: ["gateway"],
       qualityLabel: "verified",
-      gatewayCompatibility: {
+      gateway_compatibility: {
         hosted_gateway: false,
         requires_connector_runtime: true,
         supported_transports: ["stdio", "streamable-http"]
@@ -261,14 +261,14 @@ describeWithDatabase("gateway catalog projection", () => {
       }
     });
     expect(itemsByName.get(packageOnlyServer.name)).toMatchObject({
-      gatewayCompatibility: {
+      gateway_compatibility: {
         hosted_gateway: false,
         requires_connector_runtime: true,
         supported_transports: ["stdio"]
       }
     });
     expect(itemsByName.get(hostedRemoteServer.name)).toMatchObject({
-      gatewayCompatibility: {
+      gateway_compatibility: {
         hosted_gateway: true,
         requires_connector_runtime: false,
         supported_transports: ["sse"]
@@ -314,7 +314,7 @@ describeWithDatabase("gateway catalog projection", () => {
     expect(item.readiness).toMatchObject({
       status: "needs_secret"
     });
-    expect(item.gatewayCompatibility).toMatchObject({
+    expect(item.gateway_compatibility).toMatchObject({
       hosted_gateway: false,
       requires_connector_runtime: true
     });
@@ -356,17 +356,18 @@ describeWithDatabase("gateway catalog projection", () => {
     });
 
     const app = createApp({ db });
-    const firstResponse = await app.request("/v0.1/gateway/catalog?limit=1");
+    const firstResponse = await app.request("/v0.1/gateway/catalog?limit=3");
     const first = await firstResponse.json();
     const secondResponse = await app.request(
       `/v0.1/gateway/catalog?limit=1&cursor=${first.nextCursor}`
     );
     const second = await secondResponse.json();
 
-    expect(first.items).toHaveLength(1);
-    expect(first.nextCursor).toBe("1");
+    expect(first.items).toHaveLength(3);
+    expect(first.nextCursor).toBe("3");
     expect(second.items).toHaveLength(1);
     expect(second.items[0].catalogItemId).not.toBe(first.items[0].catalogItemId);
     expect(second.nextCursor).toBeNull();
   });
 });
+;

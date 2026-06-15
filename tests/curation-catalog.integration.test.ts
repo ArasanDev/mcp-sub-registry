@@ -149,7 +149,7 @@ describeWithDatabase("curation catalog", () => {
       isLatest: true
     });
     expect(catalog.servers[0]._meta["com.mcp-gateway.registry/readiness"]).toMatchObject({
-      status: "unknown"
+      status: "remote_only"
     });
     expect(pendingResponse.status).toBe(200);
     expect(pending._meta[curationMetaKey]).toMatchObject({

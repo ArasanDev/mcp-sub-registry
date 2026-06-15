@@ -11,8 +11,8 @@ export function computeGatewayCompatibility(
 ): GatewayCompatibility {
   const curation = objectMeta(response._meta?.[metaKeys.curation]);
   const supportedTransports = unique([
-    ...packageTransports(response.server.packages ?? []),
-    ...remoteTransports(response.server.remotes ?? [])
+    ...packageTransports((response.server.packages ?? []) as Array<Record<string, JsonValue>>),
+    ...remoteTransports((response.server.remotes ?? []) as Array<Record<string, JsonValue>>)
   ]);
   const approvedPublic =
     stringValue(curation.status) === "approved" &&

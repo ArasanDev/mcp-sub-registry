@@ -1,0 +1,9 @@
+.env
+.git
+.codex
+changes
+node_modules
+coverage
+*.log
+Dockerfile
+docker-compose.yml

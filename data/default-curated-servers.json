@@ -1,0 +1,492 @@
+{
+  "source": {
+    "name": "default-curated-remote",
+    "type": "manual",
+    "baseUrl": null,
+    "enabled": true
+  },
+  "servers": [
+    {
+      "server": {
+        "name": "com.deepwiki/mcp",
+        "title": "DeepWiki MCP",
+        "description": "Remote MCP server for understanding public codebases through generated documentation, architecture diagrams, and source links.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.deepwiki.com/mcp"
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Handpicked developer productivity remote server.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "codebase-docs",
+        "remote",
+        "open"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.github/mcp",
+        "title": "GitHub MCP",
+        "description": "Official GitHub remote MCP server for repositories, issues, pull requests, and developer workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "GitHub OAuth or personal access token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official developer workflow server. Gateway must map auth to secret references.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/use-the-github-mcp-server",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "source-control",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.slack/mcp",
+        "title": "Slack MCP",
+        "description": "Remote MCP server for Slack workspace communication and developer/team workflow context.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.slack.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Slack OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote Slack connector draft candidate. Gateway must not auto-enable workspace access.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://docs.slack.dev/tools/mcp-server/",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "team-communication",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.notion/mcp",
+        "title": "Notion MCP",
+        "description": "Official hosted Notion MCP server for workspace knowledge, docs, notes, and planning workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.notion.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Notion OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Hosted Notion remote server.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://developers.notion.com/docs/mcp",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "knowledge-base",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.cloudflare/mcp",
+        "title": "Cloudflare MCP",
+        "description": "Cloudflare remote MCP server for cloud, DNS, Workers, and infrastructure operations.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.cloudflare.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Cloudflare OAuth or API token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote cloud/devops connector draft candidate.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "cloud",
+        "devops",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.sentry/mcp",
+        "title": "Sentry MCP",
+        "description": "Sentry MCP server for error tracking, performance monitoring, and production debugging workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.sentry.dev",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Sentry OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Production service root verified; confirm exact client path if Gateway requires strict endpoint suffix.",
+        "meta": {
+          "verification": {
+            "status": "needs_confirmation",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://docs.sentry.io/product/sentry-mcp/",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Production MCP service root found; confirm exact client endpoint path before relying on strict URL matching."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "observability",
+        "debugging",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.linear/mcp",
+        "title": "Linear MCP",
+        "description": "Official Linear MCP server for issues, project tracking, and engineering planning workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.linear.app/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Linear OAuth or bearer token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote project management connector draft candidate.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://linear.app/docs/mcp",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "issues",
+        "planning",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.figma/mcp",
+        "title": "Figma MCP",
+        "description": "Official hosted Figma MCP server for design and prototyping context in product engineering workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.figma.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Figma OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote design context connector draft candidate.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "design",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.neon/mcp",
+        "title": "Neon MCP",
+        "description": "Official Neon remote MCP server for serverless PostgreSQL management and database workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.neon.tech/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Neon OAuth or API key reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote database connector draft candidate.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://neon.com/docs/ai/neon-mcp-server",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "database",
+        "postgres",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.supabase/mcp",
+        "title": "Supabase MCP",
+        "description": "Official Supabase hosted MCP server for database, backend, and app platform workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.supabase.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Supabase OAuth or personal access token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Remote backend/database connector draft candidate.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://supabase.com/docs/guides/getting-started/mcp",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "database",
+        "backend",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.atlassian/mcp",
+        "title": "Atlassian MCP",
+        "description": "Atlassian remote MCP server for Jira, Confluence, and software team collaboration workflows.",
+        "version": "remote-2026-05",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.atlassian.com/v1/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Atlassian OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Use streamable HTTP endpoint; legacy SSE endpoint is deprecated.",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://support.atlassian.com/rovo/docs/setting-up-ides/",
+            "verifiedAt": "2026-05-07T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "jira",
+        "confluence",
+        "remote",
+        "oauth"
+      ]
+    }
+  ]
+}
