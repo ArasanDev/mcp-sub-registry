@@ -487,6 +487,185 @@
         "remote",
         "oauth"
       ]
+    },
+    {
+      "server": {
+        "name": "com.stripe/mcp",
+        "title": "Stripe MCP",
+        "description": "Official Stripe remote MCP server for payments, billing, invoices, and financial operations.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.stripe.com",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Stripe OAuth or restricted API key reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Cloudflare MCP launch partner. Endpoint live-verified 2026-06-15 (HTTP 401, OAuth required).",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://blog.cloudflare.com/mcp-demo-day/",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint reachability confirmed (HTTP 401, auth required). Provenance: Cloudflare MCP Demo Day. Re-verify auth scope vs vendor docs before production reliance."
+          }
+        }
+      },
+      "tags": [
+        "payments",
+        "commerce",
+        "fintech",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.vercel/mcp",
+        "title": "Vercel MCP",
+        "description": "Official Vercel remote MCP server for deployments, projects, logs, and frontend infrastructure workflows.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.vercel.com",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Vercel OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Official hosted endpoint. Endpoint live-verified 2026-06-15 (HTTP 401, OAuth required).",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://www.datacamp.com/blog/top-remote-mcp-servers",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint reachability confirmed (HTTP 401, auth required). Re-verify auth scope vs vendor docs before production reliance."
+          }
+        }
+      },
+      "tags": [
+        "developer-productivity",
+        "deployment",
+        "devops",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.asana/mcp",
+        "title": "Asana MCP",
+        "description": "Official Asana remote MCP server for tasks, projects, and work management workflows.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "sse",
+            "url": "https://mcp.asana.com/sse",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Asana OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Cloudflare MCP launch partner; SSE transport. Endpoint live-verified 2026-06-15 (HTTP 401, OAuth required).",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://blog.cloudflare.com/mcp-demo-day/",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint reachability confirmed (HTTP 401, auth required). SSE transport — not a hosted-gateway candidate without runtime planning. Re-verify before production reliance."
+          }
+        }
+      },
+      "tags": [
+        "productivity",
+        "project-management",
+        "remote",
+        "oauth"
+      ]
+    },
+    {
+      "server": {
+        "name": "com.webflow/mcp",
+        "title": "Webflow MCP",
+        "description": "Official Webflow remote MCP server for sites, CMS collections, and no-code web workflows.",
+        "version": "remote-2026-06",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://mcp.webflow.com/mcp",
+            "headers": [
+              {
+                "name": "Authorization",
+                "description": "Webflow OAuth token reference.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            ]
+          }
+        ],
+        "packages": []
+      },
+      "curation": {
+        "status": "approved",
+        "visibility": "public",
+        "qualityLabel": "curated",
+        "notes": "Cloudflare MCP launch partner. Endpoint live-verified 2026-06-15 (HTTP 401, OAuth required).",
+        "meta": {
+          "verification": {
+            "status": "verified",
+            "ownership": "official_vendor",
+            "sourceUrl": "https://blog.cloudflare.com/mcp-demo-day/",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint reachability confirmed (HTTP 401, auth required). Re-verify auth scope vs vendor docs before production reliance."
+          }
+        }
+      },
+      "tags": [
+        "web",
+        "cms",
+        "no-code",
+        "remote",
+        "oauth"
+      ]
     }
   ]
 }
