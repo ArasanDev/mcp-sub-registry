@@ -214,7 +214,8 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 - **Catalog:** 15 approved/public remote servers (`data/default-curated-servers.json`); newest
   group (Stripe, Vercel, Asana, Webflow) added + endpoint-verified 2026-06-15. Expand via
   `subregistry-curate` + `docs/PLAYBOOK_ADD_SERVERS.md`. NOTE: the 4 new servers are committed
-  to the seed but **not yet seeded into the live DB** — run `seed:curated` on the VPS.
+  to the seed but **not yet live** (the running image baked the 11-server seed) — publish via
+  `subregistry-deploy` (re-overlay current master → rebuild api → `seed:curated`).
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run).
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
