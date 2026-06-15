@@ -43,6 +43,9 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      - name: Build operator UI
+        run: bun run build:web
+
       - name: Apply migrations
         run: bun run db:migrate
 
