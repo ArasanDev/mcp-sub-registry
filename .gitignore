@@ -24,6 +24,9 @@ build.md
 image.png
 *.local.md
 
+# Local Claude settings (keep .claude/skills/ committed — they ARE the maintenance process)
+.claude/settings.local.json
+
 # Other agent/tool configs (not part of this product)
 .codex/
 .agents/

@@ -124,22 +124,26 @@ system under load.
   or an explicitly recorded blocker. Never report done on red.
 - Migrations are an explicit deploy step (`bun run db:migrate`) before promoting the service.
 
-## 9. Session operating loop
+## 9. Session operating loop — run skills, stay lean
 
-Every session, in order:
+Work is organized as **skills** in `.claude/skills/` (modular, loaded on-demand so context
+stays lean across continuous work). Every session:
 
-1. Read this file (`CLAUDE.md`). Re-establish role and boundary.
-2. Read §13 (Current state) for where work stands.
-3. `git status` / `git log --oneline -10` — see what's committed and pending.
-4. Skim `docs/research/` for the latest landscape report; note what's stale.
-5. Pick the highest-value unblocked action. Smallest complete slice.
-6. Inspect real code before editing. Validate inputs with Zod. Keep response shapes stable.
-7. Run the verification gate. Commit production-ready work with a clear message.
-8. Update §13 and the relevant `docs/` file when product behavior or status changes.
-9. Report honestly: what changed, what remains, what's blocked, what's verified.
+1. Run **`subregistry-boot`** — it establishes role + boundary, checks live state, and routes
+   you to the right skill without loading the whole repo.
+2. Pick ONE highest-value unblocked action → invoke its skill:
+   - `subregistry-research` — periodic ecosystem research (the daily cron target)
+   - `subregistry-curate` — add trusted servers, one researched group at a time
+   - `subregistry-audit` — re-verify cataloged servers (reachability + security)
+   - `subregistry-deploy` — push committed changes to the live VPS, verified via Caddy
+3. Work one small slice. Inspect real code before editing; validate with Zod; keep shapes stable.
+4. Run the verification gate (§11). Commit production-ready work with a clear message; push.
+5. Update §13 (and the relevant `docs/`) when behavior or status changes. Report honestly:
+   what changed / remains / is blocked / is verified.
 
-Durable state lives in: `CLAUDE.md` (§13), `docs/`, `docs/research/`, and git history.
-Never leave critical state only in chat — the next session boots from the repo.
+**Context discipline:** prefer targeted `grep`/reads; never read `node_modules`, build output,
+or agent transcripts; one slice per session — record extra work in §13, don't expand scope.
+Durable state lives in `CLAUDE.md` (§13), `docs/`, `docs/research/`, and git — never only in chat.
 
 ## 10. Proactive charter (your standing work)
 
@@ -179,14 +183,38 @@ fans out web research → writes/updates a dated report in `docs/research/` → 
 the ranking in `docs/research/landscape.md` → flags catalog items needing action →
 commits the result. Cadence and mechanism are recorded in §13 once live.
 
+## 12.5 Strategy & roadmap
+
+- **First customer is us (dogfood).** Phase 1: power our own gateway with a trusted catalog.
+  Get the curation, projection, and trust signals genuinely useful for our own use before
+  anything else.
+- **Then productize.** The sub-registry becomes a standalone product/business: **persona- and
+  use-case-based curated lists** — "*if you are a $ROLE, here are the trusted MCP servers for
+  you*" — delivered as tag-based catalog views. These curated bundles are also a wedge to pitch
+  and sell the MCP Gateway.
+- **Co-evolve with the gateway.** The gateway (separate product, live on the same VPS) is
+  adding runtime — e.g. hosting a stdio MCP server and exposing it as streamable-HTTP via a
+  Connector Runtime. Monitor the gateway's progress and customize the sub-registry's projection
+  + compatibility metadata to serve what it actually consumes. Never absorb runtime here.
+- **Moat:** provenance, verification, version-pinning, and change-detection (see
+  `subregistry-audit`) — the trust the aggregators lack.
+
 ## 13. Current state (living section — keep this honest)
 
 **As of 2026-06-15:**
 
-- **Status:** Foundation complete and live. Repo reorganized for production: identity
-  consolidated into this file, reference docs moved to `docs/`, scratch removed from git
-  via `.gitignore`, first landscape research report written. **Private remote established
-  and pushed:** `github.com/AI-with-Tamil/mcp-sub-registry` (default branch `master`).
+- **Status:** Foundation complete and live; now self-operating via skills. Identity in this
+  file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
+  git. **Private remote:** `github.com/AI-with-Tamil/mcp-sub-registry` (`master`).
+- **Production:** the registry runs live on Hostinger VPS `947510` (compose project
+  `mcp-sub-registry`, at `/home/tamil/deployments/mcp-sub-registry-launch/`), co-located with
+  the gateway + Caddy. Updated to current `master` on 2026-06-15 (code live, db preserved,
+  gateway untouched). **HTTP public works; HTTPS pending** a one-line Caddy fix (owner action —
+  see `subregistry-deploy`). Update via `ssh hostinger-vps` + `subregistry-deploy`.
+- **Catalog:** 15 approved/public remote servers (`data/default-curated-servers.json`); newest
+  group (Stripe, Vercel, Asana, Webflow) added + endpoint-verified 2026-06-15. Expand via
+  `subregistry-curate` + `docs/PLAYBOOK_ADD_SERVERS.md`. NOTE: the 4 new servers are committed
+  to the seed but **not yet seeded into the live DB** — run `seed:curated` on the VPS.
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run).
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
@@ -201,12 +229,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (only Obot and Lunar.dev MCPX do it cleanly per 2026 surveys) — this is the product's
   defensible niche.
 - **Next actions (ordered):**
-  1. Execute the private hosted deploy per `docs/DEPLOY_RUNBOOK.md` onto existing VPS 947510
-     (`148.135.136.137`). Needs: SSH access to the VPS + owner go-ahead (the box likely
-     hosts the gateway), and the exposure choice (private-during-buildout vs public reads).
-  2. Act on the routine's findings: the 2026-07-28 spec RC adds mandatory `Mcp-Method` /
-     `Mcp-Name` headers and goes stateless (ships July 28) — no catalog schema change, but
-     note it in the gateway contract for the Gateway operator. Track newly-flagged CVEs.
-  3. Review the gateway-compatibility edits folded into the baseline against intent.
+  1. **Owner:** apply the one-line Caddy fix to serve `registry.toolhost.online` over HTTPS
+     (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
+     `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
+     `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
+  2. Seed the 4 new servers into the live DB (`subregistry-deploy` → `seed:curated` on the VPS).
+  3. Set up a weekly `subregistry-audit` cadence; expand the catalog group-by-group via
+     `subregistry-curate` (backlog in the playbook).
+  4. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+     ships July 28) for the Gateway operator; no catalog schema change.
 </content>
 </invoke>
