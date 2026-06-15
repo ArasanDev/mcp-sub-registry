@@ -220,6 +220,12 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   MCP (no single universal endpoint), Salesforce + Azure DevOps (org-specific URLs).
   Servers added since last VPS deploy: Stripe, Vercel, Asana, Webflow, Exa, Context7, AWS
   Knowledge MCP, AWS MCP Server — not yet live on VPS — publish via `subregistry-deploy`.
+- **Scheduled-skills test (2026-06-15):** proved the autonomous skills-via-scheduler pipeline
+  end to end. Three `run_once_at` cloud triggers (audit 11:52Z, research 12:00Z, curate 12:11Z)
+  each booted from a cold checkout, followed its committed SKILL.md, did real verified work, and
+  pushed to private `master` — concurrently, without losing each other's commits (rebase rule
+  held). Audit fixed the Sentry URL; research wrote a 49-cite second-pass report; curate grew the
+  catalog with correct dedup + boundary discipline. Gate stayed green throughout.
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run). Fixed stale warning assertion in curated-validation.test.ts
   (sentry confirmed verified by 2026-06-15 audit; no longer warns).
