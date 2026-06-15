@@ -211,11 +211,13 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   the gateway + Caddy. Updated to current `master` on 2026-06-15 (code live, db preserved,
   gateway untouched). **HTTP public works; HTTPS pending** a one-line Caddy fix (owner action —
   see `subregistry-deploy`). Update via `ssh hostinger-vps` + `subregistry-deploy`.
-- **Catalog:** 15 approved/public remote servers (`data/default-curated-servers.json`); newest
-  group (Stripe, Vercel, Asana, Webflow) added + endpoint-verified 2026-06-15. Expand via
-  `subregistry-curate` + `docs/PLAYBOOK_ADD_SERVERS.md`. NOTE: the 4 new servers are committed
-  to the seed but **not yet live** (the running image baked the 11-server seed) — publish via
-  `subregistry-deploy` (re-overlay current master → rebuild api → `seed:curated`).
+- **Catalog:** 15 approved/public remote servers (`data/default-curated-servers.json`). Last
+  audit 2026-06-15: all 15 endpoints live (HTTP 403, auth-gated). One URL fix applied:
+  `com.sentry/mcp` corrected from `https://mcp.sentry.dev` → `https://mcp.sentry.dev/mcp`
+  (confirmed via getsentry/sentry-mcp docs). All 11 stale `verifiedAt` dates bumped from
+  2026-05-07 → 2026-06-15. No CVEs or security flags affect any cataloged server. The 4 servers
+  added 2026-06-15 (Stripe, Vercel, Asana, Webflow) are committed but **not yet live** (the
+  running image baked the 11-server seed) — publish via `subregistry-deploy`.
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run).
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs typecheck + UI build + migrations
@@ -234,7 +236,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
      `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
      `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
-  2. Seed the 4 new servers into the live DB (`subregistry-deploy` → `seed:curated` on the VPS).
+  2. Seed the 15-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   3. Set up a weekly `subregistry-audit` cadence; expand the catalog group-by-group via
      `subregistry-curate` (backlog in the playbook).
   4. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;

@@ -30,8 +30,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -74,8 +74,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/use-the-github-mcp-server",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -118,8 +118,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://docs.slack.dev/tools/mcp-server/",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -162,8 +162,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://developers.notion.com/docs/mcp",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -206,8 +206,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -228,7 +228,7 @@
         "remotes": [
           {
             "type": "streamable-http",
-            "url": "https://mcp.sentry.dev",
+            "url": "https://mcp.sentry.dev/mcp",
             "headers": [
               {
                 "name": "Authorization",
@@ -245,14 +245,14 @@
         "status": "approved",
         "visibility": "public",
         "qualityLabel": "curated",
-        "notes": "Production service root verified; confirm exact client path if Gateway requires strict endpoint suffix.",
+        "notes": "Endpoint path confirmed as /mcp suffix (docs.sentry.io/ai/mcp/). Live-verified 2026-06-15 (HTTP 403, OAuth required).",
         "meta": {
           "verification": {
-            "status": "needs_confirmation",
+            "status": "verified",
             "ownership": "official_vendor",
-            "sourceUrl": "https://docs.sentry.io/product/sentry-mcp/",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Production MCP service root found; confirm exact client endpoint path before relying on strict URL matching."
+            "sourceUrl": "https://docs.sentry.io/ai/mcp/",
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint path confirmed: https://mcp.sentry.dev/mcp per getsentry/sentry-mcp docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -296,8 +296,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://linear.app/docs/mcp",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -341,8 +341,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -385,8 +385,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://neon.com/docs/ai/neon-mcp-server",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -430,8 +430,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://supabase.com/docs/guides/getting-started/mcp",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
@@ -475,8 +475,8 @@
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://support.atlassian.com/rovo/docs/setting-up-ides/",
-            "verifiedAt": "2026-05-07T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs."
+            "verifiedAt": "2026-06-15T00:00:00.000Z",
+            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
           }
         }
       },
