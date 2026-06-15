@@ -183,9 +183,10 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 **As of 2026-06-15:**
 
-- **Status:** Foundation pass. Repo reorganized for production: identity consolidated
-  into this file, reference docs moved to `docs/`, scratch removed from git via
-  `.gitignore`, first landscape research report written.
+- **Status:** Foundation complete and live. Repo reorganized for production: identity
+  consolidated into this file, reference docs moved to `docs/`, scratch removed from git
+  via `.gitignore`, first landscape research report written. **Private remote established
+  and pushed:** `github.com/AI-with-Tamil/mcp-sub-registry` (default branch `master`).
 - **Baseline:** typecheck green; 52 tests pass / 27 skipped (skipped = DB integration,
   no live Postgres in this run).
 - **Build state:** gateway catalog (`/v0.1/gateway/catalog` + single-item lookup) and
@@ -196,9 +197,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (only Obot and Lunar.dev MCPX do it cleanly per 2026 surveys) — this is the product's
   defensible niche.
 - **Next actions (ordered):**
-  1. Establish the private GitHub remote and push a clean, production-ready first commit.
-  2. Stand up the daily research routine (scheduled cloud agent → `docs/research/`).
-  3. Verify + commit the pending gateway-compatibility edits.
-  4. Plan the private hosted deploy (Hostinger VPS + managed Postgres → `registry.toolhost.online`).
+  1. Stand up the daily research routine (scheduled cloud agent → `docs/research/`).
+  2. Plan + execute the private hosted deploy (Hostinger VPS + managed Postgres →
+     `registry.toolhost.online`).
+  3. Wire CI on the remote (typecheck + test gate on push).
 </content>
 </invoke>
