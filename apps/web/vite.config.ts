@@ -12,7 +12,15 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@shared": resolve(__dirname, "../../packages/shared/src")
+      "@shared": resolve(__dirname, "../../packages/shared/src"),
+      "@": resolve(__dirname, "src")
+    }
+  },
+  server: {
+    port: 5173,
+    proxy: {
+      "/v0.1": "http://localhost:8080",
+      "/health": "http://localhost:8080"
     }
   }
 });
