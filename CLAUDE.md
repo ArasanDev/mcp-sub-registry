@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-16:**
+**As of 2026-06-17:**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -257,6 +257,15 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   targets `mcp-server` npm packages and injects prompt injection into tool descriptions.
   Our remote-HTTP delivery model bypasses this attack vector. Clawdbot exposure (Jan 2026)
   now fully documented with active exploitation — elevates auth verification priority.
+- **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
+  `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
+  arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
+  the entire prototype CSS verbatim into `globals.css` as named classes (`.pipe-col`, `.tbl`,
+  `.detail`, `.sidebar`, etc.) and rewrote every component to use those class names directly.
+  Added the `/upstream` page (was missing from the implementation), restored the 4-column
+  pipeline (Upstream → Discovered → Approved → Gateway), trust timeline in the detail panel,
+  security checklist, cfg-block, all feed/stat cards. Build: 29.88 kB CSS. Commit: `3b985d9`.
+  Dev server: `bun run dev:web` → `http://localhost:5173/`. Tests: 50 pass / 27 skipped.
 - **Next actions (ordered):**
   1. **Owner:** apply the one-line Caddy fix to serve `registry.toolhost.online` over HTTPS
      (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
