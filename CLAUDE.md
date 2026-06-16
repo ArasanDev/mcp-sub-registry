@@ -220,6 +220,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   MCP (no single universal endpoint), Salesforce + Azure DevOps (org-specific URLs).
   Servers added since last VPS deploy: Stripe, Vercel, Asana, Webflow, Exa, Context7, AWS
   Knowledge MCP, AWS MCP Server — not yet live on VPS — publish via `subregistry-deploy`.
+- **Audit 2026-06-16 (security-elevated):** acted on the same-day research flag (Clawdbot /
+  Akamai unauthenticated-DB-MCP incident class). Live-verified `com.supabase/mcp`,
+  `com.neon/mcp`, and `com.sentry/mcp` — all return **HTTP 401** to an unauthenticated GET and
+  `initialize` POST, confirming the endpoints are OAuth/PAT-gated, **not** the open pattern
+  Clawdbot exploited. Bumped `verifiedAt` → 2026-06-16 and recorded the post-incident
+  re-verification in each entry's notes. No cataloged vendor was named in any active incident.
+  `com.sentry/mcp` was already `verification.status: verified` (set by the 2026-06-15 audit), so
+  that stale backlog item is closed. All entries stay `approved`/`public` — nothing demoted.
 - **Scheduled-skills test (2026-06-15):** proved the autonomous skills-via-scheduler pipeline
   end to end. Three `run_once_at` cloud triggers (audit 11:52Z, research 12:00Z, curate 12:11Z)
   each booted from a cold checkout, followed its committed SKILL.md, did real verified work, and
@@ -255,18 +263,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
      `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
   2. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  3. **[ELEVATED]** Next `subregistry-audit`: verify auth model for `com.supabase/mcp` and
-     `com.neon/mcp` (database-backend MCPs; Clawdbot incident makes unauthenticated DB-backend
-     MCPs higher risk; flagged by Akamai class). Also set `com.sentry/mcp`
-     `verification.status` → `verified` (endpoint confirmed, OAuth 2.0).
-  4. Set up a weekly `subregistry-audit` cadence; next curate group: Comms & support (Intercom,
+  3. Set up a weekly `subregistry-audit` cadence; next curate group: Comms & support (Intercom,
      PayPal, Zapier) or Data & analytics (Hugging Face, Snowflake, MongoDB).
-  5. Verify HubSpot MCP externally (mcp.hubspot.com/mcp, GA April 2026, OAuth 2.1 + PKCE) —
+  4. Verify HubSpot MCP externally (mcp.hubspot.com/mcp, GA April 2026, OAuth 2.1 + PKCE) —
      blocked by this environment's egress; add once confirmed live from outside the container.
-  6. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
+  5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
-  7. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+  6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
 </content>
 </invoke>

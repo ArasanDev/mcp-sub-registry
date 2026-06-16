@@ -245,14 +245,14 @@
         "status": "approved",
         "visibility": "public",
         "qualityLabel": "curated",
-        "notes": "Endpoint path confirmed as /mcp suffix (docs.sentry.io/ai/mcp/). Live-verified 2026-06-15 (HTTP 403, OAuth required).",
+        "notes": "Endpoint path confirmed as /mcp suffix (docs.sentry.io/ai/mcp/). Live re-verified 2026-06-16 (HTTP 401, OAuth required).",
         "meta": {
           "verification": {
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://docs.sentry.io/ai/mcp/",
-            "verifiedAt": "2026-06-15T00:00:00.000Z",
-            "notes": "Endpoint path confirmed: https://mcp.sentry.dev/mcp per getsentry/sentry-mcp docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
+            "verifiedAt": "2026-06-16T00:00:00.000Z",
+            "notes": "Endpoint path confirmed: https://mcp.sentry.dev/mcp per getsentry/sentry-mcp docs. Live re-verified 2026-06-16 (HTTP 401, auth enforced)."
           }
         }
       },
@@ -379,14 +379,14 @@
         "status": "approved",
         "visibility": "public",
         "qualityLabel": "curated",
-        "notes": "Remote database connector draft candidate.",
+        "notes": "Remote database connector. Auth enforcement re-verified 2026-06-16 after the Clawdbot/Akamai unauthenticated-DB-MCP incident class: unauthenticated GET and initialize POST both return HTTP 401, so the endpoint is OAuth/PAT-gated (not openly exposed).",
         "meta": {
           "verification": {
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://neon.com/docs/ai/neon-mcp-server",
-            "verifiedAt": "2026-06-15T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
+            "verifiedAt": "2026-06-16T00:00:00.000Z",
+            "notes": "Endpoint verified from official vendor docs. Live-verified 2026-06-16: unauthenticated GET and initialize POST to https://mcp.neon.tech/mcp both return HTTP 401 (auth enforced). Re-checked specifically against the Clawdbot-class risk for database-backend MCPs — endpoint is gated, not the unauthenticated pattern that incident exploited."
           }
         }
       },
@@ -424,14 +424,14 @@
         "status": "approved",
         "visibility": "public",
         "qualityLabel": "curated",
-        "notes": "Remote backend/database connector draft candidate.",
+        "notes": "Remote backend/database connector. Auth enforcement re-verified 2026-06-16 after the Clawdbot/Akamai unauthenticated-DB-MCP incident class: unauthenticated GET and initialize POST both return HTTP 401, so the endpoint is OAuth/PAT-gated (not openly exposed).",
         "meta": {
           "verification": {
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://supabase.com/docs/guides/getting-started/mcp",
-            "verifiedAt": "2026-06-15T00:00:00.000Z",
-            "notes": "Endpoint verified from public vendor documentation or official setup docs. Live-verified 2026-06-15 (HTTP 403, auth required)."
+            "verifiedAt": "2026-06-16T00:00:00.000Z",
+            "notes": "Endpoint verified from official vendor docs. Live-verified 2026-06-16: unauthenticated GET and initialize POST to https://mcp.supabase.com/mcp both return HTTP 401 (auth enforced). Re-checked specifically against the Clawdbot-class risk for database-backend MCPs — endpoint is gated, not the unauthenticated pattern that incident exploited."
           }
         }
       },
