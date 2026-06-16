@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-15:**
+**As of 2026-06-16:**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -240,24 +240,33 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
 - **Research:** landscape + top-11 ranking in `docs/research/`. Runlayer elevated to #10
-  (was watch list) on strength of $11M seed + MCP-founder consulting. NSA guidance (May 20,
-  2026) independently validates the `discovered != approved != enabled` model — strongest
-  external signal yet. Key thesis: clean separation is rare; Obot and Lunar.dev MCPX do it
-  cleanly; Runlayer + Docker MCP Catalog + AWS Agent Registry are the newest credible entrants.
+  on strength of $11M seed + MCP-founder consulting + Rising in Cyber 2026 (150 CISO votes).
+  Kong MCP Registry formally placed at #11 (announced February 2, 2026 in Kong Konnect).
+  NSA guidance (May 20, 2026) independently validates the `discovered != approved != enabled`
+  model — strongest external signal yet. Key thesis: clean separation is rare; Obot and
+  Lunar.dev MCPX do it cleanly; Runlayer + Docker MCP Catalog + AWS Agent Registry are the
+  newest credible entrants. New threat (June 2026): Mini Shai-Hulud npm worm explicitly
+  targets `mcp-server` npm packages and injects prompt injection into tool descriptions.
+  Our remote-HTTP delivery model bypasses this attack vector. Clawdbot exposure (Jan 2026)
+  now fully documented with active exploitation — elevates auth verification priority.
 - **Next actions (ordered):**
   1. **Owner:** apply the one-line Caddy fix to serve `registry.toolhost.online` over HTTPS
      (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
      `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
      `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
   2. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  3. Set up a weekly `subregistry-audit` cadence; next curate group: Comms & support (Intercom,
+  3. **[ELEVATED]** Next `subregistry-audit`: verify auth model for `com.supabase/mcp` and
+     `com.neon/mcp` (database-backend MCPs; Clawdbot incident makes unauthenticated DB-backend
+     MCPs higher risk; flagged by Akamai class). Also set `com.sentry/mcp`
+     `verification.status` → `verified` (endpoint confirmed, OAuth 2.0).
+  4. Set up a weekly `subregistry-audit` cadence; next curate group: Comms & support (Intercom,
      PayPal, Zapier) or Data & analytics (Hugging Face, Snowflake, MongoDB).
-  4. Verify HubSpot MCP externally (mcp.hubspot.com/mcp, GA April 2026, OAuth 2.1 + PKCE) —
+  5. Verify HubSpot MCP externally (mcp.hubspot.com/mcp, GA April 2026, OAuth 2.1 + PKCE) —
      blocked by this environment's egress; add once confirmed live from outside the container.
-  5. Next `subregistry-audit`: set `com.sentry/mcp` `verification.status` → `verified`
-     (endpoint confirmed `mcp.sentry.dev/mcp`, OAuth 2.0). Also verify auth model for
-     `com.supabase/mcp` and `com.neon/mcp` (database-backend MCPs; flagged by Akamai class).
-  6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+  6. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
+     approved server schema when Sigstore-signed MCP artifacts become common upstream
+     (MDPI Future Internet 18(5):243 proposal; no action needed now).
+  7. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
 </content>
 </invoke>
