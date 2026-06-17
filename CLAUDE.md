@@ -209,8 +209,10 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 - **Production:** the registry runs live on Hostinger VPS `947510` (compose project
   `mcp-sub-registry`, at `/home/tamil/deployments/mcp-sub-registry-launch/`), co-located with
   the gateway + Caddy. Updated to current `master` on 2026-06-15 (code live, db preserved,
-  gateway untouched). **HTTP public works; HTTPS pending** a one-line Caddy fix (owner action —
-  see `subregistry-deploy`). Update via `ssh hostinger-vps` + `subregistry-deploy`.
+  gateway untouched). **HTTPS live as of 2026-06-17** — added registry block to Caddyfile
+  (`/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`), restarted caddy,
+  Let's Encrypt cert provisioned via HTTP-01 ACME. HTTP→HTTPS 308 redirect active.
+  Update via `ssh hostinger-vps` + `subregistry-deploy`.
 - **Catalog:** 19 approved/public remote servers (`data/default-curated-servers.json`). Last
   curate run 2026-06-15 (commit `7b4c8bd`): added `com.aws/mcp-knowledge` (AWS Knowledge MCP,
   no-auth public endpoint, live-verified HTTP 200 MCP initialize) and `com.aws/mcp` (AWS MCP
@@ -281,24 +283,20 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   security checklist, cfg-block, all feed/stat cards. Build: 29.88 kB CSS. Commit: `3b985d9`.
   Dev server: `bun run dev:web` → `http://localhost:5173/`. Tests: 50 pass / 27 skipped.
 - **Next actions (ordered):**
-  1. **Owner:** apply the one-line Caddy fix to serve `registry.toolhost.online` over HTTPS
-     (change `http://registry.toolhost.online {` → `registry.toolhost.online {` in
-     `/home/tamil/deployments/mcp-gateway/deploy/Caddyfile.gateway.example`, then
-     `docker exec deploy-caddy-1 caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile`).
-  2. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  3. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
+  1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
+  2. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
      confirmed April 13, `https://mcp.hubspot.com/mcp`, OAuth 2.1 + PKCE), Intercom, Zapier.
      HubSpot endpoint confirmed live in second-pass June 17 research.
-  4. Next `subregistry-audit` pass: (a) verify `com.asana/mcp` SSE endpoint still live (Atlassian
+  3. Next `subregistry-audit` pass: (a) verify `com.asana/mcp` SSE endpoint still live (Atlassian
      SSE deprecated June 30 — Asana not yet announced, but watch); (b) ask all TypeScript SDK-based
      vendors to confirm they are running ≥1.26.0 (CVE-2026-25536).
-  5. Set up a weekly `subregistry-audit` cadence after #3 curate run completes.
-  6. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
+  4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
+  5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
-  7. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
+  6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
-  8. Once SEP-2127 (MCP Server Cards) merges into spec (expected June 2026), extend
+  7. Once SEP-2127 (MCP Server Cards) merges into spec (expected June 2026), extend
      `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each cataloged
      server origin and record tool count + version in `verification.notes`. No schema
      migration needed now.
