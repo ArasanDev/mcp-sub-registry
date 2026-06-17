@@ -6,7 +6,7 @@ field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
 - **Latest daily update:** [2026-06-17-mcp-ecosystem-update.md](./2026-06-17-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-17 (daily scheduled run)
+- **Last updated:** 2026-06-17 (daily scheduled run, second pass)
 
 ## Ranking criteria
 
@@ -30,11 +30,12 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 | 11 | **Runlayer** | Enterprise gateway + catalog | $11M seed (Khosla/Felicis); **Rising in Cyber 2026** (150 CISO votes, Notable Capital/Morgan Stanley); MCP founder (D.S. Parra) as consultant; 18,000+ server catalog | Security-approved servers, ABAC, fast-tracked approval; curated vs. raw | **Elevated** — CISO endorsement validates enterprise market signal |
 
-**Honorable mentions / watch list:** Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; incumbent API-gw credibility),
+**Honorable mentions / watch list:** Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; tech preview; no June GA),
 mcp.so (~20,222, unvetted), MCP Market (~10k, community),
 MintMCP (**SOC 2 Type II certified**; STDIO-to-production containerization; active June 2026 development),
 Microsoft MCP Gateway (k8s, no catalog),
 **AWS Agent Registry** (April 9, 2026 preview; private org catalog in Bedrock AgentCore; indexes agents/MCP servers/skills; exposes as MCP endpoint; watch for GA),
+**Salesforce Agentforce MCP** (**GA June 15, 2026**; SObject CRUD + SOQL + Tableau analytics; bidirectional — Agentforce also consumes external MCP servers via Atlas Reasoning Engine 3.0; org-specific endpoint pattern, not catalog-friendly),
 Composio, Operant, Airlock,
 **Portkey** *(acquired by Palo Alto Networks, May 29, 2026; now Prisma AIRS; standalone in maintenance mode)*,
 agentic-community/mcp-gateway-registry (OSS gateway+registry),
@@ -50,11 +51,14 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   CVE-2026-26118, CVE-2026-33032, RSAC 2026's systemic supply-chain advisory,
   VIPER-MCP's 106 zero-days across 39,884 repos, Akamai's database MCP flaws,
   the Clawdbot/OpenClaw 900+ gateway exposure with active exploitation (Jan 2026),
-  the Mini Shai-Hulud npm worm that **specifically targets `mcp-server` packages and
-  injects prompt injection into tool descriptions**,
-  and **SANDWORM_MODE** (June 16, 2026) — a live npm worm injecting malicious MCP server
-  configs into AI agent toolchains via 19 typosquatted packages, targeting Claude Code /
-  Cursor / VS Code config files to steal API keys and SSH keys).
+  the Mini Shai-Hulud npm worm (tool-description injection),
+  **SANDWORM_MODE** (June 16, 2026) — npm worm injecting malicious MCP server configs
+  via 19 typosquatted packages, targeting Claude Code / Cursor / VS Code,
+  **Miasma** (June 5–9, 2026) — repository-level worm compromising 73 Microsoft GitHub
+  repos; **toolkit open-sourced June 9** targeting 15 AI coding agents — derivative
+  variants expected throughout H2 2026,
+  CVE-2026-27825/27826 "MCPwnfluence" (CVSS 9.1 RCE + SSRF in `mcp-atlassian`; patched in 0.17.0),
+  CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0)).
 - **NSA validation (May 20, 2026):** The NSA published MCP security design guidance
   explicitly recommending source-verified, reputable MCP registries as a control layer.
   The `discovered != approved != enabled` boundary is exactly the NSA's recommended
