@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-17:**
+**As of 2026-06-17 (research run):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -247,16 +247,23 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Runlayer elevated to #10
-  on strength of $11M seed + MCP-founder consulting + Rising in Cyber 2026 (150 CISO votes).
-  Kong MCP Registry formally placed at #11 (announced February 2, 2026 in Kong Konnect).
-  NSA guidance (May 20, 2026) independently validates the `discovered != approved != enabled`
-  model — strongest external signal yet. Key thesis: clean separation is rare; Obot and
-  Lunar.dev MCPX do it cleanly; Runlayer + Docker MCP Catalog + AWS Agent Registry are the
-  newest credible entrants. New threat (June 2026): Mini Shai-Hulud npm worm explicitly
-  targets `mcp-server` npm packages and injects prompt injection into tool descriptions.
-  Our remote-HTTP delivery model bypasses this attack vector. Clawdbot exposure (Jan 2026)
-  now fully documented with active exploitation — elevates auth verification priority.
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-17:
+  Palo Alto Networks / Prisma AIRS elevated to #4 (acquired Portkey May 29, 2026 — trillions
+  of tokens/month, Prisma AIRS 3.0 AI Gateway). Kong MCP Registry dropped to honorable
+  mention (feature, not a standalone product). NSA guidance (May 20, 2026) independently
+  validates `discovered != approved != enabled` — strongest external signal yet. Key thesis:
+  clean separation is rare; Obot + Lunar.dev MCPX do it cleanly; Palo Alto + Runlayer +
+  Docker + AWS Agent Registry are the credible enterprise entrants.
+  Active threats (June 2026): (1) Mini Shai-Hulud npm worm injects prompt injection into tool
+  descriptions; our remote-HTTP model bypasses it. (2) **SANDWORM_MODE** (discovered June 16,
+  2026) — npm worm (19 packages, aliases "official334"/"javaorg") injects malicious MCP server
+  configs into Claude Code / Cursor / VS Code config files to steal API keys + SSH keys; 48-hour
+  time bomb; no impact on our remote HTTP catalog but operator advisory issued in June 17 report.
+  (3) Agentjacking (CSA research note, June 12) formalizes MCP injection attack class.
+  Clawdbot exposure (Jan 2026) fully documented. SANDWORM_MODE is highest active threat in ecosystem.
+  SEP-2127 / MCP Server Cards (/.well-known/mcp/server-card.json): targeting June 2026 spec merge;
+  Claude Desktop + Cursor already shipping support — once merged, `subregistry-audit` can use this
+  to auto-verify tool counts and protocol version on cataloged endpoints.
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
@@ -281,5 +288,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
      ships July 28) for the Gateway operator; no catalog schema change.
+  7. Once SEP-2127 (MCP Server Cards) merges into spec (expected June 2026), extend
+     `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each cataloged
+     server origin and record tool count + version in `verification.notes`. No schema
+     migration needed now.
 </content>
 </invoke>
