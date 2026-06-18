@@ -583,11 +583,11 @@
         "name": "com.asana/mcp",
         "title": "Asana MCP",
         "description": "Official Asana remote MCP server for tasks, projects, and work management workflows.",
-        "version": "remote-2026-06",
+        "version": "remote-2026-06-v2",
         "remotes": [
           {
-            "type": "sse",
-            "url": "https://mcp.asana.com/sse",
+            "type": "streamable-http",
+            "url": "https://mcp.asana.com/v2/mcp",
             "headers": [
               {
                 "name": "Authorization",
@@ -604,14 +604,14 @@
         "status": "approved",
         "visibility": "public",
         "qualityLabel": "curated",
-        "notes": "Cloudflare MCP launch partner; SSE transport. Endpoint live-verified 2026-06-15 (HTTP 401, OAuth required).",
+        "notes": "Cloudflare MCP launch partner. Migrated from V1 SSE (https://mcp.asana.com/sse, shut down 2026-05-11) to V2 Streamable HTTP endpoint per 2026-06-18 research pass.",
         "meta": {
           "verification": {
             "status": "verified",
             "ownership": "official_vendor",
             "sourceUrl": "https://blog.cloudflare.com/mcp-demo-day/",
-            "verifiedAt": "2026-06-15T00:00:00.000Z",
-            "notes": "Endpoint reachability confirmed (HTTP 401, auth required). SSE transport — not a hosted-gateway candidate without runtime planning. Re-verify before production reliance."
+            "verifiedAt": "2026-06-18T00:00:00.000Z",
+            "notes": "V1 SSE endpoint shut down 2026-05-11. Updated to V2 Streamable HTTP at https://mcp.asana.com/v2/mcp. Auth: OAuth required. Re-verify live reachability in next audit pass."
           }
         }
       },

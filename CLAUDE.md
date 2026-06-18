@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-17 (second research pass):**
+**As of 2026-06-18 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -268,11 +268,19 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   for next audit pass. (6) Agentjacking (CSA June 12). Clawdbot (Jan 2026) fully documented.
   All 19 catalog servers remain approved/public; remote-HTTP model is the correct defense against
   all npm/repo-based worm vectors. Operator advisories in June 17 research report.
-  SEP-2127 / MCP Server Cards (/.well-known/mcp/server-card.json): targeting June 2026 spec merge;
-  Claude Desktop + Cursor already shipping support — once merged, `subregistry-audit` can use this
-  to auto-verify tool counts and protocol version on cataloged endpoints.
+  (7) **OX Security "Mother of All AI Supply Chains" (April 2026):** systemic STDIO RCE across 200k+
+  instances, 9/11 registries successfully poisoned in PoC testing, 14 CVEs (CVE-2026-30615
+  Windsurf zero-click, CVE-2026-11624 DNS rebinding). Anthropic declined to change STDIO transport
+  design. Remote-HTTP-only catalog is structurally immune. Full detail in June 18 report.
+  SEP-2127 / MCP Server Cards (/.well-known/mcp/server-card.json): Working Group active, term ends
+  Aug 14, 2026; may land post-RC rather than in the July 28 spec. Claude Desktop + Cursor already
+  shipping support — once merged, `subregistry-audit` can use this to auto-verify tool counts
+  and protocol version on cataloged endpoints.
   **Salesforce Agentforce MCP GA (June 15, 2026)**: bidirectional MCP at GA; org-specific URLs
   keep it out of our catalog but watch list updated in landscape.md.
+  **Spec RC breaking changes (June 18 research):** `initialize`/`initialized` handshake removed;
+  `Mcp-Session-Id` deprecated; `_meta` carries capabilities + W3C trace context; `ttlMs`/`cacheScope`
+  added; Roots/Sampling/Logging deprecated; error code -32002 → -32602. No catalog schema change.
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
@@ -287,18 +295,24 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   2. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
      confirmed April 13, `https://mcp.hubspot.com/mcp`, OAuth 2.1 + PKCE), Intercom, Zapier.
      HubSpot endpoint confirmed live in second-pass June 17 research.
-  3. Next `subregistry-audit` pass: (a) verify `com.asana/mcp` SSE endpoint still live (Atlassian
-     SSE deprecated June 30 — Asana not yet announced, but watch); (b) ask all TypeScript SDK-based
-     vendors to confirm they are running ≥1.26.0 (CVE-2026-25536).
+  3. Next `subregistry-audit` pass: (a) ~~verify `com.asana/mcp` SSE endpoint~~ **DONE 2026-06-18** —
+     Asana V1 SSE endpoint was dead (shut down May 11); updated to V2 Streamable HTTP
+     `https://mcp.asana.com/v2/mcp` in this commit. (b) Verify all TypeScript SDK-based
+     vendors are running ≥1.26.0 (CVE-2026-25536); Atlassian SSE deprecated June 30 (not in catalog).
+     (c) Any SSE-typed entry should be audited for migration to Streamable HTTP — this is
+     becoming an industry-wide pattern. (d) CVE-2026-11624 DNS rebinding: confirm all cataloged
+     vendors run MCP server ≥v0.25.
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
-  6. Track the 2026-07-28 spec RC (mandatory `Mcp-Method`/`Mcp-Name` headers, stateless;
-     ships July 28) for the Gateway operator; no catalog schema change.
-  7. Once SEP-2127 (MCP Server Cards) merges into spec (expected June 2026), extend
-     `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each cataloged
-     server origin and record tool count + version in `verification.notes`. No schema
+  6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
+     ships July 28 — 40 days) for the Gateway operator; no catalog schema change needed.
+  7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
+     post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
+     cataloged server origin and record tool count + version in `verification.notes`. No schema
      migration needed now.
+  8. Anthropic MCP Tunnels (research preview, May 2026): when GA, consider tracking
+     `remotes[].type: "mcp-tunnel"` as a new endpoint archetype for private-network servers.
 </content>
 </invoke>

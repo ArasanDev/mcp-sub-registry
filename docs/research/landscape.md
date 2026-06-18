@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-17-mcp-ecosystem-update.md](./2026-06-17-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-17 (daily scheduled run, second pass)
+- **Latest daily update:** [2026-06-18-mcp-ecosystem-update.md](./2026-06-18-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-18 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -67,13 +67,24 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
 - **Scale signal (Censys, June 2026):** 12,520 internet-accessible MCP services found;
   ~40% expose tools with no authentication. The unvetted surface grows while our
   approved set stays narrow and verified.
-- **Spec watch:** MCP 2026-07-28 RC (locked May 28; ships July 28 — **41 days**) removes session state
-  and adds mandatory `Mcp-Method`/`Mcp-Name` headers. No catalog schema change required;
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **40 days**). Breaking changes:
+  `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
+  enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
+  `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
+  mandatory `Mcp-Method`/`Mcp-Name` headers. No catalog schema change required.
   Gateway operator must update transport validation before July 28.
 - **Server Cards (SEP-2127, targeting June 2026 merge):** `/.well-known/mcp/server-card.json` standard
   for machine-readable server metadata. Claude Desktop + Cursor already shipping support (April 2026).
-  Parallel IETF track: draft-serra-mcp-discovery-uri-04 (expires Sep 2026). Once merged, `subregistry-audit`
+  Parallel IETF track: draft-serra-mcp-discovery-uri-04 (expires Sep 2026). Working Group term ends
+  Aug 14, 2026 — may land post-RC rather than in the July 28 spec. Once merged, `subregistry-audit`
   can query this endpoint to auto-verify tool counts and protocol version on cataloged servers.
+- **Asana V1 SSE endpoint shutdown (May 11, 2026):** `https://mcp.asana.com/sse` is dead. V2 Streamable
+  HTTP at `https://mcp.asana.com/v2/mcp`. Catalog updated 2026-06-18. Atlassian SSE likewise deprecated
+  June 30, 2026 (not in our catalog). SSE-to-Streamable-HTTP migration is an industry-wide pattern —
+  audit all SSE-typed catalog entries in next `subregistry-audit` pass.
+- **OX Security STDIO RCE (April 2026):** 14 CVEs, 200k+ vulnerable instances, 9/11 registries poisoned.
+  Root cause is STDIO transport design (Anthropic declined protocol change). Our remote-HTTP-only
+  catalog is structurally immune. Strongest external validation of the remote-HTTP-first approach.
 - **Acquisition signal:** Palo Alto Networks acquiring Portkey (closed May 29, 2026) is the strongest
   enterprise validation signal to date — an $8B-ARR incumbent paying for AI gateway governance confirms
   the market we serve is real and growing. Portkey is now in maintenance mode; Prisma AIRS is the live entity.
