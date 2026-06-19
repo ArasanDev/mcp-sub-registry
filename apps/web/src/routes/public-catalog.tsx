@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { PUBLIC_SERVERS } from "@/data/public-catalog";
 import type { PublicServer, RiskLevel } from "@/data/public-catalog";
@@ -12,21 +12,39 @@ function riskPillClass(risk: RiskLevel): string {
 
 function ServerCard({ server }: { server: PublicServer }) {
   return (
-    <Link to="/server/$slug" params={{ slug: server.slug }} className="pub-card">
-      <div className="pub-card-name">{server.name}</div>
-      <div className="pub-card-desc">{server.description}</div>
-      <div className="pub-card-pills">
-        <span className="pub-pill pub-mono">{server.category}</span>
-        <span className="pub-pill pub-pill-auth pub-mono">{server.auth}</span>
-        <span className={riskPillClass(server.risk)}>{server.risk} Risk</span>
-      </div>
-      <div className="pub-card-footer">{server.toolCount} tools</div>
-    </Link>
+    <article className="pub-card">
+      <Link to="/server/$slug" params={{ slug: server.slug }} className="pub-card-link">
+        <h2 className="pub-card-name">{server.name}</h2>
+        <p className="pub-card-desc">{server.description}</p>
+        <div className="pub-card-pills">
+          <span className="pub-pill pub-mono">{server.category}</span>
+          <span
+            className="pub-pill pub-pill-auth pub-mono"
+            aria-label={`Authentication: ${server.auth}`}
+          >
+            {server.auth}
+          </span>
+          <span
+            className={riskPillClass(server.risk)}
+            aria-label={`Risk level: ${server.risk}`}
+          >
+            {server.risk} Risk
+          </span>
+        </div>
+        <data className="pub-card-footer" value={server.toolCount}>
+          {server.toolCount} tools
+        </data>
+      </Link>
+    </article>
   );
 }
 
 export function PublicCatalogPage() {
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    document.title = "ToolHost Catalog — MCP Servers";
+  }, []);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return PUBLIC_SERVERS;
@@ -57,40 +75,45 @@ export function PublicCatalogPage() {
         </a>
       </header>
 
-      <div className="pub-container">
-        <div className="pub-hero">
-          <h1 className="pub-hero-title">ToolHost Catalog</h1>
-          <p className="pub-hero-sub">
-            Curated MCP servers for production use. Every server is schema-pinned at
-            approval. Connect directly to any ToolHost gateway.
-          </p>
-        </div>
+      <main aria-label="ToolHost Catalog">
+        <div className="pub-container">
+          <div className="pub-hero">
+            <h1 className="pub-hero-title">ToolHost Catalog</h1>
+            <p className="pub-hero-sub">
+              Curated MCP servers for production use. Every server is schema-pinned at
+              approval. Connect directly to any ToolHost gateway.
+            </p>
+          </div>
 
-        <div className="pub-search-wrap">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input
-            className="pub-search-input"
-            type="text"
-            placeholder="Search servers..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            aria-label="Search servers"
-          />
-        </div>
+          <div className="pub-search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <label className="sr-only" htmlFor="search">Search servers</label>
+            <input
+              id="search"
+              className="pub-search-input"
+              type="text"
+              placeholder="Search servers..."
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+            />
+          </div>
 
-        <div className="pub-grid">
-          {filtered.length === 0 ? (
-            <div className="pub-empty">No servers match "{query}"</div>
-          ) : (
-            filtered.map(server => (
-              <ServerCard key={server.slug} server={server} />
-            ))
-          )}
+          <section aria-label="Server catalog">
+            <div className="pub-grid">
+              {filtered.length === 0 ? (
+                <div className="pub-empty">No servers match "{query}"</div>
+              ) : (
+                filtered.map(server => (
+                  <ServerCard key={server.slug} server={server} />
+                ))
+              )}
+            </div>
+          </section>
         </div>
-      </div>
+      </main>
 
       <footer className="pub-footer">
         <div className="pub-container">
