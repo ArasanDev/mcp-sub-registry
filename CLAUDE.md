@@ -297,6 +297,15 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   pipeline (Upstream → Discovered → Approved → Gateway), trust timeline in the detail panel,
   security checklist, cfg-block, all feed/stat cards. Build: 29.88 kB CSS. Commit: `3b985d9`.
   Dev server: `bun run dev:web` → `http://localhost:5173/`. Tests: 50 pass / 27 skipped.
+- **Public catalog UI LIVE (2026-06-19):** Deployed to production at `registry.toolhost.online`.
+  Commit `e873967`: added server routes `/servers` + `/server/*` (SPA, `webIndexResponse()`),
+  `/llms.txt` route, meta tags + JSON-LD DataCatalog in `index.html`, `apps/web/public/llms.txt`
+  (copied to `dist/` by Vite build). Fixed Caddy 502: updated live Caddyfile
+  (`/home/tamil/deployments/repo/mcp-gateway/deploy/Caddyfile.gateway`) from
+  `host.docker.internal:8080` → `172.17.0.1:8080` (Linux Docker bridge; `host.docker.internal`
+  doesn't resolve inside the Caddy container on Linux). Restarted Caddy container.
+  Verified: `/health`, `/servers`, `/server/:slug`, `/llms.txt`, `/v0.1/gateway/catalog` all
+  200 through HTTPS. Gateway unchanged and healthy.
 - **Next actions (ordered):**
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   2. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
