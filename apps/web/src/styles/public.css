@@ -1,0 +1,549 @@
+/* ================================================================
+   Public Catalog UI — ToolHost brand tokens
+   Scoped under .pub-root so console styles are unaffected.
+   All tokens match TOOLHOST-DESIGN.md exactly.
+   NO Tailwind arbitrary values — all named classes.
+   ================================================================ */
+
+.pub-root {
+  --canvas:        #08090a;
+  --surf1:         #0f1011;
+  --surf2:         #161718;
+  --surf3:         #232527;
+  --surf4:         #2e3134;
+  --hairline:      #383c40;
+  --tx-primary:    #f4f4f5;
+  --tx-secondary:  #9ca3af;
+  --tx-muted:      #6b7280;
+  --accent:        #5e6ad2;
+  --accent-hover:  #6b78e5;
+  --accent-dim:    rgba(94, 106, 210, 0.12);
+  --success:       #4ade80;
+  --success-dim:   rgba(74, 222, 128, 0.12);
+  --warning:       #fbbf24;
+  --warning-dim:   rgba(251, 191, 36, 0.12);
+  --error:         #f87171;
+  --error-dim:     rgba(248, 113, 113, 0.12);
+
+  min-height: 100vh;
+  background: var(--canvas);
+  color: var(--tx-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pub-root *, .pub-root *::before, .pub-root *::after {
+  box-sizing: border-box;
+}
+
+/* ── Typography helpers ── */
+.pub-mono {
+  font-family: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Header ── */
+.pub-header {
+  border-bottom: 1px solid var(--hairline);
+  background: var(--surf1);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 12px;
+}
+
+.pub-header-logo {
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.pub-header-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--tx-primary);
+}
+
+.pub-header-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--hairline);
+  margin: 0 4px;
+}
+
+.pub-header-section {
+  font-size: 14px;
+  color: var(--tx-muted);
+}
+
+.pub-header-space {
+  flex: 1;
+}
+
+.pub-header-link {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  text-decoration: none;
+  transition: color 150ms ease-out;
+}
+
+.pub-header-link:hover {
+  color: var(--tx-primary);
+}
+
+/* ── Page container ── */
+.pub-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Browse hero ── */
+.pub-hero {
+  padding: 64px 0 40px;
+}
+
+.pub-hero-title {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--tx-primary);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.pub-hero-sub {
+  font-size: 16px;
+  color: var(--tx-secondary);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* ── Search bar ── */
+.pub-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surf2);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 36px;
+  transition: border-color 150ms ease-out;
+}
+
+.pub-search-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+.pub-search-wrap svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--tx-muted);
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.pub-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--tx-primary);
+}
+
+.pub-search-input::placeholder {
+  color: var(--tx-muted);
+}
+
+/* ── Server grid ── */
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 900px) {
+  .pub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .pub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-hero-title {
+    font-size: 28px;
+  }
+
+  .pub-container {
+    padding: 0 16px;
+  }
+}
+
+/* ── Server card ── */
+.pub-card {
+  background: var(--surf1);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 150ms ease-out;
+}
+
+.pub-card:hover {
+  border-color: rgba(94, 106, 210, 0.4);
+}
+
+.pub-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tx-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.pub-card-desc {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.pub-card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pub-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--hairline);
+  background: var(--surf3);
+  color: var(--tx-muted);
+  white-space: nowrap;
+}
+
+.pub-pill-risk-low {
+  background: var(--success-dim);
+  color: var(--success);
+  border-color: transparent;
+}
+
+.pub-pill-risk-medium {
+  background: var(--warning-dim);
+  color: var(--warning);
+  border-color: transparent;
+}
+
+.pub-pill-risk-high {
+  background: var(--error-dim);
+  color: var(--error);
+  border-color: transparent;
+}
+
+.pub-pill-auth {
+  background: var(--surf3);
+  color: var(--tx-secondary);
+  border-color: var(--hairline);
+}
+
+.pub-card-footer {
+  font-size: 13px;
+  color: var(--tx-muted);
+  margin-top: 4px;
+}
+
+/* ── Empty state ── */
+.pub-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 64px 0;
+  color: var(--tx-muted);
+  font-size: 14px;
+}
+
+/* ================================================================
+   Detail page
+   ================================================================ */
+
+/* ── Back link ── */
+.pub-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--tx-muted);
+  text-decoration: none;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  transition: color 150ms ease-out;
+}
+
+.pub-back:hover {
+  color: var(--tx-primary);
+}
+
+/* ── Detail header ── */
+.pub-det-header {
+  margin-bottom: 32px;
+}
+
+.pub-det-title {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--tx-primary);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.pub-det-desc {
+  font-size: 18px;
+  color: var(--tx-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.pub-det-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.pub-det-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--hairline);
+  background: var(--surf3);
+  color: var(--tx-muted);
+  white-space: nowrap;
+}
+
+.pub-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms ease-out;
+}
+
+.pub-cta-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ── Detail body ── */
+.pub-det-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 800px) {
+  .pub-det-body {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-det-title {
+    font-size: 28px;
+  }
+}
+
+/* ── Sections ── */
+.pub-section {
+  margin-bottom: 32px;
+}
+
+.pub-section-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--tx-muted);
+  margin-bottom: 12px;
+}
+
+/* ── Tool list ── */
+.pub-tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pub-tool-item {
+  background: var(--surf2);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.pub-tool-name {
+  font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pub-tool-desc {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.4;
+}
+
+.pub-tools-more {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.pub-tools-more:hover {
+  text-decoration: underline;
+}
+
+/* ── Auth setup ── */
+.pub-auth-text {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+}
+
+/* ── Schema block ── */
+.pub-schema-block {
+  background: var(--surf2);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.pub-schema-key {
+  color: var(--accent);
+}
+
+.pub-schema-val {
+  color: var(--tx-muted);
+  word-break: break-all;
+}
+
+/* ── Sidebar card ── */
+.pub-sidebar-card {
+  background: var(--surf1);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.pub-sidebar-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tx-primary);
+  margin-bottom: 10px;
+}
+
+.pub-sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 13px;
+}
+
+.pub-sidebar-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pub-sidebar-label {
+  color: var(--tx-muted);
+}
+
+.pub-sidebar-val {
+  color: var(--tx-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ── Footer ── */
+.pub-footer {
+  border-top: 1px solid var(--hairline);
+  padding: 24px 0;
+  margin-top: 0;
+}
+
+.pub-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--tx-muted);
+}
+
+.pub-footer-link {
+  color: var(--tx-muted);
+  text-decoration: none;
+  transition: color 150ms ease-out;
+}
+
+.pub-footer-link:hover {
+  color: var(--tx-primary);
+}
