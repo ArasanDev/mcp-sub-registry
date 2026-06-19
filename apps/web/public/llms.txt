@@ -1,0 +1,20 @@
+# ToolHost Catalog
+
+Curated catalog of MCP (Model Context Protocol) servers for production use.
+Every server is schema-pinned at approval — drift is blocked, not alerted.
+
+## Browse
+https://registry.toolhost.online/servers
+
+## Available servers
+github-mcp — Full GitHub API (26 tools, OAuth)
+brave-search — Web search via Brave API (2 tools, API Key)
+stripe — Payments and invoicing (14 tools, API Key)
+grafana — Dashboard and metrics queries (8 tools, API Key)
+linear — Issues and project management (11 tools, OAuth)
+notion — Pages and databases (18 tools, OAuth)
+aws-kb-retrieval — AWS Knowledge Base via Bedrock (1 tool, API Key)
+playwright — Browser automation (5 tools, None)
+
+## Connect to ToolHost Gateway
+https://toolhost.online/start

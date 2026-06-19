@@ -71,6 +71,11 @@ export function createApp(dependencies: AppDependencies = {}) {
   );
 
   app.get("/", () => webIndexResponse());
+  // Public catalog UI — SPA routes served from the built index.html
+  app.get("/servers", () => webIndexResponse());
+  app.get("/server/*", () => webIndexResponse());
+  // Machine-readable layer
+  app.get("/llms.txt", () => fileResponse(`${builtUiRoot}/llms.txt`, "text/plain; charset=utf-8"));
   app.get("/assets/*", (c) => {
     const assetPath = `${builtUiRoot}/${c.req.path.replace("/assets/", "assets/")}`;
 

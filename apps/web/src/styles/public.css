@@ -204,18 +204,25 @@
   background: var(--surf1);
   border: 1px solid var(--hairline);
   border-radius: 6px;
-  padding: 24px;
+  padding: 0;
   cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  overflow: hidden;
   transition: border-color 150ms ease-out;
 }
 
 .pub-card:hover {
   border-color: rgba(94, 106, 210, 0.4);
+}
+
+/* Inner link stretches to fill the article card */
+.pub-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
 }
 
 .pub-card-name {
