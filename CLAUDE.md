@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-18 (daily research pass):**
+**As of 2026-06-19 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -258,16 +258,23 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Docker + AWS Agent Registry are the credible enterprise entrants.
   Active threats (June 2026): (1) Mini Shai-Hulud npm worm injects prompt injection into tool
   descriptions. (2) **SANDWORM_MODE** (June 16) — npm worm injecting malicious MCP server
-  configs into Claude Code / Cursor / VS Code via 19 typosquatted packages. (3) **Miasma**
-  (June 5–9) — repository-level worm; compromised 73 Microsoft GitHub repos; **toolkit
-  open-sourced June 9** targeting 15 AI coding agents — derivative variants expected H2 2026.
-  This is now the highest-escalation threat in the ecosystem (open toolkit = low barrier to clone).
+  configs into Claude Code / Cursor / VS Code via 19 typosquatted packages. (3) **Miasma
+  Waves 1–3** — Wave 1 (June 1): 32 `@redhat-cloud-services` packages; Wave 2 (June 3):
+  `@vapi-ai/server-sdk`; **Wave 3 (June 17): `@mastra` npm org — 144 packages backdoored in
+  88 minutes, 1.1M weekly downloads exposed, cross-platform RAT (166 crypto wallet extensions
+  + credential harvest)**. Phantom Gyp technique documented; derivative attacks expected H2 2026.
   (4) CVE-2026-27825/27826 "MCPwnfluence" — CVSS 9.1 RCE + SSRF in `mcp-atlassian` Python package
   (patched 0.17.0; our catalog uses official remote server, unaffected). (5) CVE-2026-25536 —
-  MCP TypeScript SDK cross-client data leak, patched in SDK 1.26.0; flag all cataloged vendors
-  for next audit pass. (6) Agentjacking (CSA June 12). Clawdbot (Jan 2026) fully documented.
-  All 19 catalog servers remain approved/public; remote-HTTP model is the correct defense against
-  all npm/repo-based worm vectors. Operator advisories in June 17 research report.
+  MCP TypeScript SDK cross-client data leak, patched in SDK 1.26.0; **audit pass pending** to
+  verify all TypeScript SDK vendors in catalog are running ≥1.26.0. (6) **Agentjacking** (CSA
+  June 12, 2026) — 2,388 orgs exposed via Sentry DSN injection; Sentry MCP server faithfully
+  returns attacker-controlled event data to AI agents; Sentry declined platform-level fix;
+  `com.sentry/mcp` endpoint remains auth-gated (401 on unauthenticated) — no catalog demotion,
+  but operators must treat Sentry event content as untrusted external data. (7) **BlueRock
+  Security SSRF** (June 2026) — 36.7% of 7,000+ MCP servers SSRF-vulnerable; Microsoft Markitdown
+  MCP exploited to extract AWS IAM credentials from EC2 metadata endpoint. Clawdbot (Jan 2026)
+  fully documented. All 19 catalog servers remain approved/public; remote-HTTP model is the
+  correct defense against all npm/repo-based worm vectors. Detail in June 19 report.
   (7) **OX Security "Mother of All AI Supply Chains" (April 2026):** systemic STDIO RCE across 200k+
   instances, 9/11 registries successfully poisoned in PoC testing, 14 CVEs (CVE-2026-30615
   Windsurf zero-click, CVE-2026-11624 DNS rebinding). Anthropic declined to change STDIO transport
@@ -307,7 +314,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — 40 days) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **39 days**) for the Gateway operator; no catalog schema change needed.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema

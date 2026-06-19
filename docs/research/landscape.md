@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-18-mcp-ecosystem-update.md](./2026-06-18-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-18 (daily scheduled run)
+- **Latest daily update:** [2026-06-19-mcp-ecosystem-update.md](./2026-06-19-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-19 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -54,20 +54,31 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   the Mini Shai-Hulud npm worm (tool-description injection),
   **SANDWORM_MODE** (June 16, 2026) — npm worm injecting malicious MCP server configs
   via 19 typosquatted packages, targeting Claude Code / Cursor / VS Code,
-  **Miasma** (June 5–9, 2026) — repository-level worm compromising 73 Microsoft GitHub
-  repos; **toolkit open-sourced June 9** targeting 15 AI coding agents — derivative
-  variants expected throughout H2 2026,
+  **Miasma Waves 1–3** (June 1–17, 2026) — self-spreading npm supply-chain worm;
+  Wave 3 (June 17) compromised `@mastra` npm org, **144 packages backdoored in 88 minutes**,
+  1.1M weekly downloads exposed, cross-platform RAT payload (credential harvesting + 166
+  crypto-wallet extensions); toolkit / Phantom Gyp technique documented and available for reuse —
+  derivative attacks expected H2 2026 (Microsoft Security Blog confirmed; Socket detected in 6 min),
+  **Agentjacking** (CSA June 12, 2026) — Sentry DSN write-only credential used to inject prompt
+  payloads into error events; Sentry MCP server faithfully returns attacker-controlled data to
+  AI coding agents; **2,388 orgs exposed**; 100+ agents acted on injected payloads in testing;
+  Sentry declined to fix at platform level ("Authorized Intent Chain" bypasses all traditional defenses),
+  **BlueRock Security SSRF survey** (June 2026) — 36.7% of 7,000+ MCP servers SSRF-vulnerable;
+  Microsoft Markitdown MCP exploited to extract AWS IAM credentials from EC2 metadata endpoint,
   CVE-2026-27825/27826 "MCPwnfluence" (CVSS 9.1 RCE + SSRF in `mcp-atlassian`; patched in 0.17.0),
-  CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0)).
+  CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0; **audit
+  pass pending** to confirm all TypeScript SDK vendors in catalog are running ≥1.26.0)).
 - **NSA validation (May 20, 2026):** The NSA published MCP security design guidance
   explicitly recommending source-verified, reputable MCP registries as a control layer.
   The `discovered != approved != enabled` boundary is exactly the NSA's recommended
   gate. Document: U/OO/6030316-26, 17pp.
   [NSA PDF](https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf)
-- **Scale signal (Censys, June 2026):** 12,520 internet-accessible MCP services found;
-  ~40% expose tools with no authentication. The unvetted surface grows while our
-  approved set stays narrow and verified.
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **40 days**). Breaking changes:
+- **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
+  unauthenticated. Cross-registry ecosystem count: **59,312 servers** (Official Registry +
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol, as of June 3, 2026).
+  Official MCP Registry alone: ~9,652 latest records (May 24). Our curated set: **19**.
+  The trust gap — 59k indexed vs. 19 approved — is the product.
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **39 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
