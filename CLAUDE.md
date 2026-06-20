@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-19 (daily research pass):**
+**As of 2026-06-20 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -288,6 +288,19 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   **Spec RC breaking changes (June 18 research):** `initialize`/`initialized` handshake removed;
   `Mcp-Session-Id` deprecated; `_meta` carries capabilities + W3C trace context; `ttlMs`/`cacheScope`
   added; Roots/Sampling/Logging deprecated; error code -32002 → -32602. No catalog schema change.
+  **June 20 new findings:** (1) **Backslash Security** — three new attack surfaces in 2026-07-28 spec:
+  MCP Apps iframes invisible to network gateways; stateless transport breaks DPI-based session policy;
+  Tasks extension enables cross-client task handle hijacking. All three require endpoint-level security.
+  [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
+  (2) **AAIF** now 170 member orgs (fastest growth in Linux Foundation history); India summits complete
+  (Bengaluru June 9–10, Mumbai June 14–15); formal project lifecycle policy approved.
+  (3) **Atlassian SSE shutdown June 30** (10 days) — our catalog already on streamable HTTP endpoint.
+  (4) **AWS Agent Registry** + **MCP Tunnels** both remain in preview; no GA.
+  (5) **Qualys MCP Shadow IT** (March 2026) + CSA: 82% of enterprises have unknown AI agents;
+  47% of ~3M deployed agents unmonitored. Sub-registry approval workflow is the mitigation.
+  (6) **Glama count** now 38,156 (up ~1,170 since June 19). PulseMCP ~18,570+.
+  (7) **HubSpot OAuth**: GA confirmed, OAuth 2.1 + PKCE required, no DCR — community auth failures
+  in LibreChat/Kiro noted; account for no-DCR requirement in next curate entry.
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
@@ -323,7 +336,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **39 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **38 days**) for the Gateway operator; no catalog schema change needed.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema

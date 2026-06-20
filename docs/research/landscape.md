@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-19-mcp-ecosystem-update.md](./2026-06-19-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-19 (daily scheduled run)
+- **Latest daily update:** [2026-06-20-mcp-ecosystem-update.md](./2026-06-20-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-20 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -14,7 +14,7 @@ Significance to a *curated sub-registry that feeds a gateway* — weighted towar
 influence, scale, curation/trust quality, governance maturity, and relevance to our niche
 (clean `discovered != approved != enabled` separation). Not a pure popularity list.
 
-## Top 11 (2026-06-17)
+## Top 11 (2026-06-20)
 
 | # | Player | Layer | Scale / signal | Curation & governance | Relevance to us |
 | --- | --- | --- | --- | --- | --- |
@@ -25,7 +25,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 6 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 7 | **PulseMCP** | Directory | **~18,570+** hand-reviewed (+160 since Jun 16); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 8 | **Glama** | Directory | ~36,986 servers (+36 since Jun 16) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **Glama** | Directory | **~38,156 servers** (+1,170 since Jun 19; batch indexing suspected) | Light curation on a large set | Breadth reference + sync source |
 | 9 | **Smithery** | Directory + hosting | ~7,000+ | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 | 11 | **Runlayer** | Enterprise gateway + catalog | $11M seed (Khosla/Felicis); **Rising in Cyber 2026** (150 CISO votes, Notable Capital/Morgan Stanley); MCP founder (D.S. Parra) as consultant; 18,000+ server catalog | Security-approved servers, ABAC, fast-tracked approval; curated vs. raw | **Elevated** — CISO endorsement validates enterprise market signal |
@@ -73,17 +73,33 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   The `discovered != approved != enabled` boundary is exactly the NSA's recommended
   gate. Document: U/OO/6030316-26, 17pp.
   [NSA PDF](https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf)
+- **AAIF governance (June 2026):** 170 member organizations in under four months — faster
+  than CNCF at the same stage. Formal project lifecycle policy (Growth / Impact / Emeritus)
+  approved. MCP Dev Summits in Bengaluru (June 9–10) and Mumbai (June 14–15) complete.
+  [[AAIF]](https://aaif.io)
+- **MCP Shadow IT (Qualys, March 2026):** Qualys extended TotalAI with MCP server discovery
+  and inventory. Gravitee survey (Feb 2026): 47% of ~3M deployed AI agents not monitored.
+  CSA: 82% of enterprises have unknown AI agents. Sub-registry approval workflow is the
+  structural mitigation. [[Qualys blog]](https://blog.qualys.com/product-tech/2026/03/19/mcp-servers-shadow-it-ai-qualys-totalai-2026)
 - **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
-  unauthenticated. Cross-registry ecosystem count: **59,312 servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol, as of June 3, 2026).
-  Official MCP Registry alone: ~9,652 latest records (May 24). Our curated set: **19**.
-  The trust gap — 59k indexed vs. 19 approved — is the product.
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **39 days**). Breaking changes:
+  unauthenticated. Cross-registry ecosystem count: **59,312+ servers** (Official Registry +
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama alone now **38,156**
+  as of June 20). Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
+  set: **19**. The trust gap — 60k+ indexed vs. 19 approved — is the product.
+- **New attack surfaces in 2026-07-28 spec (Backslash, June 2026):** Three attack vectors that
+  bypass gateway-layer detection: (1) **MCP Apps iframes** — HTML rendered in IDE iframe is
+  invisible to network monitoring; (2) **stateless transport** — DPI-based session policies must
+  be rebuilt around per-request `Mcp-Method`/`Mcp-Name` headers; (3) **Tasks extension lifetime**
+  — long-running task handles enable cross-client hijacking if servers don't enforce ownership.
+  All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
+  runtime surface — these are concerns for gateway operators and MCP client implementers.
+  [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **38 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
-  mandatory `Mcp-Method`/`Mcp-Name` headers. No catalog schema change required.
-  Gateway operator must update transport validation before July 28.
+  mandatory `Mcp-Method`/`Mcp-Name` headers; MCP Apps (SEP-1865) and Tasks as official extensions.
+  No catalog schema change required. Gateway operator must update transport validation before July 28.
 - **Server Cards (SEP-2127, targeting June 2026 merge):** `/.well-known/mcp/server-card.json` standard
   for machine-readable server metadata. Claude Desktop + Cursor already shipping support (April 2026).
   Parallel IETF track: draft-serra-mcp-discovery-uri-04 (expires Sep 2026). Working Group term ends
