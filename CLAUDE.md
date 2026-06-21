@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-20 (daily research pass):**
+**As of 2026-06-21 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-17:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-21:
   Palo Alto Networks / Prisma AIRS elevated to #4 (acquired Portkey May 29, 2026 — trillions
   of tokens/month, Prisma AIRS 3.0 AI Gateway). Kong MCP Registry dropped to honorable
   mention (feature, not a standalone product). NSA guidance (May 20, 2026) independently
@@ -263,6 +263,13 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   `@vapi-ai/server-sdk`; **Wave 3 (June 17): `@mastra` npm org — 144 packages backdoored in
   88 minutes, 1.1M weekly downloads exposed, cross-platform RAT (166 crypto wallet extensions
   + credential harvest)**. Phantom Gyp technique documented; derivative attacks expected H2 2026.
+  (4) **IronWorm** (June 2026) — Rust/eBPF kernel rootkit npm stealer; 50+ poisoned packages from
+  compromised account "asteroiddao"; targets 86 env vars (Anthropic/Claude, OpenAI Codex, Gemini,
+  AWS, Docker, K8s, Exodus wallet credentials); uses eBPF to hide from scanners.
+  (5) **Miasma new variant + Hades wave** (June 2026) — 57 packages, 286 malicious versions;
+  drops lifecycle hooks, executes via `binding.gyp` (Phantom Gyp); 3 Red Hat MCP packages targeted;
+  **Hades wave crossed to Azure (73 repos disabled) + PyPI (37 malicious Python wheels)** — worm is now
+  cross-platform. Remote-HTTP-only catalog is structurally immune to all items (1)–(5).
   (4) CVE-2026-27825/27826 "MCPwnfluence" — CVSS 9.1 RCE + SSRF in `mcp-atlassian` Python package
   (patched 0.17.0; our catalog uses official remote server, unaffected). (5) CVE-2026-25536 —
   MCP TypeScript SDK cross-client data leak, patched in SDK 1.26.0; **audit pass pending** to
@@ -288,6 +295,22 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   **Spec RC breaking changes (June 18 research):** `initialize`/`initialized` handshake removed;
   `Mcp-Session-Id` deprecated; `_meta` carries capabilities + W3C trace context; `ttlMs`/`cacheScope`
   added; Roots/Sampling/Logging deprecated; error code -32002 → -32602. No catalog schema change.
+  **June 21 new findings:** (1) **IronWorm + Miasma new variant** — see Active threats above.
+  (2) **Adversa AI MCP Security TOP 25** — industry's first comprehensive MCP vulnerability
+  classification (25 categories; prompt injection #1; living framework).
+  [[adversa.ai]](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/)
+  (3) **OWASP MCP Top 10 Phase 3 beta** — stable/citable; MCP01:2025–MCP10:2025; NSA guidance
+  cross-mapped to OWASP Top 10 by Equixly (June 4). Two independent frameworks now explicitly
+  validate `discovered != approved != enabled` as the correct control.
+  (4) **MACH Alliance MCP Registry** — new landscape entrant; vendor-neutral, enterprise-focused;
+  added to watch list.
+  (5) **Smithery hosting policy change** — free tier ended March 1, 2026; rebuilding from scratch;
+  server count contracting.
+  (6) **JFrog MCP Registry GA March 18** — proactive blocking, policy enforcement at request time
+  confirmed; closes rank #2 in landscape.
+  (7) **HubSpot no-DCR confirmed** — pre-registered client_id + secret required; mcp-remote workaround;
+  note in catalog entry auth.notes when curating.
+  (8) **Glama 38,524** (+368 since June 20); **spec countdown 37 days** to July 28 RC final.
   **June 20 new findings:** (1) **Backslash Security** — three new attack surfaces in 2026-07-28 spec:
   MCP Apps iframes invisible to network gateways; stateless transport breaks DPI-based session policy;
   Tasks extension enables cross-client task handle hijacking. All three require endpoint-level security.
