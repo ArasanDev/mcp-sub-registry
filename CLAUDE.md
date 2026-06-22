@@ -311,6 +311,22 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (7) **HubSpot no-DCR confirmed** — pre-registered client_id + secret required; mcp-remote workaround;
   note in catalog entry auth.notes when curating.
   (8) **Glama 38,524** (+368 since June 20); **spec countdown 37 days** to July 28 RC final.
+  **June 22 new findings:** (1) **Trend Micro cloud threat escalation** — 1,467 exposed MCP servers
+  (3× baseline), 74% hosted on AWS/Azure/GCP/Oracle, CVSS 9.8 command injection in unofficial AWS/Azure
+  community servers (not our catalog entries). AI sweep of 19,000 repos: SQL injection 26% + RCE 22.5%.
+  (2) **CVE-2026-20205** (Splunk MCP Server, April 15, CVSS 7.2) — token leak in logs, patched in v1.0.3;
+  first known CVE against a major enterprise vendor's packaged MCP Server app; not in catalog.
+  (3) **CVE-2026-23744** (MCPJam Inspector RCE) — crafted HTTP triggers code execution on inspector host.
+  (4) **The Vulnerable MCP Project** (vulnerablemcp.info) — new open-source CVE database for MCP.
+  (5) **Adversa AI AIRQ Framework** (June 4) — 100+ agents scored on attack surface, blast radius, defenses;
+  OWASP/CoSAI/CSA/NIST contributors; open-source at airq.adversa.ai.
+  (6) **CoSAI white paper** (Jan 2026) key stats: 43% of public MCP servers have ≥1 vulnerability; 5.5%
+  have poisoned tool descriptions in production.
+  (7) **Pinterest case study** — 66k invocations/month, 844 users, 7k engineering hours/month saved,
+  internal central registry + two-layer JWT + mesh identity auth. Validates registry-then-runtime pattern.
+  (8) **MCP 2026 Roadmap** published — stateless horizontal scaling, Tasks retry/expiry, enterprise
+  SSO/audit, governance delegation model for Working Groups.
+  (9) **Glama 44,392** (+5,868 since June 21, likely batch indexing); **spec countdown 36 days**.
   **June 20 new findings:** (1) **Backslash Security** — three new attack surfaces in 2026-07-28 spec:
   MCP Apps iframes invisible to network gateways; stateless transport breaks DPI-based session policy;
   Tasks extension enables cross-client task handle hijacking. All three require endpoint-level security.

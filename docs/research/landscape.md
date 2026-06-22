@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-21-mcp-ecosystem-update.md](./2026-06-21-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-21 (daily scheduled run)
+- **Latest daily update:** [2026-06-22-mcp-ecosystem-update.md](./2026-06-22-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-22 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -25,7 +25,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 6 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 7 | **PulseMCP** | Directory | **~18,240+** (official/remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 8 | **Glama** | Directory | **~38,524 servers** (+368 since Jun 20; batch indexing) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **Glama** | Directory | **~44,392 servers** (+5,868 since Jun 21; batch indexing) | Light curation on a large set | Breadth reference + sync source |
 | 9 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 | 11 | **Runlayer** | Enterprise gateway + catalog | $11M seed (Khosla/Felicis); **Rising in Cyber 2026** (150 CISO votes, Notable Capital/Morgan Stanley); MCP founder (D.S. Parra) as consultant; 18,000+ server catalog | Security-approved servers, ABAC, fast-tracked approval; curated vs. raw | **Elevated** — CISO endorsement validates enterprise market signal |
@@ -67,6 +67,11 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   drops `preinstall`/`postinstall` hooks, executes via `binding.gyp` (Phantom Gyp), bypassing
   all package.json-watching scanners; 3 Red Hat MCP packages targeted; Hades wave crossed to
   Azure (73 repos disabled) + PyPI (37 malicious Python wheels) — worm is now cross-platform,
+  **CVE-2026-20205** (April 15, 2026) — Splunk MCP Server app versions < 1.0.3 leak session +
+  auth tokens in clear text to log files; CVSS 7.2; patched in v1.0.3. First known CVE against
+  a major enterprise vendor's packaged MCP Server app. Not in our catalog (self-hosted),
+  **CVE-2026-23744** (MCPJam Inspector RCE) — crafted HTTP requests install MCP servers and
+  execute arbitrary code on the Inspector host; development/debug tooling,
   **Agentjacking** (CSA June 12, 2026) — Sentry DSN write-only credential used to inject prompt
   payloads into error events; Sentry MCP server faithfully returns attacker-controlled data to
   AI coding agents; **2,388 orgs exposed**; 100+ agents acted on injected payloads in testing;
@@ -76,8 +81,8 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   CVE-2026-27825/27826 "MCPwnfluence" (CVSS 9.1 RCE + SSRF in `mcp-atlassian`; patched in 0.17.0),
   CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0; **audit
   pass pending** to confirm all TypeScript SDK vendors in catalog are running ≥1.26.0)).
-- **Security framework signal (June 2026):** Two independent frameworks now explicitly
-  validate `discovered != approved != enabled` as the correct control layer:
+- **Security framework signal (June 2026):** Four complementary security resources now
+  explicitly validate `discovered != approved != enabled` as the correct control layer:
   (1) **Adversa AI MCP Security TOP 25** (industry's first comprehensive vulnerability
   classification; 25 categories; prompt injection #1; living framework).
   [[Adversa AI]](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/)
@@ -85,6 +90,13 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   Vandana Verma Sehgal); NSA guidance cross-mapped to OWASP Top 10 by Equixly (June 4, 2026).
   [[OWASP]](https://owasp.org/www-project-mcp-top-10/)
   [[Equixly mapping]](https://equixly.com/blog/2026/06/04/mapping-nsa-s-mcp-guidance-to-the-owasp-mcp-top-10-how-to-test-for-the-risks/)
+  (3) **Adversa AI AIRQ Framework** (June 4, 2026) — first independent AI agent security
+  rating; scores 100+ agents on attack surface, blast radius, and defense controls;
+  contributors from OWASP, CoSAI, CSA, NIST.
+  [[AIRQ]](https://airq.adversa.ai/report)
+  (4) **The Vulnerable MCP Project** (vulnerablemcp.info) — open-source comprehensive
+  CVE database for MCP; tracks exploits, CVEs, and security research.
+  [[vulnerablemcp.info]](https://vulnerablemcp.info/)
 - **NSA validation (May 20, 2026):** The NSA published MCP security design guidance
   explicitly recommending source-verified, reputable MCP registries as a control layer.
   The `discovered != approved != enabled` boundary is exactly the NSA's recommended
@@ -99,10 +111,14 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   CSA: 82% of enterprises have unknown AI agents. Sub-registry approval workflow is the
   structural mitigation. [[Qualys blog]](https://blog.qualys.com/product-tech/2026/03/19/mcp-servers-shadow-it-ai-qualys-totalai-2026)
 - **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
-  unauthenticated. Cross-registry ecosystem count: **59,680+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama alone now **38,524**
-  as of June 21). Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
-  set: **19**. The trust gap — 60k+ indexed vs. 19 approved — is the product.
+  unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
+  exposed MCP servers (3× prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
+  with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
+  servers). Cross-registry ecosystem count: **65,500+ servers** (Official Registry +
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama alone now **44,392**
+  as of June 22 — +5,868 vs Jun 21, likely a batch indexing event). Official MCP Registry
+  alone: ~9,652 latest records (May 24). Our curated set: **19**. The trust gap — 65k+
+  indexed vs. 19 approved — is the product.
 - **New attack surfaces in 2026-07-28 spec (Backslash, June 2026):** Three attack vectors that
   bypass gateway-layer detection: (1) **MCP Apps iframes** — HTML rendered in IDE iframe is
   invisible to network monitoring; (2) **stateless transport** — DPI-based session policies must
@@ -111,7 +127,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **37 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **36 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
