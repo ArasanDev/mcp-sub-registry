@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-22-mcp-ecosystem-update.md](./2026-06-22-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-22 (daily scheduled run)
+- **Latest daily update:** [2026-06-23-mcp-ecosystem-update.md](./2026-06-23-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-23 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -24,7 +24,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 4 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | **New entrant** at enterprise tier; validates governance-over-MCP market; watch for registry/catalog features |
 | 5 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 6 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 7 | **PulseMCP** | Directory | **~18,240+** (official/remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 7 | **PulseMCP** | Directory | **~19,180–19,240+** (remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
 | 8 | **Glama** | Directory | **~44,392 servers** (+5,868 since Jun 21; batch indexing) | Light curation on a large set | Breadth reference + sync source |
 | 9 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
@@ -110,6 +110,14 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   and inventory. Gravitee survey (Feb 2026): 47% of ~3M deployed AI agents not monitored.
   CSA: 82% of enterprises have unknown AI agents. Sub-registry approval workflow is the
   structural mitigation. [[Qualys blog]](https://blog.qualys.com/product-tech/2026/03/19/mcp-servers-shadow-it-ai-qualys-totalai-2026)
+- **Enterprise-Managed Authorization (EMA / SEP-990) stable — June 18, 2026:** Anthropic
+  published zero-touch OAuth provisioning for MCP connectors via enterprise IdP (Okta first;
+  more IdPs coming). 7 connectors at launch: Asana, Atlassian, Canva, Figma, Granola, Linear,
+  Supabase. **5 of 7 are in our catalog.** Slack EMA support coming. This is the clearest
+  external validation of our curation criteria: Anthropic's own short-list overlaps ours by
+  71% at launch. Signals that our `approved` catalog set is already aligned with enterprise
+  provisioning intent.
+  [[MCP Blog — EMA]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
 - **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
   unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
   exposed MCP servers (3× prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
@@ -127,7 +135,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **36 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **35 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);

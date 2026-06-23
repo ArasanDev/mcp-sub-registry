@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-21 (daily research pass):**
+**As of 2026-06-23 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -340,6 +340,25 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) **Glama count** now 38,156 (up ~1,170 since June 19). PulseMCP ~18,570+.
   (7) **HubSpot OAuth**: GA confirmed, OAuth 2.1 + PKCE required, no DCR — community auth failures
   in LibreChat/Kiro noted; account for no-DCR requirement in next curate entry.
+  **June 23 new findings:** (1) **Enterprise-Managed Authorization (EMA / SEP-990) stable June 18,
+  2026** — Anthropic + Okta zero-touch MCP connector provisioning for enterprise IT. 7 connectors at
+  launch: Asana, Atlassian, Canva, Figma, Granola, Linear, Supabase. **5 of 7 are in our catalog** —
+  strongest external signal yet that our curation criteria align with enterprise trust requirements.
+  Slack EMA support coming. [[MCP Blog]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
+  (2) **MCP spec RC countdown: 35 days** to July 28 final. RC locked May 21. All breaking changes
+  confirmed: stateless core (no `Mcp-Session-Id`, no initialize handshake); new `Mcp-Method`,
+  `Mcp-Name`, `MCP-Protocol-Version: 2026-07-28` headers; `_meta` per-request; MCP Apps (SEP-1865)
+  + Tasks as official extensions; 6 SEPs for OAuth 2.0/OIDC auth hardening; Roots/Sampling/Logging
+  deprecated (12-month window). No catalog schema change. [[RC blog]](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
+  (3) **Atlassian SSE shutdown June 30** (7 days) — catalog already on Streamable HTTP. No action.
+  (4) **Docker MCP Toolkit June 2026**: warning banner for unverified community servers mirrors
+  our `approved` vs `discovered` distinction; 300+ verified containers; CVE-2026-33990 fix.
+  (5) **PulseMCP 19,180–19,240+**; **Glama 44,392** (steady). Trust gap: 65k+ indexed vs. 19 approved.
+  (6) **AAIF MCP Dev Summit North America** (NYC, April 2–3, 1,200 attendees): new Executive Director
+  Mazin Gilbert; formal project lifecycle policy (Growth/Impact/Emeritus) approved; AgenCon +
+  MCPCon Europe (Amsterdam Sept 17–18) + North America (Oct 22–23) scheduled.
+  (7) **Obot v0.14**: MCP Registry Support — IT admins define approved catalog, visible in VS Code
+  + GitHub Copilot. (8) No new CVEs or incidents since June 22.
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
@@ -375,7 +394,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **38 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **35 days**) for the Gateway operator; no catalog schema change needed.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema
