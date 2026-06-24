@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-23-mcp-ecosystem-update.md](./2026-06-23-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-23 (daily scheduled run)
+- **Latest daily update:** [2026-06-24-mcp-ecosystem-update.md](./2026-06-24-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-24 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -24,8 +24,8 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 4 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | **New entrant** at enterprise tier; validates governance-over-MCP market; watch for registry/catalog features |
 | 5 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 6 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 7 | **PulseMCP** | Directory | **~19,180–19,240+** (remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 8 | **Glama** | Directory | **~44,392 servers** (+5,868 since Jun 21; batch indexing) | Light curation on a large set | Breadth reference + sync source |
+| 7 | **PulseMCP** | Directory | **19,410+** (remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 8 | **Glama** | Directory | **~47,579 servers** (+3,187 since Jun 22; batch indexing; 290,691 tools indexed) | Light curation on a large set | Breadth reference + sync source |
 | 9 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 | 11 | **Runlayer** | Enterprise gateway + catalog | $11M seed (Khosla/Felicis); **Rising in Cyber 2026** (150 CISO votes, Notable Capital/Morgan Stanley); MCP founder (D.S. Parra) as consultant; 18,000+ server catalog | Security-approved servers, ABAC, fast-tracked approval; curated vs. raw | **Elevated** — CISO endorsement validates enterprise market signal |
@@ -80,7 +80,12 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   Microsoft Markitdown MCP exploited to extract AWS IAM credentials from EC2 metadata endpoint,
   CVE-2026-27825/27826 "MCPwnfluence" (CVSS 9.1 RCE + SSRF in `mcp-atlassian`; patched in 0.17.0),
   CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0; **audit
-  pass pending** to confirm all TypeScript SDK vendors in catalog are running ≥1.26.0)).
+  pass pending** to confirm all TypeScript SDK vendors in catalog are running ≥1.26.0),
+  **UNC1069 / Axios WAVESHAPER.V2** (March 31, 2026) — North Korea-nexus actor social-engineered
+  axios npm maintainer; WAVESHAPER.V2 backdoor delivered via versions 1.14.1 and 0.30.4 (live ~3h);
+  malware **enumerated MCP config files** (Claude Code, Cursor, Windsurf, VS Code Continue) and
+  injected rogue server definitions — first confirmed nation-state targeting of MCP config files
+  as exfiltration/persistence vector. [[Google Cloud GTIG]](https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package)).
 - **Security framework signal (June 2026):** Four complementary security resources now
   explicitly validate `discovered != approved != enabled` as the correct control layer:
   (1) **Adversa AI MCP Security TOP 25** (industry's first comprehensive vulnerability
@@ -97,6 +102,15 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   (4) **The Vulnerable MCP Project** (vulnerablemcp.info) — open-source comprehensive
   CVE database for MCP; tracks exploits, CVEs, and security research.
   [[vulnerablemcp.info]](https://vulnerablemcp.info/)
+  (5) **Authzed Timeline of MCP Security Breaches** (June 2026) — timestamped historical
+  incident index; complements the Vulnerable MCP Project CVE database.
+  [[Authzed]](https://authzed.com/blog/timeline-mcp-breaches)
+  (6) **PipeLab State of MCP Security 2026** — cross-incident analysis of attack patterns
+  and defense coverage across known MCP vulnerability classes.
+  [[PipeLab]](https://pipelab.org/blog/state-of-mcp-security-2026/)
+  (7) **Adversa AI Top MCP Security Resources June 2026** — curated roundup of CVEs, tools,
+  and threat intelligence through June 2026.
+  [[Adversa AI]](https://adversa.ai/blog/top-mcp-security-resources-june-2026/)
 - **NSA validation (May 20, 2026):** The NSA published MCP security design guidance
   explicitly recommending source-verified, reputable MCP registries as a control layer.
   The `discovered != approved != enabled` boundary is exactly the NSA's recommended
@@ -105,7 +119,9 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
 - **AAIF governance (June 2026):** 170 member organizations in under four months — faster
   than CNCF at the same stage. Formal project lifecycle policy (Growth / Impact / Emeritus)
   approved. MCP Dev Summits in Bengaluru (June 9–10) and Mumbai (June 14–15) complete.
-  [[AAIF]](https://aaif.io)
+  **AGNTCon + MCPCon China (MCP Dev Summit Shanghai)** announced; CFP closed May 29;
+  schedule announcement July 8, 2026; event dates TBA (likely Q3 2026).
+  [[AAIF]](https://aaif.io) [[Shanghai CFP]](https://www.lfopensource.cn/mcp-dev-summit-shanghai/)
 - **MCP Shadow IT (Qualys, March 2026):** Qualys extended TotalAI with MCP server discovery
   and inventory. Gravitee survey (Feb 2026): 47% of ~3M deployed AI agents not monitored.
   CSA: 82% of enterprises have unknown AI agents. Sub-registry approval workflow is the
@@ -123,10 +139,17 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   exposed MCP servers (3× prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
   servers). Cross-registry ecosystem count: **65,500+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama alone now **44,392**
-  as of June 22 — +5,868 vs Jun 21, likely a batch indexing event). Official MCP Registry
-  alone: ~9,652 latest records (May 24). Our curated set: **19**. The trust gap — 65k+
-  indexed vs. 19 approved — is the product.
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama alone now **47,579**
+  as of June 23–24 — +3,187 vs Jun 22, batch indexing; 290,691 tools indexed; PulseMCP
+  now 19,410+). Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
+  set: **19**. The trust gap — ~72–73k indexed vs. 19 approved — is the product.
+  **Ecosystem concentration risk (Security Boulevard, June 2026):** 973 MCP npm packages
+  analyzed; 71% single-maintainer; 56% < 30 days old; 25% no source repo; 9/11 registries
+  failed to detect malicious uploads. Our remote-HTTP-only catalog is immune to all STDIO/npm
+  risk vectors. [[Security Boulevard]](https://securityboulevard.com/2026/06/973-mcp-packages-71-single-maintainer-a-practitioners-guide-to-ai-developer-security/)
+  **GitGuardian (2026):** 24,008 unique secrets in MCP config files on public GitHub;
+  2,117 confirmed live at scan time; AI-service credential leaks up 81% YoY. Our schema
+  stores secret *names* only — never values. [[GitGuardian Secrets Sprawl 2026]](https://www.gitguardian.com/state-of-secrets-sprawl-report-2026)
 - **New attack surfaces in 2026-07-28 spec (Backslash, June 2026):** Three attack vectors that
   bypass gateway-layer detection: (1) **MCP Apps iframes** — HTML rendered in IDE iframe is
   invisible to network monitoring; (2) **stateless transport** — DPI-based session policies must

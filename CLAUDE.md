@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-23 (daily research pass):**
+**As of 2026-06-24 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -359,6 +359,28 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   MCPCon Europe (Amsterdam Sept 17–18) + North America (Oct 22–23) scheduled.
   (7) **Obot v0.14**: MCP Registry Support — IT admins define approved catalog, visible in VS Code
   + GitHub Copilot. (8) No new CVEs or incidents since June 22.
+  **June 24 new findings:** (1) **Glama 47,579** (+3,187 since June 22; 290,691 tools indexed);
+  **PulseMCP 19,410+** (+170 since June 23). Cross-registry estimate now ~72–73k. **Spec countdown
+  34 days** to July 28.
+  (2) **Security Boulevard: 973 MCP npm packages, 71% single-maintainer, 56% < 30 days old, 25%
+  no source repo** — new quantitative research on MCP ecosystem concentration risk; 9/11 registries
+  failed to detect malicious uploads; every STDIO package can execute OS commands on install.
+  Remote-HTTP-only catalog is structurally immune to all measured STDIO/npm risk vectors.
+  [[Security Boulevard]](https://securityboulevard.com/2026/06/973-mcp-packages-71-single-maintainer-a-practitioners-guide-to-ai-developer-security/)
+  (3) **GitGuardian 2026 Secrets Sprawl:** 24,008 unique secrets in MCP config files on public
+  GitHub; 2,117 confirmed live; AI-service leaks +81% YoY. Root cause: official quickstart docs
+  recommend embedding credentials in plaintext JSON config. Our schema stores secret *names* only —
+  never values. [[GitGuardian]](https://www.gitguardian.com/state-of-secrets-sprawl-report-2026)
+  (4) **UNC1069 / Axios WAVESHAPER.V2 (March 31, 2026):** North Korea-nexus actor compromised
+  `axios` npm package; WAVESHAPER.V2 backdoor active for ~3h; malware enumerated and injected rogue
+  server definitions into MCP config files for Claude Code, Cursor, Windsurf, and VS Code Continue
+  (Lorikeet Security analysis). First confirmed nation-state targeting of MCP config files as
+  exfiltration/persistence vector. [[GTIG blog]](https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package)
+  (5) **AGNTCon + MCPCon China (MCP Dev Summit Shanghai)** announced; CFP closed May 29; schedule
+  announcement July 8, 2026; event Q3 2026. [[Shanghai CFP]](https://www.lfopensource.cn/mcp-dev-summit-shanghai/)
+  (6) New security resources: **Authzed Timeline of MCP Security Breaches** (historical incident
+  index), **PipeLab State of MCP Security 2026** (attack pattern analysis), **Adversa AI Top MCP
+  Security Resources June 2026** (CVE + framework roundup).
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
