@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-24 (daily research pass):**
+**As of 2026-06-25 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -381,6 +381,16 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) New security resources: **Authzed Timeline of MCP Security Breaches** (historical incident
   index), **PipeLab State of MCP Security 2026** (attack pattern analysis), **Adversa AI Top MCP
   Security Resources June 2026** (CVE + framework roundup).
+  **June 25 new findings:** (1) **Salesforce Agentforce 3 (June 23, 2026)** — three new vendor-operated
+  MCP servers: Salesforce DX MCP Server, Heroku Platform MCP Server, MuleSoft MCP Server. Total
+  Salesforce MCP servers now 4+; all org-specific URLs, not catalogable. Watch list in landscape.md
+  updated. (2) **AAIF inaugural Ambassador Cohort (June 23, 2026)** — 138 ambassadors across 41 countries.
+  (3) **AAIF event dates confirmed:** Seoul (Aug 13–14), Shanghai (Sept 6–7), Tokyo (Sept 10–11), Amsterdam
+  (Sept 17–18), North America (Oct 22–23). (4) **Glama 48,043** (+464 since June 24; 6,279 connectors;
+  293,804+ tools); **PulseMCP 19,500+**. **Spec countdown 33 days** to July 28.
+  (5) **Google Cloud 50+ managed MCP servers** at GA/preview confirmed (Google Cloud Next '26); all
+  service-scoped, not catalogable. (6) **Atlassian SSE shutdown June 30** — 5 days away; catalog
+  already on Streamable HTTP. (7) **No new CVEs on June 25** — clean day.
 - **UI (2026-06-17):** Full React frontend rebuilt from scratch to achieve visual parity with
   `apps/web/prototype.html`. Root cause of the 30% gap was Tailwind v4 failing to generate
   arbitrary-value classes (`bg-[var(--s1)]`, `grid-cols-[1fr_40px...]`, etc.). Fix: ported
@@ -416,7 +426,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **35 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **33 days**) for the Gateway operator; no catalog schema change needed.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema
