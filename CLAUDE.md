@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-25 (daily research pass):**
+**As of 2026-06-26 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -381,6 +381,21 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) New security resources: **Authzed Timeline of MCP Security Breaches** (historical incident
   index), **PipeLab State of MCP Security 2026** (attack pattern analysis), **Adversa AI Top MCP
   Security Resources June 2026** (CVE + framework roundup).
+  **June 26 new findings:** (1) **CVE-2026-54309** (n8n MCP browser HTTP transport,
+  published June 23, 2026) — `@n8n/mcp-browser` with `--transport http` accepts unauthenticated
+  MCP sessions; browser-control exposure (navigation, JS eval, cookies); patched in n8n v2.25.7 /
+  v2.26.2; default stdio unaffected; not in catalog. (2) **CVE-2026-26118** (Azure MCP Server
+  SSRF, June 2026) — attacker-supplied URL causes managed identity token capture; Azure org-specific
+  endpoint, not in catalog. (3) **Shai-Hulud PyPI Hades wave (June 9)** — 23 MCP-themed PyPI
+  packages compromised (langchain-core-mcp, openai-mcp, instructor-mcp, tiktoken-mcp,
+  ray-mcp-server); total campaign 471 artifacts; remote-HTTP-only catalog immune.
+  (4) **Slack Marketplace MCP Registry (GA, June 2026)** — Slackbot MCP client GA with 20+
+  partner apps; Slack Marketplace now hosts an in-product MCP registry with workspace-admin
+  approval flow; `com.slack/mcp` already in catalog; landscape watch list updated.
+  (5) **Atlassian SSE shutdown June 30** — 4 days away; our `com.atlassian/mcp` is already on
+  Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`); confirmed no action needed.
+  (6) **Registry scale**: Glama **48,480** (+437 since June 25); PulseMCP 19,500+.
+  **Spec countdown: 32 days** to July 28 RC final.
   **June 25 new findings:** (1) **Salesforce Agentforce 3 (June 23, 2026)** — three new vendor-operated
   MCP servers: Salesforce DX MCP Server, Heroku Platform MCP Server, MuleSoft MCP Server. Total
   Salesforce MCP servers now 4+; all org-specific URLs, not catalogable. Watch list in landscape.md
