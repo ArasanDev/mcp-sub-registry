@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-26 (daily research pass):**
+**As of 2026-06-27 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -396,6 +396,30 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`); confirmed no action needed.
   (6) **Registry scale**: Glama **48,480** (+437 since June 25); PulseMCP 19,500+.
   **Spec countdown: 32 days** to July 28 RC final.
+  **June 27 new findings:** (1) **Bitwarden CLI supply chain attack (April 22, 2026)** — first
+  documented supply chain attack to explicitly target AI coding tool credentials and MCP config
+  files. `@bitwarden/cli@2026.4.0` (90-minute exposure; 334 downloads); payload collected Claude
+  Code, Cursor, Codex CLI, Aider configs alongside cloud credentials; part of Shai-Hulud/Checkmarx
+  worm family. Not in catalog; validates secret-names-only schema design.
+  [[SecurityWeek]](https://www.securityweek.com/bitwarden-npm-package-hit-in-supply-chain-attack/)
+  [[OX Security]](https://www.ox.security/blog/shai-hulud-bitwarden-cli-supply-chain-attack/)
+  (2) **MCP Python SDK v2 beta due tomorrow** (June 30, 2026): v2.0.0a1 shipped June 11;
+  beta June 30; stable v2 July 27 (1 day before final spec). Vendors using Python SDK should pin
+  `mcp>=1.27,<2`; cataloged Python-SDK vendors must ship v2-compliant versions before July 28.
+  [[python-sdk]](https://github.com/modelcontextprotocol/python-sdk)
+  (3) **AWS Agent Registry** (Preview): new features — Web Search as MCP connector (built on Amazon
+  search infrastructure, zero egress), Bedrock Guardrails in policy (prompt injection + harmful
+  content enforcement at gateway layer). Still Preview; no GA date.
+  [[AWS release notes]](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html)
+  (4) **Atlassian SSE shutdown T-3 days** (June 30); catalog on Streamable HTTP — no action.
+  (5) **agentic-community/mcp-gateway-registry**: bi-weekly release cadence; recent additions —
+  OAuth coding-assistant integration (v1.25.0), CIMD support, RFC 8707 resource-parameter
+  enforcement. Active OSS reference for gateway+registry separation.
+  [[GitHub]](https://github.com/agentic-community/mcp-gateway-registry)
+  (6) **SEP-2127 Go library** published (`olgasafonova/mcp-servercard-go`); second language
+  implementation of MCP Server Cards alongside Python reference demo.
+  (7) **Registry scale**: Glama **49,010** (+530 since June 26); PulseMCP **19,620+** (+120).
+  Cross-registry estimate ~74,000+. **Spec countdown: 31 days** to July 28 RC final.
   **June 25 new findings:** (1) **Salesforce Agentforce 3 (June 23, 2026)** — three new vendor-operated
   MCP servers: Salesforce DX MCP Server, Heroku Platform MCP Server, MuleSoft MCP Server. Total
   Salesforce MCP servers now 4+; all org-specific URLs, not catalogable. Watch list in landscape.md
@@ -441,7 +465,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **33 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **31 days**) for the Gateway operator; no catalog schema change needed.
+     MCP Python SDK v2 beta lands June 30; cataloged Python-SDK vendors must ship v2 compliance
+     before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema
