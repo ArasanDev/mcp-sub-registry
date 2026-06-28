@@ -174,7 +174,7 @@ Before any commit-to-main or hosted promote, verify:
 - `GET /v0.1/catalog` returns only approved + visible records
 - `GET /v0.1/gateway/catalog` excludes pending/rejected/hidden/private/deleted/removed,
   and leaks **no** runtime/secret fields
-- `ADMIN_API_KEY` is strong (≥32 chars in prod) and never printed/committed
+- `ADMIN_API_KEY` is strong (>=32 chars in prod) and never printed/committed
 
 ## 12. Daily routine (scheduling)
 
@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-27 (daily research pass):**
+**As of 2026-06-28 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-21:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-28:
+  Runlayer elevated to #3 (from #11) after $30M Series A (June 24; total $42M; see June 28
+  findings above). Prior update 2026-06-21:
   Palo Alto Networks / Prisma AIRS elevated to #4 (acquired Portkey May 29, 2026 — trillions
   of tokens/month, Prisma AIRS 3.0 AI Gateway). Kong MCP Registry dropped to honorable
   mention (feature, not a standalone product). NSA guidance (May 20, 2026) independently
@@ -273,7 +275,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (4) CVE-2026-27825/27826 "MCPwnfluence" — CVSS 9.1 RCE + SSRF in `mcp-atlassian` Python package
   (patched 0.17.0; our catalog uses official remote server, unaffected). (5) CVE-2026-25536 —
   MCP TypeScript SDK cross-client data leak, patched in SDK 1.26.0; **audit pass pending** to
-  verify all TypeScript SDK vendors in catalog are running ≥1.26.0. (6) **Agentjacking** (CSA
+  verify all TypeScript SDK vendors in catalog are running >=1.26.0. (6) **Agentjacking** (CSA
   June 12, 2026) — 2,388 orgs exposed via Sentry DSN injection; Sentry MCP server faithfully
   returns attacker-controlled event data to AI agents; Sentry declined platform-level fix;
   `com.sentry/mcp` endpoint remains auth-gated (401 on unauthenticated) — no catalog demotion,
@@ -312,7 +314,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   note in catalog entry auth.notes when curating.
   (8) **Glama 38,524** (+368 since June 20); **spec countdown 37 days** to July 28 RC final.
   **June 22 new findings:** (1) **Trend Micro cloud threat escalation** — 1,467 exposed MCP servers
-  (3× baseline), 74% hosted on AWS/Azure/GCP/Oracle, CVSS 9.8 command injection in unofficial AWS/Azure
+  (3x baseline), 74% hosted on AWS/Azure/GCP/Oracle, CVSS 9.8 command injection in unofficial AWS/Azure
   community servers (not our catalog entries). AI sweep of 19,000 repos: SQL injection 26% + RCE 22.5%.
   (2) **CVE-2026-20205** (Splunk MCP Server, April 15, CVSS 7.2) — token leak in logs, patched in v1.0.3;
   first known CVE against a major enterprise vendor's packaged MCP Server app; not in catalog.
@@ -320,7 +322,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (4) **The Vulnerable MCP Project** (vulnerablemcp.info) — new open-source CVE database for MCP.
   (5) **Adversa AI AIRQ Framework** (June 4) — 100+ agents scored on attack surface, blast radius, defenses;
   OWASP/CoSAI/CSA/NIST contributors; open-source at airq.adversa.ai.
-  (6) **CoSAI white paper** (Jan 2026) key stats: 43% of public MCP servers have ≥1 vulnerability; 5.5%
+  (6) **CoSAI white paper** (Jan 2026) key stats: 43% of public MCP servers have >=1 vulnerability; 5.5%
   have poisoned tool descriptions in production.
   (7) **Pinterest case study** — 66k invocations/month, 844 users, 7k engineering hours/month saved,
   internal central registry + two-layer JWT + mesh identity auth. Validates registry-then-runtime pattern.
@@ -396,6 +398,21 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`); confirmed no action needed.
   (6) **Registry scale**: Glama **48,480** (+437 since June 25); PulseMCP 19,500+.
   **Spec countdown: 32 days** to July 28 RC final.
+  **June 28 new findings:** (1) **Runlayer $30M Series A (June 24, 2026)** — largest pure-play
+  enterprise MCP governance funding to date (total $42M; led by Felicis/Khosla). Customers:
+  Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s. Architecture
+  enforces `discovered != approved != enabled` — exact match to our boundary discipline. Landscape
+  ranking updated: Runlayer elevated to #3 (from #11). Vinod Khosla quoted wanting "every available
+  dollar" of the round.
+  [[Fortune]](https://fortune.com/2026/06/24/exclusive-vinod-khosla-felicis-runlayer-nanit-30-million-enterprise-ai/)
+  (2) **PulseMCP crossed 20,000 milestone** — now 20,040+ (was 19,620+ June 27). Glama 49,411
+  (+401 since June 27). Cross-registry estimate ~74,000+. **Spec countdown: 30 days** to July 28.
+  (3) **MCP Python SDK v2 beta T-2 days** (June 30); Atlassian SSE shutdown T-2 days — catalog on
+  Streamable HTTP, no action. (4) **Smithery ~7,000 servers** (contracting; free tier ended Mar 1;
+  infra rebuild; path traversal vuln patched). (5) **SEP-2127 WG term ends Aug 14** — Server Cards
+  will land post-RC; Claude Desktop + Cursor already shipping support. (6) **Clean security day** —
+  no new CVEs or incidents June 28. CVE-2026-25536 TypeScript SDK audit still pending (next
+  `subregistry-audit` pass).
   **June 27 new findings:** (1) **Bitwarden CLI supply chain attack (April 22, 2026)** — first
   documented supply chain attack to explicitly target AI coding tool credentials and MCP config
   files. `@bitwarden/cli@2026.4.0` (90-minute exposure; 334 downloads); payload collected Claude
@@ -456,16 +473,16 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   3. Next `subregistry-audit` pass: (a) ~~verify `com.asana/mcp` SSE endpoint~~ **DONE 2026-06-18** —
      Asana V1 SSE endpoint was dead (shut down May 11); updated to V2 Streamable HTTP
      `https://mcp.asana.com/v2/mcp` in this commit. (b) Verify all TypeScript SDK-based
-     vendors are running ≥1.26.0 (CVE-2026-25536); Atlassian SSE deprecated June 30 (not in catalog).
+     vendors are running >=1.26.0 (CVE-2026-25536); Atlassian SSE deprecated June 30 (not in catalog).
      (c) Any SSE-typed entry should be audited for migration to Streamable HTTP — this is
      becoming an industry-wide pattern. (d) CVE-2026-11624 DNS rebinding: confirm all cataloged
-     vendors run MCP server ≥v0.25.
+     vendors run MCP server >=v0.25.
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **31 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **30 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2 beta lands June 30; cataloged Python-SDK vendors must ship v2 compliance
      before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
@@ -474,5 +491,3 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      migration needed now.
   8. Anthropic MCP Tunnels (research preview, May 2026): when GA, consider tracking
      `remotes[].type: "mcp-tunnel"` as a new endpoint archetype for private-network servers.
-</content>
-</invoke>

@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-27-mcp-ecosystem-update.md](./2026-06-27-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-27 (daily scheduled run)
+- **Latest daily update:** [2026-06-28-mcp-ecosystem-update.md](./2026-06-28-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-28 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -14,21 +14,21 @@ Significance to a *curated sub-registry that feeds a gateway* — weighted towar
 influence, scale, curation/trust quality, governance maturity, and relevance to our niche
 (clean `discovered != approved != enabled` separation). Not a pure popularity list.
 
-## Top 11 (2026-06-21)
+## Top 11 (2026-06-28, Runlayer updated)
 
 | # | Player | Layer | Scale / signal | Curation & governance | Relevance to us |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **Official MCP Registry** | Upstream discovery | Authoritative; v0.1 frozen → v1 GA; June 10 update added ACR/MCR support; ~2,000 entries | Metadata only, no quality/security guarantees | Our primary **sync source** |
 | 2 | **JFrog MCP Registry** | Enterprise registry | Part of JFrog supply-chain suite; **GA March 18, 2026** | Curated internal catalog, RBAC, audit, allowlist | **Closest analogue** — benchmark; now fully shipped |
-| 3 | **Obot** | Gateway + catalog | OSS (MIT); **$35M seed confirmed**; v0.22.0 released (k8s Secrets binding + fleet scan) | **Clean** discovery→approval→runtime, IT-verified trust | Best model-match; well-funded; study its split |
-| 4 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | **New entrant** at enterprise tier; validates governance-over-MCP market; watch for registry/catalog features |
-| 5 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
-| 6 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 7 | **PulseMCP** | Directory | **19,500+** (remote filter; total higher); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 8 | **Glama** | Directory | **48,480 servers** (+437 since Jun 25; 6,279 connectors; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
-| 9 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
-| 10 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
-| 11 | **Runlayer** | Enterprise gateway + catalog | $11M seed (Khosla/Felicis); **Rising in Cyber 2026** (150 CISO votes, Notable Capital/Morgan Stanley); MCP founder (D.S. Parra) as consultant; 18,000+ server catalog | Security-approved servers, ABAC, fast-tracked approval; curated vs. raw | **Elevated** — CISO endorsement validates enterprise market signal |
+| 3 | **Runlayer** | Enterprise gateway + catalog | **$42M total** (**$30M Series A, June 24, 2026**, led by Felicis/Khosla); customers include Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s; 18,000+ server catalog | Security-approved servers, ABAC, conditional access, SCIM, audit; `discovered != approved != enabled` enforced | **Top-tier** — largest pure-play enterprise MCP governance funding; architecture exactly matches our boundary discipline |
+| 4 | **Obot** | Gateway + catalog | OSS (MIT); **$35M seed confirmed**; v0.22.0 released (k8s Secrets binding + fleet scan) | **Clean** discovery→approval→runtime, IT-verified trust | Best model-match; well-funded; study its split |
+| 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
+| 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
+| 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
+| 8 | **PulseMCP** | Directory | **20,040+** (crossed 20k milestone June 28); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **49,411 servers** (as of June 28; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
+| 10 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
+| 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
 **Honorable mentions / watch list:** Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; tech preview; no June GA),
 mcp.so (~20,222, unvetted), MCP Market (~10k, community),
@@ -81,7 +81,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   Microsoft Markitdown MCP exploited to extract AWS IAM credentials from EC2 metadata endpoint,
   CVE-2026-27825/27826 "MCPwnfluence" (CVSS 9.1 RCE + SSRF in `mcp-atlassian`; patched in 0.17.0),
   CVE-2026-25536 (MCP TypeScript SDK cross-client data leak; patched in SDK 1.26.0; **audit
-  pass pending** to confirm all TypeScript SDK vendors in catalog are running ≥1.26.0),
+  pass pending** to confirm all TypeScript SDK vendors in catalog are running >=1.26.0),
   **CVE-2026-54309** (n8n MCP browser HTTP transport, June 23, 2026) — unauthenticated
   MCP sessions via `--transport http`; allows browser-control (navigation, JS eval, cookies);
   patched in n8n v2.25.7 / v2.26.2; not in our catalog,
@@ -148,13 +148,13 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   [[MCP Blog — EMA]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
 - **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
   unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
-  exposed MCP servers (3× prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
+  exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
-  servers). Cross-registry ecosystem count: **~73,000+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **48,480**
-   as of June 26 — 6,279 connectors, 293,804+ tools indexed; PulseMCP now **19,500+**).
+  servers). Cross-registry ecosystem count: **~74,000+ servers** (Official Registry +
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **49,411**
+  as of June 28; PulseMCP now **20,040+** — crossed the 20k milestone).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
-  set: **19**. The trust gap — ~73k indexed vs. 19 approved — is the product.
+  set: **19**. The trust gap — ~74k indexed vs. 19 approved — is the product.
   **Ecosystem concentration risk (Security Boulevard, June 2026):** 973 MCP npm packages
   analyzed; 71% single-maintainer; 56% < 30 days old; 25% no source repo; 9/11 registries
   failed to detect malicious uploads. Our remote-HTTP-only catalog is immune to all STDIO/npm
@@ -170,7 +170,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **32 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **30 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
@@ -191,4 +191,3 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
 - **Acquisition signal:** Palo Alto Networks acquiring Portkey (closed May 29, 2026) is the strongest
   enterprise validation signal to date — an $8B-ARR incumbent paying for AI gateway governance confirms
   the market we serve is real and growing. Portkey is now in maintenance mode; Prisma AIRS is the live entity.
-</content>
