@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-28 (daily research pass):**
+**As of 2026-06-30 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -398,6 +398,16 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`); confirmed no action needed.
   (6) **Registry scale**: Glama **48,480** (+437 since June 25); PulseMCP 19,500+.
   **Spec countdown: 32 days** to July 28 RC final.
+  **June 30 new findings:** (1) **Atlassian SSE endpoint DEAD** — confirmed shut down today as
+  scheduled; our `com.atlassian/mcp` already on Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`);
+  no catalog action needed. Industry milestone: SSE is now dead for major vendors ahead of July 28 spec.
+  (2) **MCP Python SDK v2 beta slipped** — expected today, did not ship; latest release is v2.0.0a3
+  (June 26, 2026); stable v2 target remains July 27. Vendors should pin `mcp>=1.27,<2` until ready to
+  migrate. (3) **Spec countdown: 28 days** to July 28 final; no new RC changes. (4) **Clean security
+  window June 29–30** — no new CVEs or incidents. CVE-2026-25536 TypeScript SDK audit still pending
+  (verify all TS-SDK vendors ≥1.26.0; also covers CVE-2026-0621 ReDoS, patched in v1.25.2).
+  (5) **Registry scale stable**: Glama ~49,800+ (estimated); PulseMCP ~20,200+ (estimated); cross-registry
+  estimate ~74,000–75,000+ indexed. 19 approved in our catalog. All 19 remain approved/public.
   **June 28 new findings:** (1) **Runlayer $30M Series A (June 24, 2026)** — largest pure-play
   enterprise MCP governance funding to date (total $42M; led by Felicis/Khosla). Customers:
   Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s. Architecture
@@ -472,19 +482,20 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      HubSpot endpoint confirmed live in second-pass June 17 research.
   3. Next `subregistry-audit` pass: (a) ~~verify `com.asana/mcp` SSE endpoint~~ **DONE 2026-06-18** —
      Asana V1 SSE endpoint was dead (shut down May 11); updated to V2 Streamable HTTP
-     `https://mcp.asana.com/v2/mcp` in this commit. (b) Verify all TypeScript SDK-based
-     vendors are running >=1.26.0 (CVE-2026-25536); Atlassian SSE deprecated June 30 (not in catalog).
-     (c) Any SSE-typed entry should be audited for migration to Streamable HTTP — this is
-     becoming an industry-wide pattern. (d) CVE-2026-11624 DNS rebinding: confirm all cataloged
-     vendors run MCP server >=v0.25.
+     `https://mcp.asana.com/v2/mcp` in this commit. (b) **PRIORITY: Verify all TypeScript SDK-based
+     vendors are running >=1.26.0** (CVE-2026-25536 cross-client data leak + CVE-2026-0621 ReDoS — both
+     patched by v1.26.0). ~~Atlassian SSE deprecated June 30~~ — **DONE: Atlassian SSE shutdown June 30
+     confirmed; our entry already on Streamable HTTP, no action needed.** (c) Any remaining SSE-typed
+     entry should be audited for migration to Streamable HTTP — industry-wide pattern now complete.
+     (d) CVE-2026-11624 DNS rebinding: confirm all cataloged vendors run MCP server >=v0.25.
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **30 days**) for the Gateway operator; no catalog schema change needed.
-     MCP Python SDK v2 beta lands June 30; cataloged Python-SDK vendors must ship v2 compliance
-     before July 28.
+     ships July 28 — **28 days**) for the Gateway operator; no catalog schema change needed.
+     MCP Python SDK v2 beta slipped past June 30 (latest: v2.0.0a3 June 26); stable v2 target
+     July 27 — cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema
