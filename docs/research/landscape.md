@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-28-mcp-ecosystem-update.md](./2026-06-28-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-28 (daily scheduled run)
+- **Latest daily update:** [2026-06-30-mcp-ecosystem-update.md](./2026-06-30-mcp-ecosystem-update.md)
+- **Last updated:** 2026-06-30 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -170,7 +170,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **30 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **28 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
@@ -182,9 +182,9 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   Aug 14, 2026 — may land post-RC rather than in the July 28 spec. Once merged, `subregistry-audit`
   can query this endpoint to auto-verify tool counts and protocol version on cataloged servers.
 - **Asana V1 SSE endpoint shutdown (May 11, 2026):** `https://mcp.asana.com/sse` is dead. V2 Streamable
-  HTTP at `https://mcp.asana.com/v2/mcp`. Catalog updated 2026-06-18. Atlassian SSE likewise deprecated
-  June 30, 2026 (not in our catalog). SSE-to-Streamable-HTTP migration is an industry-wide pattern —
-  audit all SSE-typed catalog entries in next `subregistry-audit` pass.
+  HTTP at `https://mcp.asana.com/v2/mcp`. Catalog updated 2026-06-18. **Atlassian SSE endpoint shut
+  down June 30, 2026** — confirmed today; our catalog entry already on Streamable HTTP.
+  SSE-to-Streamable-HTTP migration is now complete for all major cataloged vendors.
 - **OX Security STDIO RCE (April 2026):** 14 CVEs, 200k+ vulnerable instances, 9/11 registries poisoned.
   Root cause is STDIO transport design (Anthropic declined protocol change). Our remote-HTTP-only
   catalog is structurally immune. Strongest external validation of the remote-HTTP-first approach.
