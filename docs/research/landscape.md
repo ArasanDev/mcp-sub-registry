@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-06-30-mcp-ecosystem-update.md](./2026-06-30-mcp-ecosystem-update.md)
-- **Last updated:** 2026-06-30 (daily scheduled run)
+- **Latest daily update:** [2026-07-01-mcp-ecosystem-update.md](./2026-07-01-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-01 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -25,9 +25,9 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **20,040+** (crossed 20k milestone June 28); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **49,411 servers** (as of June 28; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
-| 10 | **Smithery** | Directory + hosting | ~7,000 (contracting as free tier ended Mar 1, 2026; infra rebuild) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
+| 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **50,262 servers** (**first 50k crossed**, July 1; + 6,951 remote connectors; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
+| 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
 **Honorable mentions / watch list:** Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; tech preview; no June GA),
@@ -131,7 +131,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   **Inaugural Ambassador Cohort (June 23, 2026):** 138 ambassadors across 41 countries —
   broadest geographic expansion signal yet; individual practitioner layer on top of 170+ orgs.
   **Confirmed 2026 event calendar:** Seoul (Aug 13–14), Shanghai (Sept 6–7), Tokyo (Sept 10–11),
-  AGNTCon + MCPCon Europe (Amsterdam, Sept 17–18), North America (Oct 22–23).
+  AGNTCon + MCPCon Europe (Amsterdam, Sept 17–18), North America (San Jose, CA, Oct 22–23).
   [[AAIF]](https://aaif.io)
   [[AAIF Global Events]](https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-global-2026-events-program-anchored-by-agntcon-mcpcon-north-america-and-europe)
 - **MCP Shadow IT (Qualys, March 2026):** Qualys extended TotalAI with MCP server discovery
@@ -151,8 +151,9 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
   servers). Cross-registry ecosystem count: **~74,000+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **49,411**
-  as of June 28; PulseMCP now **20,040+** — crossed the 20k milestone).
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **50,262**
+  as of July 1 (first 50k crossing); PulseMCP **20,120+**; MCPToplist cross-registry
+  aggregate **73,547** as of late June 2026).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
   set: **19**. The trust gap — ~74k indexed vs. 19 approved — is the product.
   **Ecosystem concentration risk (Security Boulevard, June 2026):** 973 MCP npm packages
@@ -170,7 +171,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **28 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **27 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);

@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-06-30 (daily research pass):**
+**As of 2026-07-01 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -398,6 +398,20 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`); confirmed no action needed.
   (6) **Registry scale**: Glama **48,480** (+437 since June 25); PulseMCP 19,500+.
   **Spec countdown: 32 days** to July 28 RC final.
+  **July 1 new findings:** (1) **MCP Python SDK v2.0.0b1 CONFIRMED shipped June 30** — correction to
+  yesterday's "slipped" report; beta published to PyPI same day. Latest stable: v1.28.1. Stable v2.0.0
+  targets July 27 (1 day before spec). Vendors: pin `mcp>=1.27,<2` until July 27.
+  (2) **MCP TypeScript SDK latest stable: v1.29.0** (April 2026) — already past CVE-2026-25536 fix
+  threshold (v1.26.0). CVE audit still pending (see Next actions #3b).
+  (3) **Spec countdown: 27 days** to July 28 final.
+  (4) **Glama crosses 50k** — 50,262 servers + 6,951 remote connectors (293,804+ tools). First 50k
+  milestone. PulseMCP 20,120+; Smithery ~7,300; MCPToplist cross-registry aggregate: **73,547**.
+  (5) **CVE-2025-6514 (mcp-remote, CVSS 9.6)** — first confirmed full RCE from a remote MCP server
+  to client OS via injected `authorization_endpoint`; affects mcp-remote v0.0.5–v0.1.15; fixed in
+  v0.1.16. No catalog action (our servers are trusted/auth-gated; this reinforces approval workflow value).
+  (6) **Clean security window continues** — no new CVEs or incidents July 1.
+  (7) **AAIF MCPCon North America location confirmed**: San Jose, CA, October 22–23, 2026.
+  All 19 catalog servers remain approved/public; all on Streamable HTTP.
   **June 30 new findings:** (1) **Atlassian SSE endpoint DEAD** — confirmed shut down today as
   scheduled; our `com.atlassian/mcp` already on Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`);
   no catalog action needed. Industry milestone: SSE is now dead for major vendors ahead of July 28 spec.
@@ -493,9 +507,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **28 days**) for the Gateway operator; no catalog schema change needed.
-     MCP Python SDK v2 beta slipped past June 30 (latest: v2.0.0a3 June 26); stable v2 target
-     July 27 — cataloged Python-SDK vendors must ship v2 compliance before July 28.
+     ships July 28 — **27 days**) for the Gateway operator; no catalog schema change needed.
+     MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
+     cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
      post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
      cataloged server origin and record tool count + version in `verification.notes`. No schema
