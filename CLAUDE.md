@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-01 (daily research pass):**
+**As of 2026-07-02 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -407,10 +407,33 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (4) **Glama crosses 50k** — 50,262 servers + 6,951 remote connectors (293,804+ tools). First 50k
   milestone. PulseMCP 20,120+; Smithery ~7,300; MCPToplist cross-registry aggregate: **73,547**.
   (5) **CVE-2025-6514 (mcp-remote, CVSS 9.6)** — first confirmed full RCE from a remote MCP server
-  to client OS via injected `authorization_endpoint`; affects mcp-remote v0.0.5–v0.1.15; fixed in
+  to client OS via injected `authorization_endpoint`; affects mcp-remote v0.0.5–0.1.15; fixed in
   v0.1.16. No catalog action (our servers are trusted/auth-gated; this reinforces approval workflow value).
   (6) **Clean security window continues** — no new CVEs or incidents July 1.
   (7) **AAIF MCPCon North America location confirmed**: San Jose, CA, October 22–23, 2026.
+  All 19 catalog servers remain approved/public; all on Streamable HTTP.
+  **July 2 new findings:** (1) **Microsoft: tool-poisoning warning + signed manifest requirement
+  (July 2026)** — Microsoft Incident Response + Defender researchers confirmed that attackers
+  can poison tool descriptions to redirect AI agents silently. Starting July 2026, Microsoft
+  requires developer-signed tool manifests (content hash covering `name`/`description`/`inputSchema`)
+  for MCP servers in Microsoft official agent frameworks. MCPTox benchmark: 72.8% success rate
+  against 45 real servers across 20 models. Reinforces registry `approved` status + `verifiedAt`
+  as trust anchors; candidate for `manifest_hash` field in a future schema iteration.
+  [[Security Boulevard July 2026]](https://securityboulevard.com/2026/07/microsoft-warns-poisoned-mcp-tool-descriptions-can-make-ai-agents-leak-data/)
+  (2) **CVE-2026-35394** (Mobile MCP, Mobilenexthq, network-accessible) — Android intent
+  injection via unvalidated URL scheme in `mobile_open_url` tool; enables arbitrary phone calls,
+  SMS, USSD codes, content provider access; fixed in v0.0.50. Not in catalog (STDIO/device
+  control, not remote HTTP). Remote-HTTP catalog structurally immune.
+  [[SentinelOne]](https://www.sentinelone.com/vulnerability-database/cve-2026-35394/)
+  (3) **Spec countdown: 26 days** to July 28 final.
+  (4) **Glama: 50,777** (+515 vs July 1). PulseMCP ~20,120+; MCPToplist ~73,547 (stable).
+  (5) **HubSpot MCP new capabilities** — content analytics for landing pages / web assets +
+  landing page creation now live; OAuth 2.1 + PKCE (no DCR). Confirms HubSpot as #1 priority
+  for next curate run. (6) **OceanLotus / ZiChatBot PyPI campaign** (Kaspersky, disclosed May 2026,
+  dwell ~10 months) — first time noted in our research record; remote-HTTP catalog immune.
+  (7) **SecurityWeek + Akamai**: enterprise security analyses of 2026-07-28 spec published;
+  highlight stateless-transport policy gaps and MCP Apps iframe invisibility to network monitoring.
+  (8) **Clean security window Day 4** — no new CVEs or incidents July 2.
   All 19 catalog servers remain approved/public; all on Streamable HTTP.
   **June 30 new findings:** (1) **Atlassian SSE endpoint DEAD** — confirmed shut down today as
   scheduled; our `com.atlassian/mcp` already on Streamable HTTP (`https://mcp.atlassian.com/v1/mcp`);
@@ -507,7 +530,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **27 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **26 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
      cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
