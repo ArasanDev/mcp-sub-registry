@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-01-mcp-ecosystem-update.md](./2026-07-01-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-01 (daily scheduled run)
+- **Latest daily update:** [2026-07-02-mcp-ecosystem-update.md](./2026-07-02-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-02 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -26,7 +26,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **50,262 servers** (**first 50k crossed**, July 1; + 6,951 remote connectors; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **50,777 servers** (July 2; + 6,951 remote connectors; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
@@ -146,13 +146,13 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   71% at launch. Signals that our `approved` catalog set is already aligned with enterprise
   provisioning intent.
   [[MCP Blog — EMA]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
-- **Scale signal (June 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
+- **Scale signal (July 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
   unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
   exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
   servers). Cross-registry ecosystem count: **~74,000+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **50,262**
-  as of July 1 (first 50k crossing); PulseMCP **20,120+**; MCPToplist cross-registry
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama now **50,777**
+  as of July 2; PulseMCP **20,120+**; MCPToplist cross-registry
   aggregate **73,547** as of late June 2026).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
   set: **19**. The trust gap — ~74k indexed vs. 19 approved — is the product.
@@ -171,7 +171,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **27 days**). Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **26 days**). Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
