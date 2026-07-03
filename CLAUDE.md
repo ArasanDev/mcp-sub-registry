@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-02 (daily research pass):**
+**As of 2026-07-03 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -412,6 +412,31 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) **Clean security window continues** — no new CVEs or incidents July 1.
   (7) **AAIF MCPCon North America location confirmed**: San Jose, CA, October 22–23, 2026.
   All 19 catalog servers remain approved/public; all on Streamable HTTP.
+  **July 3 new findings:** (1) **SDK v2 betas confirmed live (June 29, 2026)** — all four Tier
+  1 SDKs: Python `mcp==2.0.0b1`, TypeScript v2 (new packages: `@modelcontextprotocol/server` +
+  `@modelcontextprotocol/client`; ESM-only; Node 20+/Bun/Deno; codemod for migration from v1),
+  Go `v1.7.0-pre.1`, C# `v2.0.0-preview.1`. Python v2 stable July 27; TS v2 stable July 28.
+  v1 SDK receives security updates for ≥6 months post-v2. CVE-2026-25536 audit gate (≥1.26.0)
+  remains valid until vendors migrate.
+  [[MCP Blog — SDK betas]](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/)
+  (2) **Microsoft MCP Server for Enterprise (Preview)** — read-only natural-language access to
+  Entra ID (users, groups, apps, devices, admin reporting); built on Microsoft Graph; Preview
+  only; not catalogable yet. Added to watch list.
+  [[Microsoft Learn]](https://learn.microsoft.com/en-us/graph/mcp-server/overview)
+  (3) **Stacklok ToolHive** — Apache 2.0 platform for MCP server management with **Sigstore +
+  GitHub Attestations provenance verification** (cryptographic fingerprint → transparency log →
+  CA check → build provenance). Most concrete implementation of NSA-mandated signed provenance
+  checks for MCP. Maintains verified-server registry. Added to watch list; validates roadmap item
+  for `provenance.attestation_url` + `provenance.signing_method` schema fields.
+  [[ToolHive]](https://github.com/stacklok/toolhive)
+  (4) **SEP-2127 Server Cards** — "Is Your MCP Ready?" compliance scanner now live
+  (isyourmcpready.com). WG ends Aug 14. Draft; may land post-RC. Claude Desktop + Cursor
+  already ship support. No catalog action until spec finalizes.
+  (5) **HubSpot new capabilities** — content analytics now unrestricted (any page, not just
+  campaign-linked) + landing-page creation live; confirms HubSpot as #1 curate priority.
+  (6) **Spec countdown: 25 days** to July 28 final. No new RC changes.
+  (7) **Glama: 50,845** (+68 vs July 2); PulseMCP 20,120+ (stable).
+  (8) **Clean security window Day 5** — no new CVEs or incidents July 3.
   **July 2 new findings:** (1) **Microsoft: tool-poisoning warning + signed manifest requirement
   (July 2026)** — Microsoft Incident Response + Defender researchers confirmed that attackers
   can poison tool descriptions to redirect AI agents silently. Starting July 2026, Microsoft
@@ -530,7 +555,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **26 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **25 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
      cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
