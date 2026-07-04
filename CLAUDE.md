@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-03 (daily research pass):**
+**As of 2026-07-04 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -412,6 +412,29 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) **Clean security window continues** — no new CVEs or incidents July 1.
   (7) **AAIF MCPCon North America location confirmed**: San Jose, CA, October 22–23, 2026.
   All 19 catalog servers remain approved/public; all on Streamable HTTP.
+  **July 4 new findings:** (1) **Claude Sonnet 5 released June 30, 2026** (previously uncaptured) —
+  most agentic Sonnet yet; 1M token context; $2/$10/M tokens (input/output) introductory through
+  Aug 31; raises tool-use quality bar for catalog curation. EMA + Okta org-wide MCP connector
+  provisioning ships with Sonnet 5. [[Anthropic]](https://www.anthropic.com/news/claude-sonnet-5)
+  (2) **AWS Agent Registry namespace migration August 6, 2026** — `bedrock-agentcore` →
+  `agent-registry` namespace; still preview (no GA). `com.aws/mcp` (AWS MCP Server) is a distinct
+  GA product (May 6, 2026; us-east-1 + eu-central-1; Agent Toolkit for AWS; IAM + CloudWatch +
+  CloudTrail).
+  [[AWS Agent Registry preview]](https://aws.amazon.com/about-aws/whats-new/2026/04/aws-agent-registry-in-agentcore-preview/)
+  (3) **HubSpot Self-Service MCP Auth Apps** (public beta Jan 13, 2026) — developers build their
+  own connectors via self-service Developer Platform UI; OAuth 2.1 + PKCE, no DCR; confirms curate
+  path for `com.hubspot/mcp`.
+  [[HubSpot changelog]](https://developers.hubspot.com/changelog/public-beta-self-service-mcp-auth-apps-for-the-hubspot-remote-mcp-server)
+  (4) **Anthropic Claude Connectors Directory: 343 verified integrations** — Anthropic's own
+  verified list (distinct from Glama/PulseMCP); first tracked. Glama: 50,845; PulseMCP: 20,120+;
+  Anthropic verified: 343; our approved: 19.
+  (5) **AAIF 2026 events calendar confirmed** — Seoul (Aug 13–14), Shanghai (Sept 6–7), Tokyo
+  (Sept 10–11), Amsterdam (Sept 17–18), Toronto (Oct 5–6), San Jose (Oct 22–23), Nairobi
+  (Nov 19–20). MCPCon Shanghai schedule July 8 pending.
+  [[AAIF global events]](https://www.prnewswire.com/news-releases/agentic-ai-foundation-announces-global-2026-events-program-anchored-by-agntcon-mcpcon-north-america-and-europe-302732860.html)
+  (6) **Spec countdown: 24 days** to July 28 final. No new RC changes.
+  (7) **Clean security window Day 6** — no new MCP CVEs July 4. All 19 catalog servers remain
+  approved/public.
   **July 3 new findings:** (1) **SDK v2 betas confirmed live (June 29, 2026)** — all four Tier
   1 SDKs: Python `mcp==2.0.0b1`, TypeScript v2 (new packages: `@modelcontextprotocol/server` +
   `@modelcontextprotocol/client`; ESM-only; Node 20+/Bun/Deno; codemod for migration from v1),
@@ -555,7 +578,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **25 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **24 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
      cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be

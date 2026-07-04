@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-03-mcp-ecosystem-update.md](./2026-07-03-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-03 (daily scheduled run)
+- **Latest daily update:** [2026-07-04-mcp-ecosystem-update.md](./2026-07-04-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-04 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -173,7 +173,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **25 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 new packages; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **24 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 new packages; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
