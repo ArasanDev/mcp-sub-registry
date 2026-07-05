@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-04 (daily research pass):**
+**As of 2026-07-05 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -412,6 +412,29 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (6) **Clean security window continues** — no new CVEs or incidents July 1.
   (7) **AAIF MCPCon North America location confirmed**: San Jose, CA, October 22–23, 2026.
   All 19 catalog servers remain approved/public; all on Streamable HTTP.
+  **July 5 new findings:** (1) **Glama crosses 51k** — 51,230 servers (first crossing; up from 50,845 July 3);
+  PulseMCP 20,110+ (stable). Spec countdown: **23 days** to July 28 final.
+  (2) **SecurityWeek + Akamai: new spec attack surfaces (July 2026)** — MCP Apps (SEP-1865) introduces
+  stored XSS risk in client hosts; Tasks extension creates DoS vector (cheap create, expensive run,
+  async disconnect); new Mcp-Method/Mcp-Name headers enable protocol confusion/desync attacks and secret
+  leakage if developers map credentials into headers. Both analyses place security responsibility on
+  server implementers and gateway operators. Remote-HTTP-only catalog is structurally immune to all three.
+  [[SecurityWeek]](https://www.securityweek.com/new-enterprise-ready-mcp-specification-brings-new-security-challenges/)
+  [[Akamai]](https://www.akamai.com/blog/security-research/new-mcp-specification-security-teams-must-prepare)
+  (3) **Claude Code OAuth token theft via MCP hijacking (Mitiga Labs)** — malicious npm postinstall hook
+  rewrites ~/.claude.json to redirect MCP OAuth traffic through attacker proxy; Anthropic said "out of
+  scope" April 12; no patch planned. Client-side attack; no catalog action. Operators should monitor
+  MCP config URL changes and OAuth refresh anomalies.
+  [[SecurityWeek]](https://www.securityweek.com/claude-code-oauth-tokens-can-be-stolen-through-stealthy-mcp-hijacking/)
+  [[Mitiga]](https://www.mitiga.io/blog/claude-code-mcp-token-theft-mitm)
+  (4) **Kiro IDE enterprise MCP governance** (new landscape entrant) — Amazon Kiro IDE shipped MCP
+  Server Registry (admin allowlist via HTTPS-hosted JSON, March 12, 2026) + model governance; CLI 2.11.0
+  (July 2, 2026) added OAuth MCP commands. Second major IDE (after VS Code/Obot) to enforce approved-server
+  allowlist. Validates our gateway catalog projection as input for enterprise MCP allowlists.
+  Added to landscape.md watch list. [[Kiro]](https://kiro.dev/blog/enterprise-governance-mcp-and-models/)
+  (5) **MCPCon Shanghai schedule** expected July 8 (event Sept 6–7 co-located with KubeCon China).
+  (6) **Clean security window Day 7** — no new MCP CVEs July 5. CVE-2026-25536 TypeScript SDK
+  audit still pending. All 19 catalog servers remain approved/public.
   **July 4 new findings:** (1) **Claude Sonnet 5 released June 30, 2026** (previously uncaptured) —
   most agentic Sonnet yet; 1M token context; $2/$10/M tokens (input/output) introductory through
   Aug 31; raises tool-use quality bar for catalog curation. EMA + Okta org-wide MCP connector
@@ -578,7 +601,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **24 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **23 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
      cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
