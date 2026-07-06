@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-05 (daily research pass):**
+**As of 2026-07-06 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -436,6 +436,29 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (5) **MCPCon Shanghai** schedule announcement expected July 8 (3 days); event September 6–7 co-located
   with KubeCon + CloudNativeCon China.
   (6) **Clean security window Day 7** — no new MCP CVEs July 5. All 19 catalog servers remain approved/public.
+  **July 6 new findings:** (1) **Glama ~51,577** (+347 vs July 5); spec countdown **22 days** to July 28.
+  (2) **Claude Code v2.1.199 (July 2, 2026) MCP improvements:** 5-minute idle timeout for hanging remote tools
+  (`CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT`); fixed OAuth `invalid_scope` on enterprise IdPs (GitLab self-hosted etc.);
+  capability discovery retries on transient errors; headless auth bypass; better 404 diagnostics. Enterprise
+  operators on cataloged OAuth-gated servers should update Claude Code. [[changelog]](https://code.claude.com/docs/en/changelog)
+  (3) **X (Twitter) official hosted MCP Server** (June 30, 2026) — wraps existing X API (search posts, read
+  content, user lookups, trend analysis); user OAuth auth hosted by X; joins GitHub/Slack/Stripe/Salesforce
+  etc. as vendor-hosted endpoints. **Catalog candidate** for next curate run (endpoint URL + auth model
+  verification required). [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/)
+  (4) **Ads-platform MCP pattern**: Google (Apr 28), Meta (Apr 29), TikTok (May 13) all shipped official
+  MCP servers for their ad APIs. Not current catalog candidates (ads persona, not developer tools persona);
+  relevant to §12.5 persona-based catalog expansion. [[Digital Applied]](https://www.digitalapplied.com/blog/official-ads-mcp-servers-meta-google-tiktok-2026-playbook)
+  (5) **AWS Agent Registry namespace migration Aug 6, 2026**: bedrock-agentcore → agent-registry; still
+  Preview. `com.aws/mcp` (AWS MCP Server in our catalog) is distinct — no catalog action needed.
+  [[AWS docs]](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry.html)
+  (6) **CMCPSE** (Certified MCP Security Expert, Practical DevSecOps, June 15, 2026) — first dedicated MCP
+  security certification; covers OWASP MCP Top 10, tool poisoning, OAuth 2.1, supply chain; $599.
+  [[Practical DevSecOps]](https://www.practical-devsecops.com/certified-mcp-security-expert/)
+  (7) **ToolHive agent skills layer** — reusable instruction bundles published to skill registry; vMCP
+  circuit breakers; multi-tenant k8s namespace scanning. Validates §12.5 persona-bundle direction.
+  [[ToolHive]](https://github.com/stacklok/toolhive)
+  (8) **MCPCon Shanghai** schedule expected July 8; event Sept 6–7 co-located with KubeCon China.
+  (9) **Clean security window Day 8** — no new MCP CVEs July 6. All 19 catalog servers remain approved/public.
   **July 4 new findings:** (1) **Claude Sonnet 5 released June 30, 2026** (previously uncaptured) —
   most agentic Sonnet yet; 1M token context; $2/$10/M tokens (input/output) introductory through
   Aug 31; raises tool-use quality bar for catalog curation. EMA + Okta org-wide MCP connector
@@ -588,7 +611,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   2. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
      confirmed April 13, `https://mcp.hubspot.com/mcp`, OAuth 2.1 + PKCE), Intercom, Zapier.
-     HubSpot endpoint confirmed live in second-pass June 17 research.
+     HubSpot endpoint confirmed live in second-pass June 17 research. Also: **X (Twitter) MCP
+     Server** (new — June 30, 2026; vendor-hosted; OAuth-gated; endpoint URL + auth model
+     verification required before adding).
   3. Next `subregistry-audit` pass: (a) ~~verify `com.asana/mcp` SSE endpoint~~ **DONE 2026-06-18** —
      Asana V1 SSE endpoint was dead (shut down May 11); updated to V2 Streamable HTTP
      `https://mcp.asana.com/v2/mcp` in this commit. (b) **PRIORITY: Verify all TypeScript SDK-based
@@ -602,7 +627,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (MDPI Future Internet 18(5):243 proposal; no action needed now).
   6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **23 days**) for the Gateway operator; no catalog schema change needed.
+     ships July 28 — **22 days**) for the Gateway operator; no catalog schema change needed.
      MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
      cataloged Python-SDK vendors must ship v2 compliance before July 28.
   7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
