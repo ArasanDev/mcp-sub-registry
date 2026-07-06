@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-05-mcp-ecosystem-update.md](./2026-07-05-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-05 (daily scheduled run)
+- **Latest daily update:** [2026-07-06-mcp-ecosystem-update.md](./2026-07-06-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-06 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -26,7 +26,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **51,230 servers** (July 5 — first crossing of 51k; + 6,951 remote connectors; 293,804+ tools indexed) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **~51,577 servers** (July 6 — +347 vs July 5; 6,951 remote connectors; 347,638 tools indexed) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
@@ -37,7 +37,8 @@ MintMCP (**SOC 2 Type II certified**; STDIO-to-production containerization; acti
 Microsoft MCP Gateway (k8s, no catalog),
 **Microsoft MCP Server for Enterprise** (Preview, July 2026; read-only Entra ID identity data via natural language; hosted on Microsoft Graph; preview only — watch for stable public endpoint),
 **Stacklok ToolHive** (Apache 2.0; enterprise MCP server management + **Sigstore/GitHub Attestations provenance verification** — most concrete implementation of cryptographic MCP server trust; maintains verified-server registry; precedent for `provenance.attestation_url` schema field),
-**AWS Agent Registry** (April 9, 2026 preview; private org catalog in Bedrock AgentCore; indexes agents/MCP servers/skills; exposes as MCP endpoint; watch for GA),
+**AWS Agent Registry** (April 9, 2026 preview; private org catalog in Bedrock AgentCore; indexes agents/MCP servers/skills; exposes as MCP endpoint; **namespace migration Aug 6, 2026**: bedrock-agentcore → agent-registry; still Preview — watch for GA),
+**X (Twitter) MCP Server** (launched June 30, 2026; official hosted MCP server wrapping X API — search posts, read content, user lookups, trend analysis; user OAuth auth; [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/); **catalog candidate** — endpoint URL and OAuth model verification pending before approval),
 **Salesforce Agentforce MCP** (**Agentforce 3 — June 23, 2026**: added Salesforce DX MCP Server + Heroku Platform MCP Server + MuleSoft MCP Server, bringing total to 4+ distinct vendor-operated MCP servers; original GA June 15 covered SObject CRUD + SOQL + Tableau analytics; bidirectional — Agentforce also consumes external MCP servers via Atlas Reasoning Engine 3.0; org-specific endpoint pattern, not catalog-friendly),
 **MACH Alliance MCP Registry** (new entrant June 2026; vendor-neutral, enterprise-focused, metadata-format aligned with official MCP Registry; open publishing, member-only governance/verification features; no curation signal yet — watch list only),
 **Slack Marketplace MCP Registry** (new entrant June 2026; embedded in Slack Marketplace, workspace-admin-controlled approval flow for MCP apps; Slackbot MCP client GA with 20+ partner apps; mirrors `discovered != approved != enabled` pattern in product-native form; `com.slack/mcp` already in our catalog),
@@ -154,8 +155,8 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
   servers). Cross-registry ecosystem count: **~74,000+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama **51,230**
-  as of July 5 — first crossing of 51k; PulseMCP **20,110+**; MCPToplist cross-registry
+  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama **~51,577**
+  as of July 6; PulseMCP **20,110+**; MCPToplist cross-registry
   aggregate **73,547** as of late June 2026).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
   set: **19**. The trust gap — ~74k indexed vs. 19 approved — is the product.
@@ -174,7 +175,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **23 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 new packages; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **22 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 new packages; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);
@@ -195,3 +196,24 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
 - **Acquisition signal:** Palo Alto Networks acquiring Portkey (closed May 29, 2026) is the strongest
   enterprise validation signal to date — an $8B-ARR incumbent paying for AI gateway governance confirms
   the market we serve is real and growing. Portkey is now in maintenance mode; Prisma AIRS is the live entity.
+- **Ads-platform MCP pattern (April–June 2026):** Google (Apr 28), Meta (Apr 29), TikTok (May 13), and
+  X/Twitter (June 30) all shipped official hosted MCP servers for their platforms. Pattern: platforms now
+  ship vendor-blessed MCP endpoints rather than leaving integration to community servers. Relevant to
+  §12.5 persona-based catalog expansion: a "performance marketer" persona would add Meta Ads, Google Ads,
+  TikTok Ads, and X MCP servers as a curated bundle. **X MCP Server** is a catalog candidate pending
+  endpoint/auth verification. [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/)
+- **MCP security certification (June 2026):** Practical DevSecOps launched **CMCPSE** (Certified MCP
+  Security Expert) on June 15, 2026 — the first hands-on MCP security certification. Covers OWASP MCP
+  Top 10, tool poisoning, OAuth 2.1, supply chain security; 6-hour exam; $599. Signals practitioner-level
+  demand for MCP security expertise. CMCPSE curriculum teaches `discovered != approved != enabled` as the
+  foundational control model. [[Practical DevSecOps]](https://www.practical-devsecops.com/certified-mcp-security-expert/)
+- **Claude Code MCP reliability (July 2, 2026 — v2.1.199):** 5-minute idle timeout for hanging remote tool
+  calls; OAuth `invalid_scope` fix for enterprise IdPs (affects GitLab self-hosted and similar); capability
+  discovery retry on transient errors; headless OAuth flow; better 404 diagnostics. Enterprise operators
+  on cataloged OAuth-gated servers should update Claude Code and re-auth if they hit `invalid_scope` failures.
+  [[Claude Code changelog]](https://code.claude.com/docs/en/changelog)
+- **ToolHive skills layer (2026):** Stacklok ToolHive now ships **agent skills** — reusable instruction
+  bundles published to a registry and installed across AI clients from a single CLI. Adds a skill-catalog
+  layer on top of the MCP server catalog. vMCP adds circuit breakers for cascading failure prevention;
+  Registry Server gains multi-tenant Kubernetes namespace scanning. Validates the §12.5 direction of
+  persona-based bundles as the next product layer. [[ToolHive]](https://github.com/stacklok/toolhive)
