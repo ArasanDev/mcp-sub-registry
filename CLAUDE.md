@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-06 (daily research pass):**
+**As of 2026-07-07 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -459,6 +459,21 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   [[ToolHive]](https://github.com/stacklok/toolhive)
   (8) **MCPCon Shanghai** schedule expected July 8; event Sept 6–7 co-located with KubeCon China.
   (9) **Clean security window Day 8** — no new MCP CVEs July 6. All 19 catalog servers remain approved/public.
+
+  **July 7 new findings:** (1) **Glama ~51,961** (+384 vs July 6); spec countdown **21 days** to July 28.
+  (2) **MCPCon Shanghai schedule announced July 8** — event Sept 6–7, KubeCon China co-located; scan session
+  abstracts for catalog candidates. (3) **X (Twitter) MCP Server confirmed at `https://api.x.com/mcp`**
+  (Streamable HTTP; OAuth 2.0 via xurl bridge); #2 curate priority after HubSpot — verify headless auth
+  before adding. (4) **SnapLogic MCP Builder GA (July 1, 2026)** — iPaaS platform auto-converts integration
+  pipelines to MCP tools; per-tenant URLs, not directly catalogable; added to landscape watch list.
+  (5) **ToolHive provenance schema confirmed** with `sigstore_url`, `repository_uri`, `signer_identity`,
+  `runner_environment`, `cert_issuer` — most concrete Sigstore-based MCP trust implementation yet; validates
+  roadmap item for `provenance.attestation_url` in our schema (open migration when >=3 catalog entries have
+  attestation URLs). (6) **6 OAuth SEPs tighten spec auth** — `iss` parameter validation per RFC 9207
+  (mix-up attack prevention); OIDC `application_type` required during DCR; affects all our OAuth-gated
+  cataloged servers after July 28. (7) **SDK v2 T-21 days** — all four Tier 1 betas live; Python stable
+  July 27; TS v2 stable July 28. (8) **Clean security window Day 9** — no new MCP CVEs July 7. All 19
+  catalog servers remain approved/public.
   **July 4 new findings:** (1) **Claude Sonnet 5 released June 30, 2026** (previously uncaptured) —
   most agentic Sonnet yet; 1M token context; $2/$10/M tokens (input/output) introductory through
   Aug 31; raises tool-use quality bar for catalog curation. EMA + Okta org-wide MCP connector
