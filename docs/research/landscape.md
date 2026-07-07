@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-06-mcp-ecosystem-update.md](./2026-07-06-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-06 (daily scheduled run)
+- **Latest daily update:** [2026-07-07-mcp-ecosystem-update.md](./2026-07-07-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-07 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -26,7 +26,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~51,577 servers** (July 6 — +347 vs July 5; 6,951 remote connectors; 347,638 tools indexed) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **~51,961 servers** (July 7 — +384 vs July 6; ~6,951 remote connectors) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
@@ -41,6 +41,7 @@ Microsoft MCP Gateway (k8s, no catalog),
 **X (Twitter) MCP Server** (launched June 30, 2026; official hosted MCP server wrapping X API — search posts, read content, user lookups, trend analysis; user OAuth auth; [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/); **catalog candidate** — endpoint URL and OAuth model verification pending before approval),
 **Salesforce Agentforce MCP** (**Agentforce 3 — June 23, 2026**: added Salesforce DX MCP Server + Heroku Platform MCP Server + MuleSoft MCP Server, bringing total to 4+ distinct vendor-operated MCP servers; original GA June 15 covered SObject CRUD + SOQL + Tableau analytics; bidirectional — Agentforce also consumes external MCP servers via Atlas Reasoning Engine 3.0; org-specific endpoint pattern, not catalog-friendly),
 **MACH Alliance MCP Registry** (new entrant June 2026; vendor-neutral, enterprise-focused, metadata-format aligned with official MCP Registry; open publishing, member-only governance/verification features; no curation signal yet — watch list only),
+**SnapLogic MCP Builder** (GA July 1, 2026; iPaaS platform automatically converts existing SnapLogic integration pipelines into MCP-compatible tools; no-code/low-code bridge pattern; customer-specific URLs, not catalogable; represents the enterprise-integration-to-MCP wrapping pattern now also pursued by Workato, MuleSoft, Boomi; [[GlobeNewswire]](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/SnapLogic-Launches-MCP-Builder-to-Accelerate-Enterprise-AI-Adoption-Through-Simplified-MCP-Creation.html)),
 **Slack Marketplace MCP Registry** (new entrant June 2026; embedded in Slack Marketplace, workspace-admin-controlled approval flow for MCP apps; Slackbot MCP client GA with 20+ partner apps; mirrors `discovered != approved != enabled` pattern in product-native form; `com.slack/mcp` already in our catalog),
 Composio, Operant, Airlock,
 **Portkey** *(acquired by Palo Alto Networks, May 29, 2026; now Prisma AIRS; standalone in maintenance mode)*,
@@ -52,7 +53,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
 - **White space:** a focused, standalone, MCP-Registry-compatible **curated catalog with a
   documented gateway projection** is uncrowded — most rivals bundle curation into a
   full gateway/runtime suite.
-- **Trust is the wedge:** provenance, version-pinning, verification, and change-detection
+- **Trust is the wedge:** provenance, verification, version-pinning, and change-detection
   are the differentiators buyers care about post-incident (postmark-mcp, CVE-2025-54136,
   CVE-2026-26118, CVE-2026-33032, RSAC 2026's systemic supply-chain advisory,
   VIPER-MCP's 106 zero-days across 39,884 repos, Akamai's database MCP flaws,
