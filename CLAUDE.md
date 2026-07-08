@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-07 (daily research pass):**
+**As of 2026-07-08 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -460,6 +460,29 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (8) **MCPCon Shanghai** schedule expected July 8; event Sept 6–7 co-located with KubeCon China.
   (9) **Clean security window Day 8** — no new MCP CVEs July 6. All 19 catalog servers remain approved/public.
 
+  **July 8 new findings:** (1) **Glama ~52,024** (crosses 52k; +63 vs July 7); **PulseMCP 20,410+** (+300);
+  **MCPToplist 73,799** (July 3 timestamp); spec countdown **20 days** to July 28.
+  (2) **TypeScript SDK 2.0.0-beta.2 released July 2** — dual CJS + ESM output; HTTP error alignment;
+  no new release since. TS v2 stable July 28; Python v2 stable July 27.
+  (3) **MCPCon Shanghai schedule** (lfopensource.cn) expected today — site returned 403, schedule URL
+  indexed but content not retrievable; event Sept 6–7; 40+ sessions, 1,500+ attendees, MCP Steering
+  Committee speakers. Scan abstracts when available.
+  (4) **CVE-2026-14748** (SSRF, AIAnytime mcp-wiki/wiki-summary, CVSS 6.3, July 5, no patch; not in catalog).
+  **CVE-2026-0755** (gemini-mcp-tool OS command injection, CVSS 9.8 Critical; not in catalog). Both are
+  community packages; remote-HTTP-only catalog structurally immune.
+  (5) **Three new tool poisoning techniques:** (a) **ShareLock** — Shamir threshold secret-sharing splits
+  malicious instructions across multiple benign-looking tool descriptions (>90% success rate). (b) **Sentry
+  Threshold Poisoning** (Tenet Security) — injected fake Sentry events via public DSN; 85% success;
+  `com.sentry/mcp` stays approved (auth-gated); operators must treat event content as untrusted. (c)
+  **DuneSlide** (Cato Networks) — two critical RCE via zero-click prompt injection in Cursor IDE.
+  (6) **Microsoft Dataverse: 60+ MCP servers** (July 6, 2026 Power Platform blog) — coding-agent plugin
+  now supports Claude + Cursor + GitHub Copilot; per-tenant SaaS, not catalogable; added to landscape watch list.
+  (7) **Obot v0.23.3** (June 25) is current; v0.23.2 patched 3 security advisories (OAuth token theft,
+  unauthenticated registry access, SSRF via remote MCP URLs). (8) **Runlayer post-Series A**: Cursor Hooks
+  partnership (Runlayer security scanning enforced for all Cursor Hooks MCP servers) + Box enterprise partnership.
+  (9) **SEP-2127 Server Cards** merged as Draft June 26; WG active through Aug 14; no new outputs.
+  (10) **Docker MCP Catalog** added community server warning banner + Gordon OAuth flow improvements + 60+ new remote servers.
+  (11) **Clean security window Day 10** — no new CVEs affecting cataloged servers July 7–8. All 19 remain approved/public.
   **July 7 new findings:** (1) **Glama ~51,961** (+384 vs July 6); spec countdown **21 days** to July 28.
   (2) **MCPCon Shanghai schedule announced July 8** — event Sept 6–7, KubeCon China co-located; scan session
   abstracts for catalog candidates. (3) **X (Twitter) MCP Server confirmed at `https://api.x.com/mcp`**

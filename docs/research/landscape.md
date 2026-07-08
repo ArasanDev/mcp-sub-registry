@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-07-mcp-ecosystem-update.md](./2026-07-07-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-07 (daily scheduled run)
+- **Latest daily update:** [2026-07-08-mcp-ecosystem-update.md](./2026-07-08-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-08 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -21,12 +21,12 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 1 | **Official MCP Registry** | Upstream discovery | Authoritative; v0.1 frozen → v1 GA; June 10 update added ACR/MCR support; ~2,000 entries | Metadata only, no quality/security guarantees | Our primary **sync source** |
 | 2 | **JFrog MCP Registry** | Enterprise registry | Part of JFrog supply-chain suite; **GA March 18, 2026** | Curated internal catalog, RBAC, audit, allowlist | **Closest analogue** — benchmark; now fully shipped |
 | 3 | **Runlayer** | Enterprise gateway + catalog | **$42M total** (**$30M Series A, June 24, 2026**, led by Felicis/Khosla); customers include Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s; 18,000+ server catalog | Security-approved servers, ABAC, conditional access, SCIM, audit; `discovered != approved != enabled` enforced | **Top-tier** — largest pure-play enterprise MCP governance funding; architecture exactly matches our boundary discipline |
-| 4 | **Obot** | Gateway + catalog | OSS (MIT); **$35M seed confirmed**; v0.22.0 released (k8s Secrets binding + fleet scan) | **Clean** discovery→approval→runtime, IT-verified trust | Best model-match; well-funded; study its split |
+| 4 | **Obot** | Gateway + catalog | OSS (MIT); **$35M seed confirmed**; v0.23.3 released June 25 (v0.23.2: 3 security advisories — OAuth token theft, unauthenticated registry access, SSRF via remote MCP URLs — all patched) | **Clean** discovery→approval→runtime, IT-verified trust | Best model-match; well-funded; study its split |
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~51,961 servers** (July 7 — +384 vs July 6; ~6,951 remote connectors) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **~52,024 servers** (July 8 — +63 vs July 7; ~6,951 remote connectors) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
@@ -36,6 +36,7 @@ mcp.so (~20,222, unvetted), MCP Market (~10k, community),
 MintMCP (**SOC 2 Type II certified**; STDIO-to-production containerization; active June 2026 development),
 Microsoft MCP Gateway (k8s, no catalog),
 **Microsoft MCP Server for Enterprise** (Preview, July 2026; read-only Entra ID identity data via natural language; hosted on Microsoft Graph; preview only — watch for stable public endpoint),
+**Microsoft Dataverse MCP Servers** (60+ ready-to-use MCP servers as of July 6, 2026 [Power Platform Blog](https://www.microsoft.com/en-us/power-platform/blog/2026/07/06/dataverse-july2026/); governance controls; coding-agent plugin now supports Claude + Cursor + GitHub Copilot; remote Dataverse MCP endpoint in private preview end-July; per-tenant enterprise SaaS, not catalogable; signals Microsoft's enterprise MCP footprint now spans two distinct catalog products),
 **Stacklok ToolHive** (Apache 2.0; enterprise MCP server management + **Sigstore/GitHub Attestations provenance verification** — most concrete implementation of cryptographic MCP server trust; maintains verified-server registry; precedent for `provenance.attestation_url` schema field),
 **AWS Agent Registry** (April 9, 2026 preview; private org catalog in Bedrock AgentCore; indexes agents/MCP servers/skills; exposes as MCP endpoint; **namespace migration Aug 6, 2026**: bedrock-agentcore → agent-registry; still Preview — watch for GA),
 **X (Twitter) MCP Server** (launched June 30, 2026; official hosted MCP server wrapping X API — search posts, read content, user lookups, trend analysis; user OAuth auth; [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/); **catalog candidate** — endpoint URL and OAuth model verification pending before approval),
