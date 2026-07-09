@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-08-mcp-ecosystem-update.md](./2026-07-08-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-08 (daily scheduled run)
+- **Latest daily update:** [2026-07-09-mcp-ecosystem-update.md](./2026-07-09-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-09 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -20,13 +20,13 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | --- | --- | --- | --- | --- | --- |
 | 1 | **Official MCP Registry** | Upstream discovery | Authoritative; v0.1 frozen → v1 GA; June 10 update added ACR/MCR support; ~2,000 entries | Metadata only, no quality/security guarantees | Our primary **sync source** |
 | 2 | **JFrog MCP Registry** | Enterprise registry | Part of JFrog supply-chain suite; **GA March 18, 2026** | Curated internal catalog, RBAC, audit, allowlist | **Closest analogue** — benchmark; now fully shipped |
-| 3 | **Runlayer** | Enterprise gateway + catalog | **$42M total** (**$30M Series A, June 24, 2026**, led by Felicis/Khosla); customers include Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s; 18,000+ server catalog | Security-approved servers, ABAC, conditional access, SCIM, audit; `discovered != approved != enabled` enforced | **Top-tier** — largest pure-play enterprise MCP governance funding; architecture exactly matches our boundary discipline |
+| 3 | **Runlayer** | Enterprise gateway + catalog | **$42M total** (**$30M Series A, June 24, 2026**, led by Felicis/Khosla); customers include Instacart, Gusto, Decagon, Opendoor, dbt Labs, AngelList, Lemonade + Fortune 500s; 18,000+ server catalog; **AAIF founding member** (alongside Anthropic, OpenAI, Google — confirmed July 2026) | Security-approved servers, ABAC, conditional access, SCIM, audit; `discovered != approved != enabled` enforced; MCP Apps extension supported from day 1 by existing governance layer | **Top-tier** — largest pure-play enterprise MCP governance funding; architecture exactly matches our boundary discipline; now in governance co-authorship position via AAIF |
 | 4 | **Obot** | Gateway + catalog | OSS (MIT); **$35M seed confirmed**; v0.23.3 released June 25 (v0.23.2: 3 security advisories — OAuth token theft, unauthenticated registry access, SSRF via remote MCP URLs — all patched) | **Clean** discovery→approval→runtime, IT-verified trust | Best model-match; well-funded; study its split |
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~52,024 servers** (July 8 — +63 vs July 7; ~6,951 remote connectors) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **52,581 servers** (July 9 — +557 vs July 8; 7,734 remote connectors; 359,561 tools) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 

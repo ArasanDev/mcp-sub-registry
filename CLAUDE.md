@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-08 (daily research pass):**
+**As of 2026-07-09 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -483,6 +483,32 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   (9) **SEP-2127 Server Cards** merged as Draft June 26; WG active through Aug 14; no new outputs.
   (10) **Docker MCP Catalog** added community server warning banner + Gordon OAuth flow improvements + 60+ new remote servers.
   (11) **Clean security window Day 10** — no new CVEs affecting cataloged servers July 7–8. All 19 remain approved/public.
+  **July 9 new findings:** (1) **Glama 52,581** (+557 vs July 8; 7,734 connectors; 359,561 tools); spec
+  countdown **19 days** to July 28. (2) **AAIF "MCP Is Growing Up" blog post**: enterprise maturation
+  signal — 78% of enterprise AI teams have MCP-backed agents in production; 28% Fortune 500 deployed MCP
+  in under 18 months; 97M monthly SDK downloads (March 2026); 41% in production per Stacklok survey.
+  EMA/SEP-990 confirmed stable with Anthropic + Microsoft + Okta as launch integrators.
+  [[AAIF blog]](https://aaif.io/blog/mcp-is-growing-up/) (3) **Runlayer joins AAIF as founding member**
+  alongside Anthropic, OpenAI, and Google — places Runlayer in governance co-authorship position; landscape
+  #3 entry updated. [[Runlayer AAIF]](https://www.runlayer.com/blog/runlayer-joins-anthropic-openai-google-as-aaif-founding-member)
+  (4) **Runlayer "MCP Apps" governance blog** — existing Runlayer controls cover the new MCP Apps extension
+  from day 1 (sandboxed iframe model; no new attack surface for governed deployments). No catalog schema
+  change needed. [[Runlayer MCP Apps]](https://www.runlayer.com/blog/mcp-apps-highlight-the-power-of-protocol-governance)
+  (5) **X (Twitter) MCP Server technical profile confirmed**: `api.x.com/mcp` (200+ endpoints) + `docs.x.com/mcp`
+  (API docs); Streamable HTTP; OAuth 2.0 via `xurl` bridge (token caching + auto-refresh). Catalog candidate #2
+  after HubSpot; headless auth model verification required before curating.
+  [[X Dev community]](https://devcommunity.x.com/t/announcing-the-hosted-x-mcp/269558) (6) **MCPCon Shanghai
+  confirmed Sept 6–7** at Shanghai International Convention Center, co-located with KubeCon China; 40+ sessions,
+  1,500+ attendees; session abstracts not yet accessible via public crawl. Re-check in 1–2 weeks.
+  (7) **Security: Day 11 clean window** — no new CVEs July 8–9 affecting cataloged servers. Adversa AI
+  published "Top MCP Security Resources July 2026" roundup; Amazon Q CVE-2026-12957/12958 (CVSS 8.5;
+  Wiz Research; auto-load MCP config without consent; patched) documented — not in catalog; reconfirms
+  auto-execution-without-consent as industry-recognized attack class. Practical DevSecOps "MCP Security
+  Statistics 2026" report: 43% of public MCP servers have ≥1 vulnerability; 5.5% have poisoned tool
+  descriptions in production; 73% SSRF-vulnerable in BlueRock scan. All 19 catalog servers remain
+  approved/public. (8) **Official MCP Registry count context**: 9,652 latest server records + 28,959
+  server/version records (May 24, 2026 API pull) — v0.1 frozen; v1 GA in development.
+  [[registry.modelcontextprotocol.io]](https://registry.modelcontextprotocol.io/)
   **July 7 new findings:** (1) **Glama ~51,961** (+384 vs July 6); spec countdown **21 days** to July 28.
   (2) **MCPCon Shanghai schedule announced July 8** — event Sept 6–7, KubeCon China co-located; scan session
   abstracts for catalog candidates. (3) **X (Twitter) MCP Server confirmed at `https://api.x.com/mcp`**
