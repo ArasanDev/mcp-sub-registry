@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-09-mcp-ecosystem-update.md](./2026-07-09-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-09 (daily scheduled run)
+- **Latest daily update:** [2026-07-10-mcp-ecosystem-update.md](./2026-07-10-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-10 (daily scheduled run)
 
 ## Ranking criteria
 
@@ -25,12 +25,13 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **20,120+** (as of July 1, 2026); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **52,581 servers** (July 9 — +557 vs July 8; 7,734 remote connectors; 359,561 tools) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **PulseMCP** | Directory | **21,330+** (July 10 — largest single-day jump recorded; batch indexing suspected); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **53,151 servers** (July 10 — +570 vs July 9; 7,956 remote connectors; 366,331 tools) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
-**Honorable mentions / watch list:** **Kiro IDE** (Amazon; enterprise MCP Server Registry — admin allowlist enforced via HTTPS-hosted JSON file, set in admin console and applied to all org users; CLI 2.11.0, July 2, 2026, added OAuth MCP commands; IDE-layer enforcement validates our gateway catalog as allowlist source-of-truth; MCP Registry governance launched March 12, 2026; [[Kiro blog]](https://kiro.dev/blog/enterprise-governance-mcp-and-models/)),
+**Honorable mentions / watch list:** **Salesloft MCP** (Clari + Salesloft, July 9, 2026; hosted MCP server natively listed in Anthropic's Claude connector directory — 343 verified integrations; OAuth-gated; revenue intelligence / sales persona; not current developer-tools persona — watch for sales persona bundle, §12.5),
+**Kiro IDE** (Amazon; enterprise MCP Server Registry — admin allowlist enforced via HTTPS-hosted JSON file, set in admin console and applied to all org users; CLI 2.11.0, July 2, 2026, added OAuth MCP commands; IDE-layer enforcement validates our gateway catalog as allowlist source-of-truth; MCP Registry governance launched March 12, 2026; [[Kiro blog]](https://kiro.dev/blog/enterprise-governance-mcp-and-models/)),
 Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; tech preview; no June GA),
 mcp.so (~20,222, unvetted), MCP Market (~10k, community),
 MintMCP (**SOC 2 Type II certified**; STDIO-to-production containerization; active June 2026 development),
@@ -156,12 +157,16 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
   exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
   with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
-  servers). Cross-registry ecosystem count: **~74,000+ servers** (Official Registry +
-  Glama + Smithery + mcp.so + github.com/modelcontextprotocol; Glama **~51,577**
-  as of July 6; PulseMCP **20,110+**; MCPToplist cross-registry
-  aggregate **73,547** as of late June 2026).
+  servers). Cross-registry ecosystem count: **~74,500+ servers** (July 10: Glama **53,151** +
+  PulseMCP **21,330+** + mcp.so ~20,222 + Smithery ~7,000; MCPToplist cross-registry
+  aggregate **73,547** as of late June 2026; current estimate ~74,500+ after July 10 spikes).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
-  set: **19**. The trust gap — ~74k indexed vs. 19 approved — is the product.
+  set: **19**. The trust gap — ~74.5k indexed vs. 19 approved — is the product.
+  **Privacy leakage (July 2026):** "What Happens Locally, Leaks Globally" (arxiv:2606.21338)
+  analyzed 10,655 MCP servers: 12.4% have confirmed privacy leakage risks; credentials
+  are 56.22% of leaked entities; Glama has the lowest leakage rate (8.8%) among registries
+  studied. Our schema stores secret *names* only — structurally immune to the documented
+  leakage pattern.
   **Ecosystem concentration risk (Security Boulevard, June 2026):** 973 MCP npm packages
   analyzed; 71% single-maintainer; 56% < 30 days old; 25% no source repo; 9/11 registries
   failed to detect malicious uploads. Our remote-HTTP-only catalog is immune to all STDIO/npm
@@ -177,7 +182,7 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   All three require **endpoint-level** security, not just gateway-layer. Our catalog is not a
   runtime surface — these are concerns for gateway operators and MCP client implementers.
   [[Backslash]](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces)
-- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **22 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 new packages; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
+- **Spec watch:** MCP 2026-07-28 RC (locked May 21; ships July 28 — **18 days**). SDK v2 betas live June 29 (Python mcp==2.0.0b1; TS v2 beta.2 July 2; Go v1.7.0-pre.1; C# v2.0.0-preview.1); Python stable July 27; TS stable July 28. Breaking changes:
   `initialize`/`initialized` handshake removed; `Mcp-Session-Id` deprecated; stateless protocol
   enables round-robin load balancing; new `_meta` carries capabilities + W3C trace context;
   `ttlMs`/`cacheScope` for list/read cache control; Roots/Sampling/Logging deprecated (12-month window);

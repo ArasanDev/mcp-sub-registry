@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-09 (daily research pass):**
+**As of 2026-07-10 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -509,6 +509,31 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   approved/public. (8) **Official MCP Registry count context**: 9,652 latest server records + 28,959
   server/version records (May 24, 2026 API pull) — v0.1 frozen; v1 GA in development.
   [[registry.modelcontextprotocol.io]](https://registry.modelcontextprotocol.io/)
+  **July 10 new findings:** (1) **Glama 53,151** (+570 vs July 9; 7,956 connectors; 366,331 tools);
+  **PulseMCP 21,330+** (+920 vs July 8 — largest single-day jump recorded, batch indexing suspected);
+  spec countdown **18 days** to July 28. Cross-registry estimate: **~74,500+**.
+  (2) **Salesloft MCP Server (Clari + Salesloft, July 9)** — hosted MCP server natively listed in
+  Anthropic's Claude connector directory (no custom setup); vendor-hosted, OAuth-gated; revenue intelligence
+  / sales persona. Added to landscape watch list; not current developer-tools curate queue — relevant to
+  §12.5 sales persona bundle. [[Salesloft MCP]](https://www.salesloft.com/company/newsroom/clari-salesloft-forecasting-execution-mcp-server)
+  (3) **"What Happens Locally, Leaks Globally" (arxiv:2606.21338)**: 10,655 MCP servers analyzed; 12.4%
+  have confirmed privacy leakage risks; credentials 56.22% of entities; Glama has lowest leakage rate
+  (8.8%). Our secret-names-only schema is structurally immune to the documented leakage pattern.
+  [[paper]](https://arxiv.org/pdf/2606.21338)
+  (4) **WebMCP MSTI (arxiv:2606.06387)**: Mid-Session Tool Injection — new attack class exploiting
+  WebMCP tool registration lifecycle via AbortSignal hijacking or race conditions. Not a catalog-side
+  risk; relevant to gateway operators enabling WebMCP. [[paper]](https://arxiv.org/abs/2606.06387)
+  (5) **AAIF "MCP Is Now Enterprise Infrastructure"** — new blog recap of MCP Dev Summit North America;
+  Uber disclosed: 5,000+ engineers, 10,000+ internal services, 1,500+ monthly active agents, 60,000+
+  weekly executions on MCP. 23/95 summit sessions focused on security — highest density at any MCP event.
+  [[AAIF blog]](https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/)
+  (6) **Runlayer 1.25.0** (Jan 2026; surfaced today): shadow MCP server visibility for admins; 14 new
+  connectors (Snowflake, Workday, CrowdStrike Falcon, etc.); named to Notable Capital & Morgan Stanley
+  2026 Rising in Cyber list. (7) **Security Day 12 clean** — no new CVEs July 9–10 affecting cataloged
+  servers. "Defending Model Context Protocol" (Security Boulevard, July 7) is the third independent
+  framework (after NSA + OWASP MCP Top 10) to frame registry-level approval as the foundational security
+  control. [[Security Boulevard]](https://securityboulevard.com/2026/07/defending-model-context-protocol-a-framework-for-future-proof-ai-security/)
+  All 19 catalog servers remain approved/public.
   **July 7 new findings:** (1) **Glama ~51,961** (+384 vs July 6); spec countdown **21 days** to July 28.
   (2) **MCPCon Shanghai schedule announced July 8** — event Sept 6–7, KubeCon China co-located; scan session
   abstracts for catalog candidates. (3) **X (Twitter) MCP Server confirmed at `https://api.x.com/mcp`**
