@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-10 (daily research pass):**
+**As of 2026-07-11 (daily research pass):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -509,6 +509,25 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   approved/public. (8) **Official MCP Registry count context**: 9,652 latest server records + 28,959
   server/version records (May 24, 2026 API pull) — v0.1 frozen; v1 GA in development.
   [[registry.modelcontextprotocol.io]](https://registry.modelcontextprotocol.io/)
+  **July 11 new findings:** (1) **Glama 53,668** (+517 vs July 10; spec countdown **17 days** to July 28).
+  (2) **Large-scale MCP vulnerability scan (GBHackers)** — 9,695 servers analyzed across GitHub/Glama/Lobehub/PulseMCP;
+  5,832 with security issues; 2,259 confirmed exploitable; 4,982 distinct issues (880 arbitrary file access, 476 command
+  injection, 422 SSRF, 211 XSS, 185 prompt injection); 2,054 lack auth. Key researcher finding: popularity/badge signals
+  don't reliably predict security posture. Remote-HTTP + auth-gated catalog is structurally immune to all
+  file-access and command-injection findings. No catalog action required.
+  [[GBHackers]](https://gbhackers.com/thousands-of-mcp-servers-found-vulnerable/)
+  (3) **EMA stable — InfoQ deep-dive** — 7 launch connector servers confirmed: Asana, Atlassian, Canva, Figma,
+  Granola, Linear, Supabase. **5 of 7 in our catalog.** Anthropic + Microsoft + Okta as integrators. Slack
+  support in progress. [[InfoQ]](https://www.infoq.com/news/2026/07/mcp-ema-enterprise-auth/)
+  (4) **MCPCon Shanghai schedule released (July 8)** — 40+ sessions, 1,500+ attendees, Sept 6–7 at
+  Shanghai International Convention Center co-located with KubeCon China. Session abstracts not yet
+  publicly accessible; re-check late July. [[AAIF/lfopensource]](https://www.lfopensource.cn/mcp-dev-summit-shanghai/)
+  (5) **Featured MCP Server GA (July 7)** — PR-agency AI tool; not a developer-tools catalog candidate.
+  **Press Ranger MCP Server (July 9)** — press release distribution; not a catalog candidate.
+  (6) **Security Day 13 clean** — no new CVEs July 10–11 affecting cataloged servers. Five independent
+  frameworks (NSA, OWASP MCP Top 10, OX Security, GBHackers large-scale scan, Security Boulevard) now
+  explicitly identify remote-HTTP + auth-gated model as the structural defense.
+  All 19 catalog servers remain approved/public.
   **July 10 new findings:** (1) **Glama 53,151** (+570 vs July 9; 7,956 connectors; 366,331 tools);
   **PulseMCP 21,330+** (+920 vs July 8 — largest single-day jump recorded, batch indexing suspected);
   spec countdown **18 days** to July 28. Cross-registry estimate: **~74,500+**.

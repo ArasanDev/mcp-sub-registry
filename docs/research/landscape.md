@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-10-mcp-ecosystem-update.md](./2026-07-10-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-10 (daily scheduled run)
+- **Latest daily update:** [2026-07-11-mcp-ecosystem-update.md](./2026-07-11-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-11 (daily scheduled run)
 
 ## Ranking criteria
 
