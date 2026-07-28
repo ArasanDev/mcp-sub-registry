@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-11-mcp-ecosystem-update.md](./2026-07-11-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-11 (daily scheduled run)
+- **Latest daily update:** [2026-07-28-mcp-ecosystem-update.md](./2026-07-28-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-28 (daily scheduled run — spec final release day)
 
 ## Ranking criteria
 
@@ -25,8 +25,8 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **21,330+** (July 10 — largest single-day jump recorded; batch indexing suspected); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **53,151 servers** (July 10 — +570 vs July 9; 7,956 remote connectors; 366,331 tools) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **PulseMCP** | Directory | **22,240+** (July 28 — up from 21,330 on July 9); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **~61,399 servers** (July 28 — up from 53,668 on July 11; cross-registry MCPToplist 76,803+ as of July 17) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
@@ -40,7 +40,8 @@ Microsoft MCP Gateway (k8s, no catalog),
 **Microsoft Dataverse MCP Servers** (60+ ready-to-use MCP servers as of July 6, 2026 [Power Platform Blog](https://www.microsoft.com/en-us/power-platform/blog/2026/07/06/dataverse-july2026/); governance controls; coding-agent plugin now supports Claude + Cursor + GitHub Copilot; remote Dataverse MCP endpoint in private preview end-July; per-tenant enterprise SaaS, not catalogable; signals Microsoft's enterprise MCP footprint now spans two distinct catalog products),
 **Stacklok ToolHive** (Apache 2.0; enterprise MCP server management + **Sigstore/GitHub Attestations provenance verification** — most concrete implementation of cryptographic MCP server trust; maintains verified-server registry; precedent for `provenance.attestation_url` schema field),
 **AWS Agent Registry** (April 9, 2026 preview; private org catalog in Bedrock AgentCore; indexes agents/MCP servers/skills; exposes as MCP endpoint; **namespace migration Aug 6, 2026**: bedrock-agentcore → agent-registry; still Preview — watch for GA),
-**X (Twitter) MCP Server** (launched June 30, 2026; official hosted MCP server wrapping X API — search posts, read content, user lookups, trend analysis; user OAuth auth; [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/); **catalog candidate** — endpoint URL and OAuth model verification pending before approval),
+**Workato Enterprise MCP Registry** (launched July 16, 2026; 60+ production-ready Enterprise MCP servers across CRM/HR/finance/IT ops; MCP Composer + Registry + Gateway/Proxy full-platform play; lifecycle governance: development → testing → publishing → versioning → decommissioning, only approved versions visible; Verified User Access ensures every AI action runs under requesting user's identity; architecture enforces `discovered != approved != enabled` — fifth major enterprise player to independently converge on this boundary; [[BusinessWire]](https://www.businesswire.com/news/home/20260716488768/en/Workato-Launches-Enterprise-MCP-Registry-Advancing-the-Enterprise-AI-Control-and-Execution-Platform); per-tenant deployment, not catalogable in universal registry — watch list),
+**X (Twitter) MCP Server** (launched June 30, 2026; official hosted MCP server at `api.x.com/mcp` wrapping 200+ X API endpoints; **auth complexity update (July 2026)**: X killed Free/Basic/Pro API tiers in Feb 2026; now pay-per-use only ($0.015/post, $0.20 if URL); Production environment enrollment required or MCP returns `client-not-enrolled`; Follows/Blocks and programmatic replies are Enterprise-only; headless-only (no background scheduling); [[TechCrunch]](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/); **catalog status**: #2 curate priority downgraded — verify gateway-compatible auth path exists before adding),
 **Salesforce Agentforce MCP** (**Agentforce 3 — June 23, 2026**: added Salesforce DX MCP Server + Heroku Platform MCP Server + MuleSoft MCP Server, bringing total to 4+ distinct vendor-operated MCP servers; original GA June 15 covered SObject CRUD + SOQL + Tableau analytics; bidirectional — Agentforce also consumes external MCP servers via Atlas Reasoning Engine 3.0; org-specific endpoint pattern, not catalog-friendly),
 **MACH Alliance MCP Registry** (new entrant June 2026; vendor-neutral, enterprise-focused, metadata-format aligned with official MCP Registry; open publishing, member-only governance/verification features; no curation signal yet — watch list only),
 **SnapLogic MCP Builder** (GA July 1, 2026; iPaaS platform automatically converts existing SnapLogic integration pipelines into MCP-compatible tools; no-code/low-code bridge pattern; customer-specific URLs, not catalogable; represents the enterprise-integration-to-MCP wrapping pattern now also pursued by Workato, MuleSoft, Boomi; [[GlobeNewswire]](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/SnapLogic-Launches-MCP-Builder-to-Accelerate-Enterprise-AI-Adoption-Through-Simplified-MCP-Creation.html)),
@@ -153,13 +154,13 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   71% at launch. Signals that our `approved` catalog set is already aligned with enterprise
   provisioning intent.
   [[MCP Blog — EMA]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
-- **Scale signal (July 2026):** Censys: 12,520 internet-accessible MCP services, ~40%
-  unauthenticated — **Trend Micro follow-up (June 2026)** puts 1,467 of these as publicly
-  exposed MCP servers (3x prior baseline), 74% hosted on major CSPs (AWS/Azure/GCP/Oracle),
-  with CVSS 9.8 command-injection found in unofficial AWS/Azure servers (not official vendor
-  servers). Cross-registry ecosystem count: **~74,500+ servers** (July 10: Glama **53,151** +
-  PulseMCP **21,330+** + mcp.so ~20,222 + Smithery ~7,000; MCPToplist cross-registry
-  aggregate **73,547** as of late June 2026; current estimate ~74,500+ after July 10 spikes).
+- **Scale signal (July 28, 2026):** Cross-registry ecosystem count updated: **~76,803+**
+  (MCPToplist July 17 snapshot; Glama **~61,399** + PulseMCP **22,240+** + Smithery ~7,000 +
+  mcp.so ~20,222 — trust gap: **76k+ indexed vs. 19 approved** in this catalog). Censys:
+  12,520 internet-accessible MCP services, ~40% unauthenticated — Trend Micro follow-up
+  (June 2026) puts 1,467 of these as publicly exposed MCP servers (3x prior baseline), 74%
+  hosted on major CSPs (AWS/Azure/GCP/Oracle), with CVSS 9.8 command-injection found in
+  unofficial AWS/Azure servers (not official vendor servers).
   Official MCP Registry alone: ~9,652 latest records (May 24). Our curated
   set: **19**. The trust gap — ~74.5k indexed vs. 19 approved — is the product.
   **Privacy leakage (July 2026):** "What Happens Locally, Leaks Globally" (arxiv:2606.21338)

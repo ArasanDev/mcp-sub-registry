@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-11 (daily research pass):**
+**As of 2026-07-28 (daily research pass — MCP spec final release day):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,9 +249,12 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-06-28:
-  Runlayer elevated to #3 (from #11) after $30M Series A (June 24; total $42M; see June 28
-  findings above). Prior update 2026-06-21:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-07-28:
+  scale numbers updated (Glama ~61,399; PulseMCP 22,240+; MCPToplist 76,803+); Workato
+  Enterprise MCP Registry added to watch list (July 16, 2026 launch); X/Twitter MCP auth
+  complexity documented (auth downgraded from "#2 priority" to "verify gateway path first");
+  SEP-2127 path CORRECTED to `/.well-known/mcp.json`; spec marked FINAL (not countdown).
+  Prior key updates: Runlayer elevated to #3 (from #11) after $30M Series A (June 24; total $42M).
   Palo Alto Networks / Prisma AIRS elevated to #4 (acquired Portkey May 29, 2026 — trillions
   of tokens/month, Prisma AIRS 3.0 AI Gateway). Kong MCP Registry dropped to honorable
   mention (feature, not a standalone product). NSA guidance (May 20, 2026) independently
@@ -509,6 +512,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   approved/public. (8) **Official MCP Registry count context**: 9,652 latest server records + 28,959
   server/version records (May 24, 2026 API pull) — v0.1 frozen; v1 GA in development.
   [[registry.modelcontextprotocol.io]](https://registry.modelcontextprotocol.io/)
+  **July 28 new findings (spec final-release day):** (1) **MCP Specification 2026-07-28 FINAL ships TODAY** — largest revision since launch; stateless core (`Mcp-Session-Id` removed, initialize handshake removed), mandatory `Mcp-Method`/`Mcp-Name` headers, OAuth 2.1 resource-server model, MCP Apps (sandboxed iframe UIs), Tasks extension, full JSON Schema 2020-12 for tool schemas, multi-round-trip requests. No catalog schema change. [[RC blog]](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
+  (2) **SDK v2 stable TODAY**: Python `mcp==2.0.0` stable July 27; TypeScript `@modelcontextprotocol/server`+`@modelcontextprotocol/client` v2.0.0 stable July 28 (package rename + split). [[SDK betas blog]](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/)
+  (3) **Glama ~61,399** (up from 53,668 July 11, +7,731 in 17 days); **PulseMCP 22,240+** (up from 21,330); **MCPToplist cross-registry 76,803+** (July 17 snapshot). Trust gap: 76k+ indexed vs. 19 approved.
+  (4) **Workato Enterprise MCP Registry** (launched July 16, 2026) — new landscape entrant; 60+ production-ready servers; MCP Composer + Registry + Gateway/Proxy; governed lifecycle (`development → publishing`; only approved versions visible); Verified User Access; fifth major enterprise player to independently enforce `discovered != approved != enabled`. Not catalogable (per-tenant URLs). Added to landscape.md watch list. [[BusinessWire]](https://www.businesswire.com/news/home/20260716488768/en/Workato-Launches-Enterprise-MCP-Registry-Advancing-the-Enterprise-AI-Control-and-Execution-Platform)
+  (5) **SEP-2127 Server Cards path CORRECTED**: `/.well-known/mcp.json` (not `mcp/server-card.json` as previously noted; SEP-1649 was superseded). WG meeting July 13; WG term ends Aug 14 (17 days). New validator at agent-ready.dev. [[SEP-2127 PR]](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127)
+  (6) **Security Day 30+ clean window**: New CVEs July 12–28 are community/STDIO packages (MCP Appium XSS July 14; mcp-gitlab path traversal) — neither in catalog. All 19 catalog servers remain approved/public.
+  (7) **HubSpot MCP confirmed ready for curate**: `mcp.hubspot.com`; GA April 13; OAuth 2.1 + PKCE ONLY (no private-app-token path; Claude one-click connector now live). **#1 next curate run.**
+  (8) **X/Twitter MCP auth complexity**: X killed Free/Basic/Pro API tiers Feb 2026; pay-per-use only ($0.015/post, $0.20 if URL); Production env enrollment required; Enterprise-only for some endpoints; headless-only (no background scheduling). Down-ranked from "#2 curate priority / verify auth" to "verify gateway-compatible auth path before proceeding."
   **July 11 new findings:** (1) **Glama 53,668** (+517 vs July 10; spec countdown **17 days** to July 28).
   (2) **Large-scale MCP vulnerability scan (GBHackers)** — 9,695 servers analyzed across GitHub/Glama/Lobehub/PulseMCP;
   5,832 with security issues; 2,259 confirmed exploitable; 4,982 distinct issues (880 arbitrary file access, 476 command
@@ -717,30 +728,29 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   200 through HTTPS. Gateway unchanged and healthy.
 - **Next actions (ordered):**
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  2. Next `subregistry-curate` run: **Comms & support group** — HubSpot (NOW UNBLOCKED — GA
-     confirmed April 13, `https://mcp.hubspot.com/mcp`, OAuth 2.1 + PKCE), Intercom, Zapier.
-     HubSpot endpoint confirmed live in second-pass June 17 research. Also: **X (Twitter) MCP
-     Server** (new — June 30, 2026; vendor-hosted; OAuth-gated; endpoint URL + auth model
-     verification required before adding).
-  3. Next `subregistry-audit` pass: (a) ~~verify `com.asana/mcp` SSE endpoint~~ **DONE 2026-06-18** —
-     Asana V1 SSE endpoint was dead (shut down May 11); updated to V2 Streamable HTTP
-     `https://mcp.asana.com/v2/mcp` in this commit. (b) **PRIORITY: Verify all TypeScript SDK-based
-     vendors are running >=1.26.0** (CVE-2026-25536 cross-client data leak + CVE-2026-0621 ReDoS — both
-     patched by v1.26.0). ~~Atlassian SSE deprecated June 30~~ — **DONE: Atlassian SSE shutdown June 30
-     confirmed; our entry already on Streamable HTTP, no action needed.** (c) Any remaining SSE-typed
-     entry should be audited for migration to Streamable HTTP — industry-wide pattern now complete.
-     (d) CVE-2026-11624 DNS rebinding: confirm all cataloged vendors run MCP server >=v0.25.
+  2. Next `subregistry-curate` run: **Comms & support group** — **HubSpot** (endpoint `mcp.hubspot.com`
+     CONFIRMED READY: GA April 13, OAuth 2.1 + PKCE only, one-click Claude connector; no DCR;
+     [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
+     Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
+     (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
+     some endpoints; headless-only) — verify gateway-compatible auth path before adding.
+  3. Next `subregistry-audit` pass: **PRIORITY: Verify all TypeScript SDK-based vendors are running
+     >=v1.26.0** (CVE-2026-25536 data leak + CVE-2026-0621 ReDoS; both patched by v1.26.0). With
+     TS SDK v2.0.0 stable TODAY, vendors migrating to v2 auto-clear this gate; vendors staying on
+     v1.x should be on v1.29.0+. After audit: check each cataloged server for `/.well-known/mcp.json`
+     (SEP-2127 Server Cards; note: correct path is `mcp.json`, NOT `mcp/server-card.json`).
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
-  5. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
+  5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
+     new OAuth 2.1 resource-server model). **Spec is FINAL as of today.** No catalog schema change
+     needed. After 6 months, flag Python-SDK vendors still on v1.x.
+  6. Once SEP-2127 (MCP Server Cards) WG finalizes (term ends Aug 14, 2026 — 17 days), extend
+     `subregistry-audit` to GET `/.well-known/mcp.json` on each cataloged server and record
+     tool count + protocol version in `verification.notes`. **PATH: `/.well-known/mcp.json`**
+     (corrected from prior notes). No schema migration needed until then.
+  7. AWS Agent Registry namespace migration: Aug 6 (9 days); our `com.aws/mcp` unaffected.
+     Watch for GA status — if GA, assess whether to add AWS Agent Registry as sync source.
+  8. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
-     (MDPI Future Internet 18(5):243 proposal; no action needed now).
-  6. Track the 2026-07-28 spec RC (stateless; mandatory `Mcp-Method`/`Mcp-Name`; `_meta`;
-     ships July 28 — **22 days**) for the Gateway operator; no catalog schema change needed.
-     MCP Python SDK v2.0.0b1 beta shipped June 30; stable v2.0.0 targets July 27 —
-     cataloged Python-SDK vendors must ship v2 compliance before July 28.
-  7. Once SEP-2127 (MCP Server Cards) merges into spec (WG term ends Aug 14, 2026 — may be
-     post-RC), extend `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each
-     cataloged server origin and record tool count + version in `verification.notes`. No schema
-     migration needed now.
-  8. Anthropic MCP Tunnels (research preview, May 2026): when GA, consider tracking
+     (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).
+  9. Anthropic MCP Tunnels (research preview, May 2026): when GA, consider tracking
      `remotes[].type: "mcp-tunnel"` as a new endpoint archetype for private-network servers.
