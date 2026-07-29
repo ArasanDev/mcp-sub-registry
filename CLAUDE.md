@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-07-28 (daily research pass — MCP spec final release day):**
+**As of 2026-07-29 (daily research pass — day after MCP spec 2026-07-28 final release):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,8 +249,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-07-28:
-  scale numbers updated (Glama ~61,399; PulseMCP 22,240+; MCPToplist 76,803+); Workato
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-07-29:
+  scale numbers updated (Glama 62,310+; PulseMCP 22,260+; MCPToplist 81,852). Prior update 2026-07-28:
+  Glama ~61,399; PulseMCP 22,240+; MCPToplist 76,803+; Workato
   Enterprise MCP Registry added to watch list (July 16, 2026 launch); X/Twitter MCP auth
   complexity documented (auth downgraded from "#2 priority" to "verify gateway path first");
   SEP-2127 path CORRECTED to `/.well-known/mcp.json`; spec marked FINAL (not countdown).
@@ -726,6 +727,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   doesn't resolve inside the Caddy container on Linux). Restarted Caddy container.
   Verified: `/health`, `/servers`, `/server/:slug`, `/llms.txt`, `/v0.1/gateway/catalog` all
   200 through HTTPS. Gateway unchanged and healthy.
+- **July 29 new findings (day after spec final release):** (1) **MCP spec 2026-07-28 CONFIRMED SHIPPED** — official release blog live at `blog.modelcontextprotocol.io/posts/2026-07-28/`; all four Tier 1 SDKs (TypeScript, Python, Go, C#) + Rust beta shipped. (2) **TypeScript SDK v2 package split confirmed**: monolithic `@modelcontextprotocol/sdk` retired; replaced by `@modelcontextprotocol/server` + `@modelcontextprotocol/client` + thin adapters (Node.js, Express, Hono, Fastify); ~83% package size reduction, 25% faster; v1.x security patches for ≥6 months. [[TS SDK v2 docs]](https://ts.sdk.modelcontextprotocol.io/v2/) (3) **Global MCP Release Parties**: San Francisco (July 28) + Amsterdam (July 29 at AI House); additional cities expected. [[Amsterdam]](https://meet.modelcontextprotocol.io/2026/07/mcp-release-party-amsterdam-TarfhhI6FJwc) (4) **Registry scale**: Glama 62,310+ (+911); PulseMCP 22,260+ (+20); MCPToplist 81,852 cross-registry (+5,049 since July 17). Trust gap: ~82k indexed vs. 19 approved. (5) **CIMD replaces DCR**: OAuth catalog vendors (Atlassian, GitHub, Slack, Stripe, etc.) should verify they implement Client ID Metadata Documents per new spec, not the deprecated Dynamic Client Registration. (6) **Security Day 31+ clean**: no new CVEs affecting cataloged servers post-July 28. (7) **SEP-2127 WG: 16 days to close** (Aug 14); `/.well-known/mcp.json` path confirmed; after WG closes, `subregistry-audit` can poll all 19 servers for server card compliance.
 - **Next actions (ordered):**
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   2. Next `subregistry-curate` run: **Comms & support group** — **HubSpot** (endpoint `mcp.hubspot.com`
@@ -735,9 +737,11 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
   3. Next `subregistry-audit` pass: **PRIORITY: Verify all TypeScript SDK-based vendors are running
-     >=v1.26.0** (CVE-2026-25536 data leak + CVE-2026-0621 ReDoS; both patched by v1.26.0). With
-     TS SDK v2.0.0 stable TODAY, vendors migrating to v2 auto-clear this gate; vendors staying on
-     v1.x should be on v1.29.0+. After audit: check each cataloged server for `/.well-known/mcp.json`
+     >=v1.26.0 or migrated to v2.0.0** (CVE-2026-25536 data leak + CVE-2026-0621 ReDoS; both patched
+     by v1.26.0; v2 auto-clears). TS SDK v2.0.0 stable as of July 28 (`@modelcontextprotocol/server` +
+     `@modelcontextprotocol/client`); v1.x receives security patches for ≥6 months. Also verify CIMD
+     compliance (DCR deprecated in new spec) for OAuth-gated catalog vendors.
+     After audit: check each cataloged server for `/.well-known/mcp.json`
      (SEP-2127 Server Cards; note: correct path is `mcp.json`, NOT `mcp/server-card.json`).
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
