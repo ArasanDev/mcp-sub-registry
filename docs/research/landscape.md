@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-07-30-mcp-ecosystem-update.md](./2026-07-30-mcp-ecosystem-update.md)
-- **Last updated:** 2026-07-30 (daily scheduled run — spec post-release day 2; day-zero vendor roll-call; CVE-2026-40576)
+- **Latest daily update:** [2026-07-31-mcp-ecosystem-update.md](./2026-07-31-mcp-ecosystem-update.md)
+- **Last updated:** 2026-07-31 (daily scheduled run — spec post-release day 3; CVE-2026-66012 SiYuan CVSS 10; MCPCon Shanghai agenda live; Glama 65,354)
 
 ## Ranking criteria
 
@@ -25,8 +25,8 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **22,260+** (July 29 — up from 22,240+ on July 28); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~63,926 servers** (July 30 — up from 62,310+ on July 29; cross-registry MCPToplist 81,852 as of July 28) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **PulseMCP** | Directory | **~22,110+** (July 31 — approx. flat vs 22,260+ on July 29; data variation); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **65,354 servers** (July 31 — up from ~63,926 on July 30, +1,428; cross-registry MCPToplist 81,852 as of July 28) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
