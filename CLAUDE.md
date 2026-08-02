@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-01 (daily research pass — Black Hat USA 2026 "MCPwned" MCP briefing; Runlayer AARM conformance + 1Password; Glama ~66,247; MCPToplist ~95k+):**
+**As of 2026-08-02 (daily research pass — Glama ~66,538; Anthropic Connectors 439 verified; Black Hat MCPwned briefing Aug 5–6 imminent; AWS Agent Registry namespace migration Aug 6; SEP-2127 WG closes Aug 14):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,10 +249,13 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-01:
-  scale numbers updated (Glama ~66,247; PulseMCP ~22,110+; MCPToplist est. ~95,000+); Runlayer
-  AARM Extended Conformance + 1Password integration added to ranking entry; Black Hat USA 2026
-  "MCPwned" briefing documented. Prior update 2026-07-31:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-02:
+  scale numbers updated (Glama ~66,538; PulseMCP ~22,100+; MCPToplist est. ~95,385);
+  Anthropic Connectors Directory reached 439 verified connectors (up from 343 July 4, +96);
+  Black Hat MCPwned briefing Aug 5–6 flagged as imminent watch item; AWS Agent Registry
+  namespace migration Aug 6 documented; SEP-2127 WG closes Aug 14 (12 days). Security: Day
+  37 clean window continues against cataloged servers. Prior update 2026-08-01:
+  Runlayer AARM Extended Conformance + 1Password; Glama ~66,247; MCPToplist ~95k+. Prior prior 2026-07-31:
   scale numbers updated (Glama 65,354; PulseMCP ~22,110+; MCPToplist 81,852). Prior prior update 2026-07-30:
   scale numbers updated (Glama ~63,926; PulseMCP 22,260+; MCPToplist 81,852). Prior update 2026-07-29:
   scale numbers updated (Glama 62,310+; PulseMCP 22,260+; MCPToplist 81,852). Prior update 2026-07-28:
@@ -763,7 +766,8 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      Watch for GA status — if GA, assess whether to add AWS Agent Registry as sync source.
   8. **Watch Black Hat USA 2026 disclosures (Aug 5–6 Briefings)** — "MCPwned" talk and other
      AI security research may surface findings affecting cataloged vendor endpoints; review
-     post-conference and run audit pass if any cataloged server is named.
+     post-conference and run audit pass if any cataloged server is named. **Slides not yet
+     published as of Aug 2; re-check Aug 6–7 after the event closes.**
   9. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).
