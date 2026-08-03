@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-02 (daily research pass — Glama ~66,538; Anthropic Connectors 439 verified; Black Hat MCPwned briefing Aug 5–6 imminent; AWS Agent Registry namespace migration Aug 6; SEP-2127 WG closes Aug 14):**
+**As of 2026-08-03 (daily research pass — Glama ~67,178; MCPToplist ~96,771 (crosses 96k); Snowflake Cortex AI Gateway launched at Black Hat (Natoma acquisition); Black Hat MCPwned Aug 5–6; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 38 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,16 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-02:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-03:
+  **Snowflake Cortex AI Gateway** added to watch list (launched Black Hat USA 2026; built on
+  Natoma acquisition May 2026; 100+ MCP servers; 7 identity partners; public preview coming;
+  sixth enterprise player to independently enforce `discovered != approved != enabled`);
+  Glama ~67,178 (crosses 67k; +640 vs Aug 2); MCPToplist ~96,771 (crosses 96k);
+  PulseMCP ~22,090+ (stable); security Day 38 clean; Black Hat MCPwned briefing still Aug 5–6
+  (no slides/CVEs yet). SEP-2127 Server Cards path confirmed as `/.well-known/mcp/server-card.json`
+  (prior CLAUDE.md §13 note said `/.well-known/mcp.json` — that may refer to a catalog-discovery
+  file; the per-server card path is `mcp/server-card.json`; WG term Aug 14, follow-on meeting
+  Aug 31). Prior update 2026-08-02:
   scale numbers updated (Glama ~66,538; PulseMCP ~22,100+; MCPToplist est. ~95,385);
   Anthropic Connectors Directory reached 439 verified connectors (up from 343 July 4, +96);
   Black Hat MCPwned briefing Aug 5–6 flagged as imminent watch item; AWS Agent Registry
@@ -758,16 +767,20 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
      new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
      After 6 months, flag Python-SDK vendors still on v1.x.
-  6. Once SEP-2127 (MCP Server Cards) WG finalizes (term ends Aug 14, 2026 — **13 days**), extend
-     `subregistry-audit` to GET `/.well-known/mcp.json` on each cataloged server and record
-     tool count + protocol version in `verification.notes`. **PATH: `/.well-known/mcp.json`**
-     (corrected from prior notes). No schema migration needed until then.
-  7. AWS Agent Registry namespace migration: **Aug 6 (5 days)**; our `com.aws/mcp` unaffected.
+  6. Once SEP-2127 (MCP Server Cards) WG finalizes (term ends Aug 14, 2026 — **11 days**), extend
+     `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each cataloged server and
+     record tool count + protocol version in `verification.notes`.
+     **PATH: `/.well-known/mcp/server-card.json`** (confirmed from GitHub PR #2127 and WG; prior
+     note `/.well-known/mcp.json` likely refers to a catalog-discovery file, not the server card).
+     No schema migration needed until then.
+  7. AWS Agent Registry namespace migration: **Aug 6 (tomorrow)**; our `com.aws/mcp` unaffected.
      Watch for GA status — if GA, assess whether to add AWS Agent Registry as sync source.
   8. **Watch Black Hat USA 2026 disclosures (Aug 5–6 Briefings)** — "MCPwned" talk and other
      AI security research may surface findings affecting cataloged vendor endpoints; review
      post-conference and run audit pass if any cataloged server is named. **Slides not yet
-     published as of Aug 2; re-check Aug 6–7 after the event closes.**
+     published as of Aug 3; re-check Aug 6–7 after the event closes.** Snowflake Cortex AI
+     Gateway (Natoma-based) was the primary MCP-relevant BH2026 announcement as of Aug 3 —
+     no named catalog vendors in any BH disclosure.
   9. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).

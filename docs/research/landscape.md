@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-02-mcp-ecosystem-update.md](./2026-08-02-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-02 (daily scheduled run — Glama ~66,538; Anthropic Connectors 439 verified; Black Hat MCPwned briefing Aug 5–6 imminent; AWS Agent Registry namespace migration Aug 6; SEP-2127 WG closes Aug 14)
+- **Latest daily update:** [2026-08-03-mcp-ecosystem-update.md](./2026-08-03-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-03 (daily scheduled run — Glama ~67,178 (+640); MCPToplist ~96,771 (crosses 96k); Snowflake Cortex AI Gateway launched at Black Hat 2026 (Natoma acquisition); Black Hat MCPwned briefing Aug 5–6 imminent; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 38 clean)
 
 ## Ranking criteria
 
@@ -25,12 +25,14 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **~22,100+** (Aug 2 — steady); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~66,538 servers** (Aug 2 — up from ~66,247 Aug 1, +291; post-spec surge continuing; cross-registry MCPToplist est. ~95,385 per July 31 snapshot) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **PulseMCP** | Directory | **~22,090+** (Aug 3 — stable); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **~67,178 servers** (Aug 3 — up from ~66,538 Aug 2, +640; post-spec surge continuing; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
-**Honorable mentions / watch list:** **Salesloft MCP** (Clari + Salesloft, July 9, 2026; hosted MCP server natively listed in Anthropic's Claude connector directory — 343 verified integrations; OAuth-gated; revenue intelligence / sales persona; not current developer-tools persona — watch for sales persona bundle, §12.5),
+**Honorable mentions / watch list:**
+**Snowflake Cortex AI Gateway** (launched Black Hat USA 2026, Aug 2026; built on Natoma acquisition closed ~June 2026; Natoma: $7M seed/Greylock+Index Ventures, 27-person team, CEO Pratyus Patnaik ex-atSpoke/Okta; Cortex AI Gateway integrates identity, policy, and audit at the tool-call level; supports 100+ MCP servers; governs Snowflake-native agents AND third-party agents on Claude Code + Cursor; 7 launch identity partners: 1Password, Aembit, Linx Security, Okta, SailPoint, Saviynt; public preview status; cost management: per-team/agent/workload AI spend attribution + limits; **sixth major enterprise player to independently converge on `discovered != approved != enabled`**; gateway/runtime product — consumes clean catalog data, does not replace a curated registry function; [[Snowflake blog]](https://www.snowflake.com/en/blog/enterprise-ai-security-agentic-mcp-governance/) [[VentureBeat]](https://venturebeat.com/security/snowflake-launches-cortex-ai-gateway-to-control-ai-agents-and-prevent-runaway-enterprise-costs/) [[CryptoRank: MCP gateways crystallizing as infra]](https://cryptorank.io/news/feed/0902a-snowflakes-cortex-ai-gateway-signals-mcp-gateways-are-crystallizing-as-infrastructure)),
+**Salesloft MCP** (Clari + Salesloft, July 9, 2026; hosted MCP server natively listed in Anthropic's Claude connector directory — 343 verified integrations; OAuth-gated; revenue intelligence / sales persona; not current developer-tools persona — watch for sales persona bundle, §12.5),
 **Kiro IDE** (Amazon; enterprise MCP Server Registry — admin allowlist enforced via HTTPS-hosted JSON file, set in admin console and applied to all org users; CLI 2.11.0, July 2, 2026, added OAuth MCP commands; IDE-layer enforcement validates our gateway catalog as allowlist source-of-truth; MCP Registry governance launched March 12, 2026; [[Kiro blog]](https://kiro.dev/blog/enterprise-governance-mcp-and-models/)),
 Kong AI Gateway (MCP Registry in Konnect Catalog, announced Feb 2, 2026; tech preview; no June GA),
 mcp.so (~20,222, unvetted), MCP Market (~10k, community),
@@ -154,9 +156,9 @@ agentic-community/mcp-gateway-registry (OSS gateway+registry),
   71% at launch. Signals that our `approved` catalog set is already aligned with enterprise
   provisioning intent.
   [[MCP Blog — EMA]](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)
-- **Scale signal (July 28, 2026):** Cross-registry ecosystem count updated: **~76,803+**
-  (MCPToplist July 17 snapshot; Glama **~61,399** + PulseMCP **22,240+** + Smithery ~7,000 +
-  mcp.so ~20,222 — trust gap: **76k+ indexed vs. 19 approved** in this catalog). Censys:
+- **Scale signal (Aug 3, 2026):** Cross-registry ecosystem count updated: **~96,771**
+  (MCPToplist Aug 2 snapshot; Glama **~67,178** + PulseMCP **~22,090+** + Smithery ~7,300 +
+  mcp.so ~20,222 + Official Registry ~9,652 — trust gap: **~97k indexed vs. 19 approved** in this catalog). Censys:
   12,520 internet-accessible MCP services, ~40% unauthenticated — Trend Micro follow-up
   (June 2026) puts 1,467 of these as publicly exposed MCP servers (3x prior baseline), 74%
   hosted on major CSPs (AWS/Azure/GCP/Oracle), with CVSS 9.8 command-injection found in
