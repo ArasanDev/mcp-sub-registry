@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-03-mcp-ecosystem-update.md](./2026-08-03-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-03 (daily scheduled run — Glama ~67,178 (+640); MCPToplist ~96,771 (crosses 96k); Snowflake Cortex AI Gateway launched at Black Hat 2026 (Natoma acquisition); Black Hat MCPwned briefing Aug 5–6 imminent; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 38 clean)
+- **Latest daily update:** [2026-08-04-mcp-ecosystem-update.md](./2026-08-04-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-04 (daily scheduled run — Glama ~67,664 (+486); Glama tools 494,862+; Black Hat MCPwned briefing TOMORROW Aug 5–6 (3,993 probes/48h from 327 IPs confirmed; Team Cymru); MCP WG sessions today+tomorrow (SDK WG, Inspector V2, MCP Apps, Gateways IG); Microsoft C# SDK v2 .NET Blog post; AWS Agent Registry migration Aug 6 (2 days); SEP-2127 WG closes Aug 14; security Day 39 clean)
 
 ## Ranking criteria
 
@@ -26,7 +26,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **~22,090+** (Aug 3 — stable); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~67,178 servers** (Aug 3 — up from ~66,538 Aug 2, +640; post-spec surge continuing; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **~67,664 servers** (Aug 4 — up from ~67,178 Aug 3, +486; also 10,818 connectors + 494,862 tools; post-spec surge continuing; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 

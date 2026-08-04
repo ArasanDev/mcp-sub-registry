@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-03 (daily research pass — Glama ~67,178; MCPToplist ~96,771 (crosses 96k); Snowflake Cortex AI Gateway launched at Black Hat (Natoma acquisition); Black Hat MCPwned Aug 5–6; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 38 clean):**
+**As of 2026-08-04 (daily research pass — Glama ~67,664 (+486); Glama tools 494,862+; Black Hat MCPwned briefing TOMORROW Aug 5–6 (3,993 probes/48h from 327 unique IPs, 155 MCP probes, 344 AI API key probes; Team Cymru presenter); MCP SDK/Inspector/Apps/Gateways WG sessions Aug 4–5; Microsoft MCP C# SDK v2 .NET Blog; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 39 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
