@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-04 (daily research pass — Glama ~67,664 (+486); Glama tools 494,862+; Black Hat MCPwned briefing TOMORROW Aug 5–6 (3,993 probes/48h from 327 unique IPs, 155 MCP probes, 344 AI API key probes; Team Cymru presenter); MCP SDK/Inspector/Apps/Gateways WG sessions Aug 4–5; Microsoft MCP C# SDK v2 .NET Blog; AWS Agent Registry migration Aug 6; SEP-2127 WG closes Aug 14; security Day 39 clean):**
+**As of 2026-08-05 (daily research pass — Black Hat MCPwned briefing LIVE Day 1 (no slides published yet); 35/121 BH2026 briefings are AI-focused (29% — highest ever); BH2026 MCP vendor launches: Tanium Atlas MCP Server, Legit Security VibeGuard 2.0, Straiker agentic kill switch, Acalvio Deception Guardrails, Sysdig Secure AI (none catalogable); CVE-2026-21852 Check Point Claude Code API key exfiltration re-surfacing (patched Feb 2026); Gateways IG today 2pm + Aug 6 4:30pm; AWS Agent Registry namespace migration TOMORROW Aug 6 (com.aws/mcp unaffected); Glama ~67,664 (stable); PulseMCP ~22,090+ (stable); MCPToplist ~96,771 (Aug 2 snap); Snowflake Cortex AI Gateway still private preview; SEP-2127 WG closes Aug 14 (9 days); security Day 40 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,18 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-03:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-05:
+  **Black Hat MCPwned briefing LIVE Day 1** (no slides published yet; Team Cymru honeypot
+  data confirmed; 35/121 BH2026 briefings AI-focused = 29% highest ever); **BH2026 MCP vendor
+  launches**: Tanium Atlas MCP Server (exposes Tanium endpoint data to Claude/Copilot),
+  Legit Security VibeGuard 2.0 (endpoint-level MCP security controls), Straiker agentic kill
+  switch (Discover + Ascend + Defend); **CVE-2026-21852** (Check Point, Feb 2026: Claude Code
+  API key exfiltration via `enableAllProjectMcpServers` + `ANTHROPIC_BASE_URL` override;
+  patched v2.0.65+; re-surfacing at BH2026; client-side only, no catalog action); **Gateways
+  IG** first sessions Aug 5 2pm + Aug 6 4:30pm (no public outputs yet); Glama ~67,664
+  (stable); PulseMCP ~22,090+ (stable); security Day 40 clean; Tanium Atlas MCP Server +
+  Legit Security VibeGuard 2.0 + Straiker added to landscape watch list.
+  Prior update 2026-08-03:
   **Snowflake Cortex AI Gateway** added to watch list (launched Black Hat USA 2026; built on
   Natoma acquisition May 2026; 100+ MCP servers; 7 identity partners; public preview coming;
   sixth enterprise player to independently enforce `discovered != approved != enabled`);
@@ -777,10 +788,11 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      Watch for GA status — if GA, assess whether to add AWS Agent Registry as sync source.
   8. **Watch Black Hat USA 2026 disclosures (Aug 5–6 Briefings)** — "MCPwned" talk and other
      AI security research may surface findings affecting cataloged vendor endpoints; review
-     post-conference and run audit pass if any cataloged server is named. **Slides not yet
-     published as of Aug 3; re-check Aug 6–7 after the event closes.** Snowflake Cortex AI
-     Gateway (Natoma-based) was the primary MCP-relevant BH2026 announcement as of Aug 3 —
-     no named catalog vendors in any BH disclosure.
+     post-conference and run audit pass if any cataloged server is named. **MCPwned briefing
+     running today (Aug 5, Day 1) and Aug 6 (Day 2) — slides not yet published as of Aug 5;
+     re-check Aug 6–7 after the event closes.** BH2026 MCP vendor launches (Tanium Atlas MCP
+     Server, Legit Security VibeGuard 2.0, Straiker) are security-tooling products — none
+     catalogable. No named catalog vendors in any BH disclosure as of Aug 5.
   9. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).

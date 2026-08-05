@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-04-mcp-ecosystem-update.md](./2026-08-04-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-04 (daily scheduled run — Glama ~67,664 (+486); Glama tools 494,862+; Black Hat MCPwned briefing TOMORROW Aug 5–6 (3,993 probes/48h from 327 IPs confirmed; Team Cymru); MCP WG sessions today+tomorrow (SDK WG, Inspector V2, MCP Apps, Gateways IG); Microsoft C# SDK v2 .NET Blog post; AWS Agent Registry migration Aug 6 (2 days); SEP-2127 WG closes Aug 14; security Day 39 clean)
+- **Latest daily update:** [2026-08-05-mcp-ecosystem-update.md](./2026-08-05-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-05 (daily scheduled run — Black Hat MCPwned briefing LIVE today Day 1 (no slides yet); 35/121 BH2026 briefings AI-focused (29%); Tanium Atlas MCP Server + Legit Security VibeGuard 2.0 + Straiker agentic kill switch launched at BH2026; CVE-2026-21852 Check Point Claude Code API key exfiltration re-surfacing (patched Feb 2026, client-side only); Gateways IG 2pm today + Aug 6 4:30pm; AWS Agent Registry namespace migration TOMORROW Aug 6; Glama ~67,664 (stable); PulseMCP ~22,090+ (stable); SEP-2127 WG closes Aug 14 (9 days); Snowflake Cortex AI Gateway still private preview; security Day 40 clean)
 
 ## Ranking criteria
 
@@ -51,7 +51,10 @@ Microsoft MCP Gateway (k8s, no catalog),
 Composio, Operant, Airlock,
 **Portkey** *(acquired by Palo Alto Networks, May 29, 2026; now Prisma AIRS; standalone in maintenance mode)*,
 agentic-community/mcp-gateway-registry (OSS gateway+registry),
-**Agensi** (new Q1-Q2 2026; curated marketplace with automated 8-point security scan).
+**Agensi** (new Q1-Q2 2026; curated marketplace with automated 8-point security scan),
+**Tanium Atlas MCP Server** (announced Black Hat USA 2026, Aug 3, 2026; governed MCP server exposing Tanium real-time endpoint intelligence and actions to Claude, Microsoft Security Copilot, and Copilot Studio; enterprise security-persona product — out of scope for current developer-tools catalog but signals enterprise security vendors now treating MCP as a data-access pattern; [[Tanium BusinessWire]](https://www.businesswire.com/news/home/20260803037958/en/Tanium-Delivers-Autonomous-Security-at-Black-Hat-USA-2026-Empowering-Operators-to-Outpace-AI-Accelerated-Threats)),
+**Legit Security VibeGuard 2.0** (released Black Hat USA 2026; endpoint-based MCP security controls for AI coding agents — Claude Code, Cursor, GitHub Copilot; real-time MCP scanning, policy enforcement, anti-tampering; not a catalogable MCP endpoint; signals enterprise-grade MCP security tooling maturing; [[Legit Security]](https://www.legitsecurity.com/security-governance-for-ai-generated-code-legit-vibeguard)),
+**Straiker Agentic Security Platform** (at Black Hat USA 2026; Discover + Ascend + Defend; maps MCP servers, adversarial testing, runtime blocking; "tool poisoning via MCP is the top attack vector" per Straiker's BH2026 analysis; [[Straiker]](https://www.straiker.ai/blog/black-hat-usa-2026-ai-security-talks)).
 
 ## Standing reads
 
