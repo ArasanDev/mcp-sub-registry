@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-05 (daily research pass — Black Hat MCPwned briefing LIVE Day 1 (no slides published yet); 35/121 BH2026 briefings are AI-focused (29% — highest ever); BH2026 MCP vendor launches: Tanium Atlas MCP Server, Legit Security VibeGuard 2.0, Straiker agentic kill switch, Acalvio Deception Guardrails, Sysdig Secure AI (none catalogable); CVE-2026-21852 Check Point Claude Code API key exfiltration re-surfacing (patched Feb 2026); Gateways IG today 2pm + Aug 6 4:30pm; AWS Agent Registry namespace migration TOMORROW Aug 6 (com.aws/mcp unaffected); Glama ~67,664 (stable); PulseMCP ~22,090+ (stable); MCPToplist ~96,771 (Aug 2 snap); Snowflake Cortex AI Gateway still private preview; SEP-2127 WG closes Aug 14 (9 days); security Day 40 clean):**
+**As of 2026-08-06 (daily research pass — BH2026 closes today Day 2; MCPwned slides expected Aug 7 on BH site / Streamly Aug 14; no cataloged servers named in any BH2026 disclosure; AWS Agent Registry namespace migration executing TODAY (bedrock-agentcore → agent-registry; still Preview; com.aws/mcp unaffected); Snowflake Cortex AI Gateway formally at BH2026, entering public preview imminently; Gateways IG session #2 4:30pm today (no outputs yet); Glama ~68,650 (+986 — crosses 68k); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); SEP-2127 WG 8 days to close (Aug 14); security Day 41 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,17 +249,16 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-05:
-  **Black Hat MCPwned briefing LIVE Day 1** (no slides published yet; Team Cymru honeypot
-  data confirmed; 35/121 BH2026 briefings AI-focused = 29% highest ever); **BH2026 MCP vendor
-  launches**: Tanium Atlas MCP Server (exposes Tanium endpoint data to Claude/Copilot),
-  Legit Security VibeGuard 2.0 (endpoint-level MCP security controls), Straiker agentic kill
-  switch (Discover + Ascend + Defend); **CVE-2026-21852** (Check Point, Feb 2026: Claude Code
-  API key exfiltration via `enableAllProjectMcpServers` + `ANTHROPIC_BASE_URL` override;
-  patched v2.0.65+; re-surfacing at BH2026; client-side only, no catalog action); **Gateways
-  IG** first sessions Aug 5 2pm + Aug 6 4:30pm (no public outputs yet); Glama ~67,664
-  (stable); PulseMCP ~22,090+ (stable); security Day 40 clean; Tanium Atlas MCP Server +
-  Legit Security VibeGuard 2.0 + Straiker added to landscape watch list.
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-06:
+  **BH2026 closes today (Day 2 of Briefings)**; MCPwned slides expected Aug 7 on BH site /
+  Streamly Aug 14; no cataloged servers named in any BH2026 disclosure across the full
+  conference (Day 41 clean); **AWS Agent Registry namespace migration** executing TODAY
+  (`bedrock-agentcore` → `agent-registry`; still Preview; `com.aws/mcp` unaffected);
+  **Snowflake Cortex AI Gateway** formally launched at BH2026 (public preview imminent;
+  sixth enterprise player enforcing `discovered != approved != enabled`; watch list updated);
+  **Gateways IG session #2** at 4:30pm today (no public outputs yet); Glama **~68,650**
+  (+986 vs Aug 5 — crosses 68k milestone); PulseMCP ~22,080+ (stable); MCPToplist ~96,771
+  (Aug 2 snap); SEP-2127 WG 8 days to close (Aug 14).
   Prior update 2026-08-03:
   **Snowflake Cortex AI Gateway** added to watch list (launched Black Hat USA 2026; built on
   Natoma acquisition May 2026; 100+ MCP servers; 7 identity partners; public preview coming;
