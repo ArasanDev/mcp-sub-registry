@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-06 (daily research pass — BH2026 closes today Day 2; MCPwned slides expected Aug 7 on BH site / Streamly Aug 14; no cataloged servers named in any BH2026 disclosure; AWS Agent Registry namespace migration executing TODAY (bedrock-agentcore → agent-registry; still Preview; com.aws/mcp unaffected); Snowflake Cortex AI Gateway formally at BH2026, entering public preview imminently; Gateways IG session #2 4:30pm today (no outputs yet); Glama ~68,650 (+986 — crosses 68k); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); SEP-2127 WG 8 days to close (Aug 14); security Day 41 clean):**
+**As of 2026-08-07 (daily research pass — MCPwned slides expected today on BH site (not yet confirmed published) / Streamly Aug 14; AWS Agent Registry namespace migration completed Aug 6 (still Preview; com.aws/mcp unaffected); Microsoft enterprise MCP wave: D365 Customer Service MCP Server GA July 30 + Governance Aug 5 + 7 D365 Sales MCP data partners (ZoomInfo, D&B, LeadIQ, Draup, Gong, Enlyft, HG Insights) — enterprise application-data MCP pattern at Microsoft scale; AAIF "Ecosystem Responds to Stateless MCP" blog — unusually fast adoption post-spec; Anthropic Connectors: 439 vetted web directory / 950+ all surfaces; IBM ContextForge SDK v2 migration epic opened; Glama ~68,650–69,280 (trending toward 69k); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); SEP-2127 WG 7 days to close (Aug 14); AAIF Seoul summit Aug 13–14; security Day 42 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,21 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-06:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-07:
+  **MCPwned slides expected today (not yet confirmed published)**; Streamly Aug 14; security
+  Day 42 clean; **AWS Agent Registry namespace migration completed Aug 6** (still Preview;
+  `com.aws/mcp` unaffected); **Microsoft enterprise MCP wave**: D365 Customer Service MCP
+  Server **GA July 30** + Governance blog Aug 5 + **7 D365 Sales MCP data partners** (ZoomInfo,
+  Dun & Bradstreet, LeadIQ, Draup, Gong, Enlyft, HG Insights — all shipped MCP servers for
+  D365 Sales, announced July 21); enterprise application-data MCP wrapping pattern at
+  Microsoft scale; added to watch list in landscape.md; **AAIF "Ecosystem Responds to
+  Stateless MCP"** blog published — unusually fast adoption, migration guides live;
+  **Anthropic Connectors Directory clarified**: 439 vetted web directory (our tracked metric)
+  vs. 950+ all surfaces (per claude.com July 28 blog, includes in-app catalog);
+  **IBM ContextForge SDK v2 migration epic** opened (enterprise-scale SDK migration signal);
+  Glama **~68,650–69,280** (trending toward 69k); PulseMCP ~22,080+ (stable); MCPToplist
+  ~96,771 (Aug 2 snap); SEP-2127 WG 7 days to close (Aug 14); AAIF Seoul summit Aug 13–14.
+  Prior update 2026-08-06:
   **BH2026 closes today (Day 2 of Briefings)**; MCPwned slides expected Aug 7 on BH site /
   Streamly Aug 14; no cataloged servers named in any BH2026 disclosure across the full
   conference (Day 41 clean); **AWS Agent Registry namespace migration** executing TODAY
