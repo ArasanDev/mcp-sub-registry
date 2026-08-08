@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-07-mcp-ecosystem-update.md](./2026-08-07-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-07 (daily scheduled run — MCPwned slides expected today (not yet confirmed published); AWS Agent Registry namespace migration completed Aug 6 (still Preview); Microsoft enterprise MCP wave: D365 Customer Service MCP Server GA (July 30) + Governance blog (Aug 5) + 7 D365 Sales MCP data partners (ZoomInfo, D&B, LeadIQ, Draup, Gong, Enlyft, HG Insights, announced July 21) — enterprise application-data MCP pattern scaling; AAIF "Ecosystem Responds to Stateless MCP" blog published — unusually fast adoption post-spec; Anthropic Connectors: 439 vetted web directory / 950+ all surfaces (clarified); IBM ContextForge creating SDK v2 migration epic; Glama ~68,650–69,280 (trending toward 69k); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); SEP-2127 WG 7 days to close (Aug 14); AAIF Seoul summit Aug 13–14; security Day 42 clean)
+- **Latest daily update:** [2026-08-08-mcp-ecosystem-update.md](./2026-08-08-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-08 (daily scheduled run — MCPwned slides still not confirmed published (Streamly Aug 14); Glama **69,395** (crosses 69k milestone); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion confirmed (leads, partner client, landing pages, campaigns, marketing emails, quotes/revenue beta, conversations, conditional rules, verified domains) — #1 curate priority reconfirmed; SEP-2127 WG 6 days to close (Aug 14); AAIF Seoul summit Aug 13–14 (5 days); IETF 126 held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG chartered yet; IBM ContextForge SDK v2 migration epic open; AWS Agent Registry still Preview post-migration; security Day 43 clean)
 
 ## Ranking criteria
 
@@ -25,8 +25,8 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 5 | **Palo Alto Networks / Prisma AIRS** | Enterprise security + AI gateway | Incumbent SASE/NGFW player (~$8B ARR); **acquired Portkey (closed May 29, 2026)**; Portkey gateway now Prisma AIRS 3.0 AI Gateway core; trillions of tokens/month processed | Prisma AIRS runtime security + Portkey AI gateway governance; centralized control plane for agentic AI | Enterprise validation of governance-over-MCP market; watch for registry/catalog features |
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
-| 8 | **PulseMCP** | Directory | **~22,080+** (Aug 6 — stable; slight ebb from 22,090+ Aug 5); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **~68,650 servers** (Aug 6 — up from ~67,664 Aug 5, +986; **crosses 68k milestone**; post-spec surge continues at ~500–1,000/day batch pace; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
+| 8 | **PulseMCP** | Directory | **~22,080+** (Aug 8 — stable; flat across Aug 6–8); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
+| 9 | **Glama** | Directory | **69,395 servers** (Aug 8 — **crosses 69k milestone**; up from ~68,650–69,280 Aug 6–7; post-spec surge continues at ~500–1,000/day batch pace; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 

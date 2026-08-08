@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-07 (daily research pass — MCPwned slides expected today on BH site (not yet confirmed published) / Streamly Aug 14; AWS Agent Registry namespace migration completed Aug 6 (still Preview; com.aws/mcp unaffected); Microsoft enterprise MCP wave: D365 Customer Service MCP Server GA July 30 + Governance Aug 5 + 7 D365 Sales MCP data partners (ZoomInfo, D&B, LeadIQ, Draup, Gong, Enlyft, HG Insights) — enterprise application-data MCP pattern at Microsoft scale; AAIF "Ecosystem Responds to Stateless MCP" blog — unusually fast adoption post-spec; Anthropic Connectors: 439 vetted web directory / 950+ all surfaces; IBM ContextForge SDK v2 migration epic opened; Glama ~68,650–69,280 (trending toward 69k); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); SEP-2127 WG 7 days to close (Aug 14); AAIF Seoul summit Aug 13–14; security Day 42 clean):**
+**As of 2026-08-08 (daily research pass — MCPwned slides still not confirmed published on BH site / Streamly Aug 14; Glama **69,395** (crosses 69k milestone); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion confirmed (leads + partner client read, landing pages + analytics, marketing email tools, quotes/revenue beta, conversations, conditional rules, verified domains) — #1 curate priority reconfirmed; SEP-2127 WG 6 days to close (Aug 14) — path `/.well-known/mcp.json`, validator at agent-ready.dev; AAIF Seoul summit Aug 13–14 (5 days); IETF 126 held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG chartered yet; IBM ContextForge SDK v2 migration epic open; AWS Agent Registry still Preview post-migration; security Day 43 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,19 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-07:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-08:
+  **MCPwned slides still not confirmed published** (Streamly Aug 14); security Day 43 clean;
+  Glama **69,395** (**crosses 69k milestone**); PulseMCP ~22,080+ (stable); MCPToplist ~96,771
+  (Aug 2 snap); **HubSpot MCP August capability expansion** confirmed (leads + partner client
+  read, landing pages + analytics, marketing email tools, quotes/revenue beta, conversations,
+  conditional rules, verified domains) — #1 curate priority reconfirmed; **SEP-2127 WG 6 days
+  to close (Aug 14)** — path `/.well-known/mcp.json`, validator live at agent-ready.dev;
+  **AAIF Seoul summit Aug 13–14** (5 days, co-located Open Source Summit Korea); **IETF 126**
+  (Vienna, July 18–24) held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG
+  chartered yet, multi-year RFC track; **IBM ContextForge SDK v2 migration epic** (#5559) open;
+  **AWS Agent Registry** still Preview post-migration; 4 new CVE IDs surfaced (55604, 55605,
+  58446, 39313) — NVD inaccessible, not confirmed MCP-catalog-relevant; spot-check in next audit.
+  Prior update 2026-08-07:
   **MCPwned slides expected today (not yet confirmed published)**; Streamly Aug 14; security
   Day 42 clean; **AWS Agent Registry namespace migration completed Aug 6** (still Preview;
   `com.aws/mcp` unaffected); **Microsoft enterprise MCP wave**: D365 Customer Service MCP
@@ -776,7 +788,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   2. Next `subregistry-curate` run: **Comms & support group** — **HubSpot** (endpoint `mcp.hubspot.com`
      CONFIRMED READY: GA April 13, OAuth 2.1 + PKCE only, one-click Claude connector; no DCR;
-     Leads read access recently added; [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
+     **August 2026 capability expansion** confirms leads, partner client read, landing pages +
+     analytics, marketing email tools, quotes/revenue (beta), conversations, conditional rules,
+     verified domain controls; [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
      Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
@@ -785,29 +799,28 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      by v1.26.0; v2 auto-clears). TS SDK v2.0.0 stable as of July 28 (`@modelcontextprotocol/server` +
      `@modelcontextprotocol/client`); v1.x receives security patches for ≥6 months. Also verify CIMD
      compliance (DCR deprecated in new spec) for OAuth-gated catalog vendors.
+     **Also spot-check CVE-2026-55604/55605/58446/39313** (surfaced Aug 8; NVD inaccessible in
+     this pass; confirm none target a cataloged endpoint).
      After audit: check each cataloged server for `/.well-known/mcp.json`
-     (SEP-2127 Server Cards; note: correct path is `mcp.json`, NOT `mcp/server-card.json`).
+     (SEP-2127 Server Cards; path confirmed: `/.well-known/mcp.json`).
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
      new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
      After 6 months, flag Python-SDK vendors still on v1.x.
-  6. Once SEP-2127 (MCP Server Cards) WG finalizes (term ends Aug 14, 2026 — **11 days**), extend
-     `subregistry-audit` to GET `/.well-known/mcp/server-card.json` on each cataloged server and
-     record tool count + protocol version in `verification.notes`.
-     **PATH: `/.well-known/mcp/server-card.json`** (confirmed from GitHub PR #2127 and WG; prior
-     note `/.well-known/mcp.json` likely refers to a catalog-discovery file, not the server card).
-     No schema migration needed until then.
-  7. AWS Agent Registry namespace migration: **Aug 6 (tomorrow)**; our `com.aws/mcp` unaffected.
-     Watch for GA status — if GA, assess whether to add AWS Agent Registry as sync source.
-  8. **Watch Black Hat USA 2026 disclosures (Aug 5–6 Briefings)** — "MCPwned" talk and other
-     AI security research may surface findings affecting cataloged vendor endpoints; review
-     post-conference and run audit pass if any cataloged server is named. **MCPwned briefing
-     running today (Aug 5, Day 1) and Aug 6 (Day 2) — slides not yet published as of Aug 5;
-     re-check Aug 6–7 after the event closes.** BH2026 MCP vendor launches (Tanium Atlas MCP
-     Server, Legit Security VibeGuard 2.0, Straiker) are security-tooling products — none
-     catalogable. No named catalog vendors in any BH disclosure as of Aug 5.
+  6. **Once SEP-2127 WG closes (Aug 14 — 6 days)**, extend `subregistry-audit` to GET
+     `/.well-known/mcp.json` on each cataloged server and record tool count + protocol version
+     in `verification.notes`. Validator live at agent-ready.dev. No schema migration needed.
+  7. **MCPwned slides** — still not confirmed published; check BH briefings page for Team Cymru
+     materials. If a cataloged server is named in the deck, trigger `subregistry-audit` immediately.
+     Streamly on-demand opens **Aug 14**. AWS Agent Registry: still Preview; watch for GA, then
+     assess as sync source.
+  8. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for governance outputs.
+     If SEP-2127 merges post-WG-close, activate server card audit pass.
   9. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).
   10. Anthropic MCP Tunnels (research preview, May 2026): when GA, consider tracking
       `remotes[].type: "mcp-tunnel"` as a new endpoint archetype for private-network servers.
+  11. **IETF MCP standardization** — IETF 126 (Vienna, July 18–24) held 3 AI-agent BoF sessions;
+      15+ internet-drafts active. No WG chartered yet. Monitor IETF 127 (2026) for WG charter
+      — if chartered, assess `gateway_compatibility` field implications for catalog schema.
