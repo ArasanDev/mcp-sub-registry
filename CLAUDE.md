@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-08 (daily research pass — MCPwned slides still not confirmed published on BH site / Streamly Aug 14; Glama **69,395** (crosses 69k milestone); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion confirmed (leads + partner client read, landing pages + analytics, marketing email tools, quotes/revenue beta, conversations, conditional rules, verified domains) — #1 curate priority reconfirmed; SEP-2127 WG 6 days to close (Aug 14) — path `/.well-known/mcp.json`, validator at agent-ready.dev; AAIF Seoul summit Aug 13–14 (5 days); IETF 126 held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG chartered yet; IBM ContextForge SDK v2 migration epic open; AWS Agent Registry still Preview post-migration; security Day 43 clean):**
+**As of 2026-08-09 (daily research pass — MCPwned slides still not confirmed published on BH site / Streamly Aug 14; Glama ~69,370 (index fluctuation from 69,395 Aug 8; overall growth trend intact); PulseMCP ~22,070+ (flat); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion fully confirmed — all hubs/tiers: leads, landing pages, analytics, email, conversations; enterprise-tier: verified domains — #1 curate priority; SEP-2127 WG closes in 5 days (Aug 14) — path `/.well-known/mcp.json`, validator at agent-ready.dev; AAIF Seoul summit Aug 13–14 (4 days); Adversa AI August MCP security digest published — new client-host attack surfaces (Kiro MCP config rewrite, Cursor deeplink flaw, GitHub Agentic Workflows data leak) — all client-side, none affect remote-HTTP catalog; CVE-2026-55604/55605 NVD pages exist, unconfirmed catalog-relevant; CIMD adoption mainstream (WorkOS, Auth0, Authlete, Stytch, Keycloak); IBM ContextForge SDK v2 migration epic active; security Day 44 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,18 +249,21 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-08:
-  **MCPwned slides still not confirmed published** (Streamly Aug 14); security Day 43 clean;
-  Glama **69,395** (**crosses 69k milestone**); PulseMCP ~22,080+ (stable); MCPToplist ~96,771
-  (Aug 2 snap); **HubSpot MCP August capability expansion** confirmed (leads + partner client
-  read, landing pages + analytics, marketing email tools, quotes/revenue beta, conversations,
-  conditional rules, verified domains) — #1 curate priority reconfirmed; **SEP-2127 WG 6 days
-  to close (Aug 14)** — path `/.well-known/mcp.json`, validator live at agent-ready.dev;
-  **AAIF Seoul summit Aug 13–14** (5 days, co-located Open Source Summit Korea); **IETF 126**
-  (Vienna, July 18–24) held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG
-  chartered yet, multi-year RFC track; **IBM ContextForge SDK v2 migration epic** (#5559) open;
-  **AWS Agent Registry** still Preview post-migration; 4 new CVE IDs surfaced (55604, 55605,
-  58446, 39313) — NVD inaccessible, not confirmed MCP-catalog-relevant; spot-check in next audit.
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-09:
+  **MCPwned slides still not confirmed published** (Streamly opens Aug 14); security Day 44 clean;
+  Glama ~69,370 (index fluctuation from 69,395 Aug 8; growth trend intact); PulseMCP ~22,070+
+  (flat); MCPToplist ~96,771 (Aug 2 snap); **HubSpot MCP August capability expansion fully
+  confirmed** — all hubs/tiers: leads, landing pages, analytics, email, conversations; enterprise:
+  verified domains — **#1 curate priority**; **SEP-2127 WG closes in 5 days (Aug 14)** — path
+  `/.well-known/mcp.json`, validator at agent-ready.dev; **AAIF Seoul summit Aug 13–14** (4 days,
+  co-located Open Source Summit Korea); **IETF 126** held 3 AI-agent BoF sessions — 15+ MCP
+  internet-drafts active, no WG chartered; **IBM ContextForge SDK v2 migration epic** (#5559)
+  active; **AWS Agent Registry** still Preview post-migration; **Adversa AI August 2026 MCP security
+  digest** published — new client-host attack surfaces (Kiro MCP config rewrite via hidden text,
+  Cursor deeplink flaw, GitHub Agentic Workflows data leak, DuneSlide CVE-2026-50548/50549 patched)
+  — all client-side, remote-HTTP catalog immune; **CIMD mainstream** — WorkOS, Auth0, Authlete,
+  Stytch, Keycloak all implementing; DCR deprecated (removed summer 2027); CVE-2026-55604/55605
+  NVD pages exist, unconfirmed catalog-relevant (NVD blocked in research environment).
   Prior update 2026-08-07:
   **MCPwned slides expected today (not yet confirmed published)**; Streamly Aug 14; security
   Day 42 clean; **AWS Agent Registry namespace migration completed Aug 6** (still Preview;

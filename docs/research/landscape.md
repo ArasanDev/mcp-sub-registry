@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-08-mcp-ecosystem-update.md](./2026-08-08-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-08 (daily scheduled run — MCPwned slides still not confirmed published (Streamly Aug 14); Glama **69,395** (crosses 69k milestone); PulseMCP ~22,080+ (stable); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion confirmed (leads, partner client, landing pages, campaigns, marketing emails, quotes/revenue beta, conversations, conditional rules, verified domains) — #1 curate priority reconfirmed; SEP-2127 WG 6 days to close (Aug 14); AAIF Seoul summit Aug 13–14 (5 days); IETF 126 held 3 AI-agent BoF sessions — 15+ MCP internet-drafts active, no WG chartered yet; IBM ContextForge SDK v2 migration epic open; AWS Agent Registry still Preview post-migration; security Day 43 clean)
+- **Latest daily update:** [2026-08-09-mcp-ecosystem-update.md](./2026-08-09-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-09 (daily scheduled run — MCPwned slides still not confirmed published (Streamly Aug 14); Glama ~69,370 (index fluctuation from 69,395 Aug 8; overall growth trend intact); PulseMCP ~22,070+ (flat); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion fully confirmed (all hubs/tiers: leads, landing pages, analytics, email, conversations; enterprise-tier: verified domains) — #1 curate priority; SEP-2127 WG closes in 5 days (Aug 14); AAIF Seoul summit in 4 days (Aug 13–14); Adversa AI August MCP security digest published — new client-host attack surfaces (Kiro config rewrite, Cursor deeplink flaw, GitHub Agentic Workflows data leak) — none affect remote-HTTP catalog; CVE-2026-55604/55605 NVD pages exist, unconfirmed catalog-relevant; CIMD adoption mainstream (WorkOS, Auth0, Authlete, Stytch, Keycloak); security Day 44 clean)
 
 ## Ranking criteria
 
