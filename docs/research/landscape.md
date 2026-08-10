@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-09-mcp-ecosystem-update.md](./2026-08-09-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-09 (daily scheduled run — MCPwned slides still not confirmed published (Streamly Aug 14); Glama ~69,370 (index fluctuation from 69,395 Aug 8; overall growth trend intact); PulseMCP ~22,070+ (flat); MCPToplist ~96,771 (Aug 2 snap); HubSpot MCP August capability expansion fully confirmed (all hubs/tiers: leads, landing pages, analytics, email, conversations; enterprise-tier: verified domains) — #1 curate priority; SEP-2127 WG closes in 5 days (Aug 14); AAIF Seoul summit in 4 days (Aug 13–14); Adversa AI August MCP security digest published — new client-host attack surfaces (Kiro config rewrite, Cursor deeplink flaw, GitHub Agentic Workflows data leak) — none affect remote-HTTP catalog; CVE-2026-55604/55605 NVD pages exist, unconfirmed catalog-relevant; CIMD adoption mainstream (WorkOS, Auth0, Authlete, Stytch, Keycloak); security Day 44 clean)
+- **Latest daily update:** [2026-08-10-mcp-ecosystem-update.md](./2026-08-10-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-10 (daily scheduled run — Glama ~69,812 (+442; approaching 70k); PulseMCP ~22,070+ (flat); MCPToplist ~96,771 (Aug 2 snap); MCPwned slides timeline clarified: BH archive ~Aug 19–20, Streamly Aug 14; Agentgateway v1.4.1 LF contributor depth confirmed (AWS, Cisco, Huawei, IBM, Microsoft, Red Hat, Shell, Zayo); IBM ContextForge v2 migration epic open 0/20 issues (11–16 weeks estimated); SEP-2127 WG closes in 4 days (Aug 14); AAIF Seoul summit in 3 days (Aug 13–14); CVE-2026-55604/55605 still unconfirmed catalog-relevant; security Day 45 clean)
 
 ## Ranking criteria
 
