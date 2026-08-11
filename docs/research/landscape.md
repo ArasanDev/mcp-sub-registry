@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-10-mcp-ecosystem-update.md](./2026-08-10-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-10 (daily scheduled run — Glama ~69,812 (+442; approaching 70k); PulseMCP ~22,070+ (flat); MCPToplist ~96,771 (Aug 2 snap); MCPwned slides timeline clarified: BH archive ~Aug 19–20, Streamly Aug 14; Agentgateway v1.4.1 LF contributor depth confirmed (AWS, Cisco, Huawei, IBM, Microsoft, Red Hat, Shell, Zayo); IBM ContextForge v2 migration epic open 0/20 issues (11–16 weeks estimated); SEP-2127 WG closes in 4 days (Aug 14); AAIF Seoul summit in 3 days (Aug 13–14); CVE-2026-55604/55605 still unconfirmed catalog-relevant; security Day 45 clean)
+- **Latest daily update:** [2026-08-11-mcp-ecosystem-update.md](./2026-08-11-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-11 (daily scheduled run — **Glama ~70,216 (CROSSES 70k MILESTONE; +404 vs Aug 10)**; **MCPToplist CROSSES 100k MILESTONE: 100,958 cross-registry (Aug 10 snap)**; PulseMCP ~22,070+ (flat); Azure DevOps MCP confused deputy attack disclosed (Manifold Security — hidden HTML in PR descriptions, inconsistent spotlighting, no CVE/fix yet, client-side concern, catalog immune); Adversa AI August 2026 MCP+coding-agent security digest published; SEP-2127 WG closes tomorrow (Aug 14); follow-on WG meetings Aug 31 + Sep 7 scheduled; AAIF Seoul summit starts tomorrow (Aug 13–14); MCPwned slides still pending (Streamly Aug 14, BH archive ~Aug 19–20); security Day 46 clean)
 
 ## Ranking criteria
 
@@ -26,7 +26,7 @@ influence, scale, curation/trust quality, governance maturity, and relevance to 
 | 6 | **Lunar.dev MCPX** | Gateway + catalog | OSS core + commercial | Partial separation, sandbox vetting, hardened tools | Model-match; trust tooling ideas |
 | 7 | **Docker MCP Catalog / Gateway** | Directory + OCI | Major vendor; OCI private catalogs | Container-per-server isolation; no enterprise RBAC | Private-catalog distribution pattern |
 | 8 | **PulseMCP** | Directory | **~22,080+** (Aug 8 — stable; flat across Aug 6–8); official co-steward | Largest hand-reviewed directory | Curation precedent + sync source |
-| 9 | **Glama** | Directory | **69,395 servers** (Aug 8 — **crosses 69k milestone**; up from ~68,650–69,280 Aug 6–7; post-spec surge continues at ~500–1,000/day batch pace; cross-registry MCPToplist est. ~96,771 per Aug 2 snapshot) | Light curation on a large set | Breadth reference + sync source |
+| 9 | **Glama** | Directory | **~70,216 servers** (Aug 11 — **crosses 70k milestone**; up from 69,812 Aug 10; post-spec surge ~400–500/day net; cross-registry MCPToplist **100,958** crosses 100k milestone Aug 10) | Light curation on a large set | Breadth reference + sync source |
 | 10 | **Smithery** | Directory + hosting | ~7,300 (free tier ended Mar 1, 2026; infra rebuild ongoing) | No formal governance; prototyping-grade | Discovery breadth, not a trust layer |
 | 11 | **TrueFoundry** | Enterprise gw + registry | Commercial, VPC-native | RBAC, audit, virtual servers | Enterprise registry benchmark |
 
