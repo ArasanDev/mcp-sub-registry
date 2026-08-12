@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-11 (daily research pass — Glama ~70,216 (CROSSES 70k MILESTONE; +404); MCPToplist CROSSES 100k MILESTONE: 100,958 cross-registry (Aug 10 snap); PulseMCP ~22,070+ (flat); Azure DevOps MCP confused deputy attack disclosed (Manifold Security — hidden HTML in PR descriptions, spotlighting not applied to PR description tool, no CVE/fix yet, catalog immune); Adversa AI August 2026 MCP + coding-agent security digests published; SEP-2127 WG closes Aug 14 (3 days); follow-on meetings Aug 31 + Sep 7; AAIF Seoul summit Aug 13–14 (tomorrow); MCPwned slides still pending (Streamly Aug 14, BH archive ~Aug 19–20); security Day 46 clean):**
+**As of 2026-08-12 (daily research pass — Glama ~70,857 (+641 vs Aug 11); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat); HubSpot MCP August capability expansion: Leads record read + Conversations data + Help Desk ratings now confirmed (curate #1 still ready); GitHub Enterprise MCP Allowlists GA Aug 6 — central allowedMcpServers/deniedMcpServers in managed-settings.json, enforced for Copilot app + CLI + VS Code, fail-closed design (validates catalog as allowlist source-of-truth); GitHub MCP Server v1.9.0 released Aug 10 (semantic search, label ordering, PR improvements, find_duplicate tool); Nutanix MCP Server for NCP announced Aug 10 (open-source, Prism v4 API, per-env deployment, infra persona, not catalogable — 7th major infra vendor); Slack MCP + Skills Plugin for Claude Code/Cursor announced + CLI 4.6.0 (no endpoint change to com.slack/mcp); Team Cymru Pure Signal MCP Server backfilled — launched Apr 29, 2026, security-persona/subscription-gated, watch list; Docker: Aug governance blogs + Gordon custom-rules tab for MCP allow/deny; MCPwned slides still not published (Streamly opens Aug 14); AAIF Seoul summit starts Aug 13–14; SEP-2127 WG closes Aug 14 — server card audit trigger fires tomorrow; security Day 47 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -787,9 +787,10 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
   2. Next `subregistry-curate` run: **Comms & support group** — **HubSpot** (endpoint `mcp.hubspot.com`
      CONFIRMED READY: GA April 13, OAuth 2.1 + PKCE only, one-click Claude connector; no DCR;
-     **August 2026 capability expansion** confirms leads, partner client read, landing pages +
-     analytics, marketing email tools, quotes/revenue (beta), conversations, conditional rules,
-     verified domain controls; [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
+     **August 2026 capability expansion** now confirmed: Leads record read, Conversations data (multi-channel),
+     Help Desk reply ratings, conditional field logic, landing pages + content analytics, marketing email tools,
+     quotes/revenue (beta), partner client read, verified domain controls; note `no DCR` in `auth.notes`;
+     [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
      Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
@@ -800,21 +801,25 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      compliance (DCR deprecated in new spec) for OAuth-gated catalog vendors.
      **Also spot-check CVE-2026-55604/55605/58446/39313** (surfaced Aug 8; NVD inaccessible in
      this pass; confirm none target a cataloged endpoint).
-     After audit: check each cataloged server for `/.well-known/mcp.json`
-     (SEP-2127 Server Cards; path confirmed: `/.well-known/mcp.json`).
+     **SEP-2127 server card audit (Aug 14 TRIGGER — TODAY):** WG closes Aug 14. Extend audit to
+     GET `/.well-known/mcp.json` on all 19 cataloged servers; record tool count + protocol version
+     in `verification.notes`. Validator live at agent-ready.dev. No schema migration needed.
+     **Also update `verifiedAt` for:** `com.github/mcp` (v1.9.0 released Aug 10) and
+     `com.slack/mcp` (Slack Skills Plugin announced Aug 2026) — no endpoint or auth changes,
+     just timestamp refresh.
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
      new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
      After 6 months, flag Python-SDK vendors still on v1.x.
-  6. **Once SEP-2127 WG closes (Aug 14 — 6 days)**, extend `subregistry-audit` to GET
-     `/.well-known/mcp.json` on each cataloged server and record tool count + protocol version
-     in `verification.notes`. Validator live at agent-ready.dev. No schema migration needed.
-  7. **MCPwned slides** — still not confirmed published; check BH briefings page for Team Cymru
-     materials. If a cataloged server is named in the deck, trigger `subregistry-audit` immediately.
-     Streamly on-demand opens **Aug 14**. AWS Agent Registry: still Preview; watch for GA, then
-     assess as sync source.
-  8. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for governance outputs.
+  6. **MCPwned slides** — still not confirmed published; Streamly on-demand opens **Aug 14**.
+     BH archive ~Aug 19–20 for public. If a cataloged server is named in the deck, trigger
+     `subregistry-audit` immediately. AWS Agent Registry: still Preview; watch for GA.
+  7. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for governance outputs.
      If SEP-2127 merges post-WG-close, activate server card audit pass.
+  8. **GitHub Enterprise allowlists validation signal:** Our `GET /v0.1/gateway/catalog`
+     projection (stable `remotes[].url`) is a direct input for GitHub's `allowedMcpServers`
+     and Kiro IDE's HTTPS-hosted JSON allowlist. Endpoint URL stability is a product guarantee.
+     No code change — just a documented product signal.
   9. Roadmap item: add `provenance.attestation_url` + `provenance.signing_method` fields to
      approved server schema when Sigstore-signed MCP artifacts become common upstream
      (Stacklok ToolHive + MDPI Future Internet 18(5):243 proposal; no action needed now).
