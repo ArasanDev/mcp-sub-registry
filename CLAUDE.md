@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-13 (daily research pass — Glama ~71,417 (+560 vs Aug 12); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat); **AAIF MCP Dev Summit Seoul (Aug 13–14)**: 57 new members announced — Alibaba + Visa + Wells Fargo as Gold (total 247 orgs; first major financial services at Gold tier; APAC momentum accelerating; blog recap expected ~Aug 15); SEP-2127 WG closes tomorrow Aug 14 — server card audit trigger fires tomorrow; MCPwned slides not yet published (Streamly Aug 14 registered; public ~Aug 19–20); security Day 48 clean):**
+**As of 2026-08-14 (daily research pass — Glama ~72,114 (+697 vs Aug 13; crosses 72k milestone); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 4); **SEP-2127 WG CLOSES TODAY (Aug 14)** — server card audit trigger NOW ACTIVE: run `subregistry-audit` to GET `/.well-known/mcp.json` on all 19 cataloged servers + refresh `verifiedAt` for `com.github/mcp` (v1.9.0 Aug 10) and `com.slack/mcp`; AAIF Seoul concludes today — blog recap expected Aug 15; **Claude Code v2.1.231 (Aug 13)** fixed MCP OAuth redirect-URI mismatch for pre-registered OAuth clients including Slack — enterprise operators should update; MCPwned slides not yet public (Streamly on-demand opens today for registered attendees; public BH archive ~Aug 19–20); security Day 49 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-11:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-14:
+  **Glama ~72,114 (CROSSES 72k MILESTONE; +697 vs Aug 13)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 4); **SEP-2127 WG CLOSES Aug 14** — server card audit trigger active; **Claude Code v2.1.231 (Aug 13)** fixed MCP OAuth redirect-URI mismatch for pre-registered OAuth clients (Slack); **AAIF Seoul summit concludes** (57 new members, 247 total, Visa+Wells Fargo+Alibaba Gold; blog recap expected Aug 15); MCPwned slides not yet public (BH archive ~Aug 19–20); security Day 49 clean. Prior update 2026-08-13:
+  **Glama ~71,417 (+560 vs Aug 12)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat); **AAIF MCP Dev Summit Seoul (Aug 13–14)**: 57 new members announced — Alibaba + Visa + Wells Fargo as Gold (total 247 orgs; first major financial services at Gold tier; APAC momentum accelerating; blog recap expected ~Aug 15); SEP-2127 WG closes tomorrow Aug 14 — server card audit trigger fires tomorrow; MCPwned slides not yet published (Streamly Aug 14 registered; public ~Aug 19–20); security Day 48 clean. Prior update 2026-08-11:
   **Glama ~70,216 (CROSSES 70k MILESTONE; +404 vs Aug 10)**; **MCPToplist CROSSES 100k MILESTONE:
   100,958 cross-registry (Aug 10 snap)**; PulseMCP ~22,070+ (flat); **Azure DevOps MCP Confused
   Deputy Attack** disclosed (Manifold Security — hidden HTML in PR descriptions carries indirect
@@ -794,28 +796,28 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
-  3. Next `subregistry-audit` pass: **PRIORITY: Verify all TypeScript SDK-based vendors are running
-     >=v1.26.0 or migrated to v2.0.0** (CVE-2026-25536 data leak + CVE-2026-0621 ReDoS; both patched
-     by v1.26.0; v2 auto-clears). TS SDK v2.0.0 stable as of July 28 (`@modelcontextprotocol/server` +
-     `@modelcontextprotocol/client`); v1.x receives security patches for ≥6 months. Also verify CIMD
-     compliance (DCR deprecated in new spec) for OAuth-gated catalog vendors.
-     **Also spot-check CVE-2026-55604/55605/58446/39313** (surfaced Aug 8; NVD inaccessible in
-     this pass; confirm none target a cataloged endpoint).
-     **SEP-2127 server card audit (Aug 14 TRIGGER — TODAY):** WG closes Aug 14. Extend audit to
-     GET `/.well-known/mcp.json` on all 19 cataloged servers; record tool count + protocol version
-     in `verification.notes`. Validator live at agent-ready.dev. No schema migration needed.
-     **Also update `verifiedAt` for:** `com.github/mcp` (v1.9.0 released Aug 10) and
-     `com.slack/mcp` (Slack Skills Plugin announced Aug 2026) — no endpoint or auth changes,
-     just timestamp refresh.
+  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger fired 2026-08-14):**
+     (a) **SEP-2127 server card audit — TRIGGERED:** WG term ended Aug 14. GET
+     `/.well-known/mcp.json` on all 19 cataloged servers; record HTTP status, tool count,
+     protocol version in `verification.notes`. Validator: agent-ready.dev/mcp-card-validator.
+     No schema migration needed; follow-on WG meetings Aug 31 + Sep 7.
+     (b) **Update `verifiedAt` for:** `com.github/mcp` (v1.9.0 released Aug 10; capability
+     expansion: semantic search default, PR from issue read, duplicate detection tool; no
+     endpoint/auth changes) and `com.slack/mcp` (Slack Skills Plugin + CC v2.1.231 OAuth fix).
+     (c) **Verify TS SDK-based vendors ≥v1.26.0 or migrated to SDK v2.0.0** (CVE-2026-25536
+     data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in 2026-07-28
+     spec) for OAuth-gated catalog vendors.
+     (d) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked in egress environment;
+     confirm none target a cataloged endpoint via alternative source).
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
      new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
      After 6 months, flag Python-SDK vendors still on v1.x.
-  6. **MCPwned slides** — still not confirmed published; Streamly on-demand opens **Aug 14**.
-     BH archive ~Aug 19–20 for public. If a cataloged server is named in the deck, trigger
+  6. **MCPwned slides** — Streamly on-demand opened Aug 14 (registered attendees only); public
+     BH archive expected **~Aug 19–20**. If a cataloged server is named in the deck, trigger
      `subregistry-audit` immediately. AWS Agent Registry: still Preview; watch for GA.
-  7. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for governance outputs.
-     If SEP-2127 merges post-WG-close, activate server card audit pass.
+  7. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for Day 2 governance outputs.
+     If SEP-2127 merges post-WG-close (follow-on meetings Aug 31 + Sep 7), activate audit pass.
   8. **GitHub Enterprise allowlists validation signal:** Our `GET /v0.1/gateway/catalog`
      projection (stable `remotes[].url`) is a direct input for GitHub's `allowedMcpServers`
      and Kiro IDE's HTTPS-hosted JSON allowlist. Endpoint URL stability is a product guarantee.

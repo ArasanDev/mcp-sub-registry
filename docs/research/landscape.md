@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-13-mcp-ecosystem-update.md](./2026-08-13-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-13 (daily research pass — **Glama ~71,417 (+560 vs Aug 12)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat); **AAIF MCP Dev Summit Seoul underway (Aug 13–14)**: **57 new members** (Alibaba + Visa + Wells Fargo as Gold; total 247 orgs — first major financial services institutions at Gold tier); **SEP-2127 WG closes tomorrow Aug 14** — server card audit trigger active; MCPwned slides still not published (Streamly Aug 14 for registered attendees; public ~Aug 19–20); security Day 48 clean)
+- **Latest daily update:** [2026-08-14-mcp-ecosystem-update.md](./2026-08-14-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-14 (daily research pass — **Glama ~72,114 (+697 vs Aug 13; crosses 72k milestone)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 4); **SEP-2127 WG closes TODAY (Aug 14)** — server card audit trigger NOW ACTIVE: GET `/.well-known/mcp.json` on all 19 cataloged servers + `verifiedAt` refresh for `com.github/mcp` (v1.9.0, Aug 10) and `com.slack/mcp`; **AAIF Seoul summit concludes** today — blog recap expected Aug 15; **MCPwned slides** not yet public (Streamly on-demand opens today for registered attendees; public BH archive ~Aug 19–20); **Claude Code v2.1.231 (Aug 13)** fixed MCP OAuth redirect-URI mismatch for pre-registered OAuth clients including Slack; security Day 49 clean)
 
 ## Ranking criteria
 
