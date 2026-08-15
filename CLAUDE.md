@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-14 (daily research pass — Glama ~72,114 (+697 vs Aug 13; crosses 72k milestone); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 4); **SEP-2127 WG CLOSES TODAY (Aug 14)** — server card audit trigger NOW ACTIVE: run `subregistry-audit` to GET `/.well-known/mcp.json` on all 19 cataloged servers + refresh `verifiedAt` for `com.github/mcp` (v1.9.0 Aug 10) and `com.slack/mcp`; AAIF Seoul concludes today — blog recap expected Aug 15; **Claude Code v2.1.231 (Aug 13)** fixed MCP OAuth redirect-URI mismatch for pre-registered OAuth clients including Slack — enterprise operators should update; MCPwned slides not yet public (Streamly on-demand opens today for registered attendees; public BH archive ~Aug 19–20); security Day 49 clean):**
+**As of 2026-08-15 (daily research pass — Glama ~72,328 (+214 vs Aug 14); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 5 — submissions paused mid-Aug for ingestion rework; expect step-jump on resume); AAIF Seoul blog recap not yet published (summit concluded Aug 14; monitor aaif.io/blog); MCPwned slides not yet public (BH archive ~Aug 19–20; no cataloged vendor named); Two new CVEs: CVE-2026-59950 MCP Python SDK WebSocket CSWSH (CVSS 7.6, patched v1.28.1) + CVE-2026-50143 Apify actor path injection (CVSS 8.1, patched v0.10.11) — neither affects remote-HTTP catalog; Agent Plugins 1.0 extended to VS Code+Copilot CLI+Copilot app (Aug 12); Adversa AI August 2026 security digests published — six-stage MCP kill chain HMM + SPELLSMITH tool-description hardening; SEP-2127 server card audit ACTIVE (WG closed Aug 14; `subregistry-audit` due); security Day 50 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,8 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-14:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-15:
+  **Glama ~72,328 (+214 vs Aug 14)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); **PulseMCP ~22,070+ (flat, Day 5 — submissions paused mid-Aug for ingestion rework)**; **AAIF Seoul blog recap NOT YET published** (summit concluded Aug 14; monitor aaif.io/blog); **MCPwned slides not yet public** (BH archive ~Aug 19–20; no cataloged vendor named); **Two new CVEs**: CVE-2026-59950 (MCP Python SDK WebSocket CSWSH, CVSS 7.6, patched v1.28.1) + CVE-2026-50143 (Apify actor path injection, CVSS 8.1, patched v0.10.11) — neither affects remote-HTTP catalog; **Agent Plugins 1.0 in VS Code+Copilot CLI+Copilot app (Aug 12)**; **Adversa AI August 2026 digests** — six-stage MCP kill chain HMM + SPELLSMITH; **SEP-2127 server card audit ACTIVE**; security Day 50 clean. Prior update 2026-08-14:
   **Glama ~72,114 (CROSSES 72k MILESTONE; +697 vs Aug 13)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat, Day 4); **SEP-2127 WG CLOSES Aug 14** — server card audit trigger active; **Claude Code v2.1.231 (Aug 13)** fixed MCP OAuth redirect-URI mismatch for pre-registered OAuth clients (Slack); **AAIF Seoul summit concludes** (57 new members, 247 total, Visa+Wells Fargo+Alibaba Gold; blog recap expected Aug 15); MCPwned slides not yet public (BH archive ~Aug 19–20); security Day 49 clean. Prior update 2026-08-13:
   **Glama ~71,417 (+560 vs Aug 12)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); PulseMCP ~22,070+ (flat); **AAIF MCP Dev Summit Seoul (Aug 13–14)**: 57 new members announced — Alibaba + Visa + Wells Fargo as Gold (total 247 orgs; first major financial services at Gold tier; APAC momentum accelerating; blog recap expected ~Aug 15); SEP-2127 WG closes tomorrow Aug 14 — server card audit trigger fires tomorrow; MCPwned slides not yet published (Streamly Aug 14 registered; public ~Aug 19–20); security Day 48 clean. Prior update 2026-08-11:
   **Glama ~70,216 (CROSSES 70k MILESTONE; +404 vs Aug 10)**; **MCPToplist CROSSES 100k MILESTONE:
@@ -796,8 +797,8 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
-  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger fired 2026-08-14):**
-     (a) **SEP-2127 server card audit — TRIGGERED:** WG term ended Aug 14. GET
+  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger ACTIVE since 2026-08-14):**
+     (a) **SEP-2127 server card audit — TRIGGERED (WG closed Aug 14):** GET
      `/.well-known/mcp.json` on all 19 cataloged servers; record HTTP status, tool count,
      protocol version in `verification.notes`. Validator: agent-ready.dev/mcp-card-validator.
      No schema migration needed; follow-on WG meetings Aug 31 + Sep 7.
@@ -807,7 +808,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (c) **Verify TS SDK-based vendors ≥v1.26.0 or migrated to SDK v2.0.0** (CVE-2026-25536
      data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in 2026-07-28
      spec) for OAuth-gated catalog vendors.
-     (d) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked in egress environment;
+     (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950, CVSS 7.6, WebSocket CSWSH;
+     patched in v1.28.1; remote-HTTP-only catalog immune, but verify any mixed-transport vendor).
+     (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked in egress environment;
      confirm none target a cataloged endpoint via alternative source).
   4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
@@ -816,8 +819,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   6. **MCPwned slides** — Streamly on-demand opened Aug 14 (registered attendees only); public
      BH archive expected **~Aug 19–20**. If a cataloged server is named in the deck, trigger
      `subregistry-audit` immediately. AWS Agent Registry: still Preview; watch for GA.
-  7. **Post-AAIF Seoul summit (Aug 15+)** — monitor aaif.io/blog for Day 2 governance outputs.
-     If SEP-2127 merges post-WG-close (follow-on meetings Aug 31 + Sep 7), activate audit pass.
+  7. **Post-AAIF Seoul summit** — AAIF Seoul blog recap not yet published (Aug 15); monitor
+     aaif.io/blog daily. If SEP-2127 merges post-WG-close (follow-on meetings Aug 31 + Sep 7),
+     activate audit pass.
+  7b. **Agent Plugins 1.0 watch:** New open standard packages MCP configs + agent skills in
+     one portable plugin (GitHub, AWS, Cursor, Microsoft, OpenAI, Vercel, Google co-founders;
+     VS Code + Copilot CLI + Copilot app live Aug 12). The `mcp.json` inside a plugin is a new
+     surface that references server URLs — our catalog endpoint URL stability is a product
+     guarantee for this pattern. No code change needed; documented signal for §12.5 roadmap.
   8. **GitHub Enterprise allowlists validation signal:** Our `GET /v0.1/gateway/catalog`
      projection (stable `remotes[].url`) is a direct input for GitHub's `allowedMcpServers`
      and Kiro IDE's HTTPS-hosted JSON allowlist. Endpoint URL stability is a product guarantee.
