@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-19-mcp-ecosystem-update.md](./2026-08-19-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-19 (daily research pass — **Glama ~73,773 (+683 vs. Aug 18 ~73,090)**; MCPToplist 100,958 (Aug 10 snap; 9 days stale); **PulseMCP ~22,050+ (flat, Day 9 — ingestion rework pause still ongoing; "mid-August" deadline nine days overdue; no step-jump yet)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 5 post-summit; Futurumgroup analyst coverage only; expected ~Aug 21–22); **MCPwned BH2026 slides: GitHub release live (Aug 7, 91 files/3 assets) but rendering intermittently**; no cataloged server named in any public coverage; **DeepJack** (Adversa AI + Proofpoint "CursorJack" — Cursor deeplink installs attacker-controlled MCP server after 1 click; no CVE; patched July 13; client-side only; no catalog action); **Xnurta MCP (Aug 13) + EDITED MCP (Aug 12)** — two retail MCP launches; candidates for §12.5 retail persona bundle; verify endpoints before curating; **SEP-2127 server card audit OVERDUE** (WG closed Aug 14; `subregistry-audit` highest priority); security Day 54 clean)
+- **Latest daily update:** [2026-08-20-mcp-ecosystem-update.md](./2026-08-20-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-20 (daily research pass — **Glama ~74,529 (+756 vs. Aug 19 ~73,773)**; MCPToplist 100,958 (Aug 10 snap; 10 days stale); **PulseMCP ~22,030–22,070 (flat, Day 10 — ingestion-rework pause ten days overdue; no step-jump yet)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 6 post-summit; expected ~Aug 21–22); **MCPwned BH2026 slides: CONFIRMED AVAILABLE — GitHub release live (91 files/3 assets); CLOSED — no cataloged server named in any analysis**; **SEP-2127 server card audit OVERDUE** (WG closed Aug 14; follow-on meetings Aug 31 + Sep 7; `subregistry-audit` highest priority); security Day 55 clean)
 
 ## Ranking criteria
 
