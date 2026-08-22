@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-21-mcp-ecosystem-update.md](./2026-08-21-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-21 (daily research pass — **Glama ~75,614 (+1,085 vs. Aug 20 ~74,529) — CROSSES 75k MILESTONE**; MCPToplist 100,958 (Aug 10 snap; 11 days stale); **PulseMCP ~22,020–22,070 (flat, Day 11 — ingestion-rework pause eleven days overdue; no step-jump yet)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 7 post-summit; expected ~Aug 22–24); **MCPwned slides: CLOSED watch item** (no catalog impact); **SEP-2127 server card audit OVERDUE** (PR still open; WG follow-on meetings Aug 31 + Sep 7; `subregistry-audit` highest priority; path confirmed `/.well-known/mcp/server-card.json`); **Impala MCP Server (Aug 19, philanthropy)** — not a catalog candidate; security Day 56 clean)
+- **Latest daily update:** [2026-08-22-mcp-ecosystem-update.md](./2026-08-22-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-22 (daily research pass — **Glama ~75,614 (flat vs. Aug 21)**; MCPToplist 100,958 (Aug 10 snap; 12 days stale); **PulseMCP ~22,020–22,070 (flat, Day 12 — ingestion-rework pause twelve days overdue; no step-jump yet)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 8 post-summit; at upper end of estimated window); **GitHub MCP Server v1.10.0 (Aug 19) + v1.10.1 (Aug 20)** — two releases since v1.9.0 capture; `com.github/mcp` verifiedAt update overdue; **CVE-2026-76404 (Splunk MCP Server App, CVSS 9.1, Aug 19)** — enterprise add-on, NOT in catalog, remote-HTTP catalog immune; **SEP-2127 server card audit OVERDUE** (PR still open; WG follow-on meetings Aug 31 + Sep 7; `subregistry-audit` highest priority; path confirmed `/.well-known/mcp/server-card.json`); security Day 57 clean)
 
 ## Ranking criteria
 

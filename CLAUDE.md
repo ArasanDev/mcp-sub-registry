@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-21 (daily research pass — Glama ~75,614 (+1,085 vs. Aug 20 ~74,529) — CROSSES 75k MILESTONE; MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot; 11 days stale); PulseMCP ~22,020–22,070 (flat, Day 11 — "until mid-August" pause now 11 days past stated end date; step-jump still pending); AAIF Seoul blog recap STILL NOT PUBLISHED (Day 7 post-summit; expected ~Aug 22–24); MCPwned BH2026 slides: CONFIRMED AVAILABLE — CLOSED watch item — no cataloged server named in any analysis; SEP-2127 server card audit OVERDUE (PR still open; follow-on meetings Aug 31 + Sep 7; `subregistry-audit` highest priority; path confirmed `/.well-known/mcp/server-card.json`); Impala MCP Server launched Aug 19 (philanthropy sector; not a catalog candidate); security Day 56 clean):**
+**As of 2026-08-22 (daily research pass — Glama ~75,614 (flat vs. Aug 21); MCPToplist 100,958 cross-registry (Aug 10 snap; no new snapshot; 12 days stale); PulseMCP ~22,020–22,070 (flat, Day 12 — "until mid-August" pause now 12 days past stated end date; step-jump still pending); AAIF Seoul blog recap STILL NOT PUBLISHED (Day 8 post-summit; at upper end of estimated ~Aug 22–24 window); MCPwned BH2026 slides: CONFIRMED AVAILABLE — CLOSED watch item; GitHub MCP Server v1.10.0 (Aug 19) + v1.10.1 (Aug 20) — two releases since v1.9.0 capture; `com.github/mcp` verifiedAt update needed; CVE-2026-76404 Splunk MCP Server App (CVSS 9.1, deserialization RCE, patched v1.2.1, Aug 19) — enterprise add-on, NOT in catalog, remote-HTTP catalog immune; SEP-2127 server card audit OVERDUE (PR still open; follow-on meetings Aug 31 + Sep 7; `subregistry-audit` highest priority; path confirmed `/.well-known/mcp/server-card.json`); security Day 57 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -802,9 +802,11 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      `/.well-known/mcp.json` on all 19 cataloged servers; record HTTP status, tool count,
      protocol version in `verification.notes`. Validator: agent-ready.dev/mcp-card-validator.
      No schema migration needed; follow-on WG meetings Aug 31 + Sep 7.
-     (b) **Update `verifiedAt` for:** `com.github/mcp` (v1.9.0 released Aug 10; capability
-     expansion: semantic search default, PR from issue read, duplicate detection tool; no
-     endpoint/auth changes) and `com.slack/mcp` (Slack Skills Plugin + CC v2.1.231 OAuth fix).
+     (b) **Update `verifiedAt` for:** `com.github/mcp` (**v1.10.1 now latest** — v1.10.0 Aug 19
+     security/reliability update: repository deletion, HTTPS enforcement, symbolic link handling,
+     GitHub Enterprise Server compatibility, enhanced Projects; v1.10.1 Aug 20 patch: fixes
+     `add_issue_comment` schema compatibility regression; no endpoint/auth changes; [[releases]](https://github.com/github/github-mcp-server/releases))
+     and `com.slack/mcp` (Slack Skills Plugin + CC v2.1.231 OAuth fix).
      (c) **Verify TS SDK-based vendors ≥v1.26.0 or migrated to SDK v2.0.0** (CVE-2026-25536
      data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in 2026-07-28
      spec) for OAuth-gated catalog vendors.
