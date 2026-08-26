@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-25-mcp-ecosystem-update.md](./2026-08-25-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-25 (daily research pass — **Glama 77,381 (+549; CROSSES 77k MILESTONE)**; MCPToplist 108,245 (Aug 23 snap; 2 days stale); **PulseMCP ~22,020–22,050 (flat, Day 15 — ingestion-rework pause now 15 days past mid-Aug stated end date; step-jump still pending)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 11 post-summit; Futurumgroup + Forkast + TechTimes third-party coverage only); **MCPCon Shanghai in 12 days** (Sept 6–7; agenda published by Linux Foundation; 40+ sessions); **Morphisec "drp-compliance-sdk" MCP supply chain attack** disclosed — fires on `tools/list` handshake, LOTL chain, no CVE yet; remote-HTTP catalog immune; **SEP-2127 WG follow-on Aug 31** (6 days); security Day 60 clean)
+- **Latest daily update:** [2026-08-26-mcp-ecosystem-update.md](./2026-08-26-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-26 (daily research pass — **Glama 78,248 (+867; CROSSES 78k MILESTONE)**; MCPToplist 108,245 (Aug 23 snap; 3 days stale); **PulseMCP ~22,020–22,050 (flat, Day 16 — ingestion-rework pause now 12 days past mid-August stated end date; step-jump still pending)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 12 post-summit; longest gap in AAIF MCP Dev Summit history); **MCPCon Shanghai in 11 days** (Sept 6–7); **CVE-2026-75149 (Marimo, CVSS 8.7, code injection via MCP, published Aug 19, exploited <10h) — first captured in our trail today; local tool, catalog immune**; **Dense WG calendar: 3 WG/IG sessions today + FSIG Aug 27 + 3 more Aug 28 + SEP-2127 WG Aug 31**; security Day 61 clean)
 
 ## Ranking criteria
 
