@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-08-26-mcp-ecosystem-update.md](./2026-08-26-mcp-ecosystem-update.md)
-- **Last updated:** 2026-08-26 (daily research pass — **Glama 78,248 (+867; CROSSES 78k MILESTONE)**; MCPToplist 108,245 (Aug 23 snap; 3 days stale); **PulseMCP ~22,020–22,050 (flat, Day 16 — ingestion-rework pause now 12 days past mid-August stated end date; step-jump still pending)**; **AAIF Seoul blog recap STILL NOT PUBLISHED** (Day 12 post-summit; longest gap in AAIF MCP Dev Summit history); **MCPCon Shanghai in 11 days** (Sept 6–7); **CVE-2026-75149 (Marimo, CVSS 8.7, code injection via MCP, published Aug 19, exploited <10h) — first captured in our trail today; local tool, catalog immune**; **Dense WG calendar: 3 WG/IG sessions today + FSIG Aug 27 + 3 more Aug 28 + SEP-2127 WG Aug 31**; security Day 61 clean)
+- **Latest daily update:** [2026-08-27-mcp-ecosystem-update.md](./2026-08-27-mcp-ecosystem-update.md)
+- **Last updated:** 2026-08-27 (daily research pass — **Glama ~78,248 (cached; 79k crossing likely Aug 27–28)**; MCPToplist 108,245 (Aug 23 snap; 4 days stale); **PulseMCP ~22,000–22,070 (flat, Day 17 — ingestion pause now 13 days past mid-Aug stated end date)**; **AAIF Seoul blog recap STILL NOT PUBLISHED (Day 13 — longest gap in AAIF MCP Dev Summit history)**; **MCPCon Shanghai in 10 days** (Sept 6–7); **MCP Roadmap published Aug 22 (5 priorities: agentic messaging, HTTP-native transport, agent identity/DPoP/WIF, progressive discovery, SDK DX; SEPs 2575/2567/2549/2663/2322/2133) — first captured in our trail today**; **TWO NEW WGs surfaced: Progressive Disclosure WG + MCP Security Interest Group biweekly (both meeting Aug 31)**; FSIG Aug 27 meeting in progress (no outputs yet); security Day 62 clean)
 
 ## Ranking criteria
 
