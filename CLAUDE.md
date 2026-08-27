@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-26 (daily research pass — Glama 78,248 (+867; CROSSES 78k MILESTONE); MCPToplist 108,245 cross-registry (Aug 23 snap; 3 days stale); PulseMCP ~22,020–22,050 (flat, Day 16 — "until mid-August" pause now 12 days past stated end date; step-jump still pending); AAIF Seoul blog recap STILL NOT PUBLISHED (Day 12 post-summit; longest gap in AAIF MCP Dev Summit history); MCPCon Shanghai Sept 6–7, 11 days away; CVE-2026-75149 (Marimo notebook, CVSS 8.7, MCP code injection, exploited <10h of disclosure, Aug 19 — first captured in our trail today; local tool, catalog immune); Dense WG calendar this week: Inspector V2 WG + Fine-Grained Auth WG + Gateways IG today; FSIG Aug 27; Transports WG + Agents WG + Triggers & Events WG Aug 28; SEP-2127 WG Aug 31 (5 days); security Day 61 clean):**
+**As of 2026-08-27 (daily research pass — Glama ~78,700–79,100 (unconfirmed today; 79k crossing likely Aug 27–28 at post-spec pace; Aug 26 confirmed: 78,248); MCPToplist 108,245 cross-registry (Aug 23 snap; 4 days stale); PulseMCP ~22,000–22,070 (flat, Day 17 — ingestion-rework pause now 13 days past "until mid-August" stated end date; no step-jump); AAIF Seoul blog recap STILL NOT PUBLISHED (Day 13 post-summit; longest gap in AAIF MCP Dev Summit history — may roll into MCPCon Shanghai coverage); MCPCon Shanghai Sept 6–7, 10 days away; MCP Roadmap published Aug 22 — first captured in our trail today: 5 priorities, key SEPs 2575 (progressive discovery), 2322 (agent identity/DPoP/WIF), 2567+2663 (Tasks), 2549 (HTTP-native transport); TWO NEW WGs surfaced: Progressive Disclosure WG (SEP-2575) + MCP Security Interest Group (both Aug 31); Aug 31 now has 4 WG sessions — most governance-dense day since Aug 14; FSIG biweekly met today (4pm London; notes in 1-2 days); Aug 26 WG notes not yet published; security Day 62 clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -249,7 +249,8 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   Registry April 2026 preview, Docker MCP Catalog detail, Censys 12,520 accessible MCP
   services (40% unauthenticated), Sentry endpoint confirmed. GitHub access + network egress
   confirmed across both runs. The loop is self-sustaining; review its commits each session.
-- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-26:
+- **Research:** landscape + top-11 ranking in `docs/research/`. Ranking updated 2026-08-27:
+  **Glama ~78,700–79,100 (unconfirmed; 79k crossing expected Aug 27–28; Aug 26 confirmed 78,248)**; MCPToplist 108,245 (Aug 23 snap; 4 days stale); PulseMCP ~22,000–22,070 (flat, Day 17 — ingestion pause 13 days past "until mid-August"); **AAIF Seoul blog recap STILL NOT PUBLISHED (Day 13 — longest gap in AAIF MCP Dev Summit history; may roll into MCPCon Shanghai coverage)**; MCPCon Shanghai 10 days (Sept 6–7); **MCP Roadmap published Aug 22 (blog.modelcontextprotocol.io) — first captured in our trail today: 5 priorities: (1) Agentic Messaging Primitives (SEP-2567/2663), (2) HTTP-native transport (SEP-2549), (3) Agent Identity/DPoP/WIF (SEP-2322), (4) Progressive Discovery (SEP-2575), (5) SDK DX; no release dates given**; **TWO NEW WGs surfaced: Progressive Disclosure WG (SEP-2575, Aug 31 8am) + MCP Security IG biweekly (#security-ig, Aug 31 10am)**; Aug 31 now has 4 WG sessions (Progressive Disclosure WG + Security IG + Auth IG + Server Card WG — most consequential governance day since Aug 14); FSIG biweekly met today (Aug 27, 4pm London; notes in 1-2 days); security Day 62 clean. Prior update 2026-08-26:
   **Glama 78,248 (CROSSES 78k MILESTONE; +867 vs Aug 25)**; MCPToplist 108,245 (Aug 23 snap; 3 days stale); PulseMCP ~22,020–22,050 (flat, Day 16 — ingestion pause overdue); **AAIF Seoul blog recap STILL NOT PUBLISHED (Day 12 — longest gap in AAIF MCP Dev Summit history)**; MCPCon Shanghai 11 days (Sept 6–7); **CVE-2026-75149 (Marimo notebook, CVSS 8.7, MCP code injection, no-auth, fixed v0.23.15, published Aug 19 — first in our research trail today; exploited <10h of disclosure; local tool, catalog immune)**; **Dense WG calendar this week** (3 sessions today Aug 26 incl. Inspector V2 WG + Fine-Grained Auth WG + Gateways IG; FSIG Aug 27; 3 more Aug 28; SEP-2127 WG Aug 31); **MCP Financial Services IG (FSIG)**: formally chartered WG at modelcontextprotocol/financial-services-interest-group, bi-weekly, finance compliance/auditability/provenance focus; security Day 61 clean. Prior update 2026-08-25:
   **Glama 77,381 (+549; CROSSES 77k MILESTONE)**; MCPToplist 108,245 (Aug 23 snap; 2 days stale); PulseMCP ~22,020–22,050 (flat, Day 15); AAIF Seoul recap pending Day 11; Morphisec "drp-compliance-sdk" MCP attack (fires on tools/list handshake, LOTL chain; no CVE; catalog immune); SEP-2127 WG Aug 31 (6 days); security Day 60 clean. Prior update 2026-08-15:
   **Glama ~72,328 (+214 vs Aug 14)**; MCPToplist 100,958 (Aug 10 snap; no new snapshot); **PulseMCP ~22,070+ (flat, Day 5 — submissions paused mid-Aug for ingestion rework)**; **AAIF Seoul blog recap NOT YET published** (summit concluded Aug 14; monitor aaif.io/blog); **MCPwned slides not yet public** (BH archive ~Aug 19–20; no cataloged vendor named); **Two new CVEs**: CVE-2026-59950 (MCP Python SDK WebSocket CSWSH, CVSS 7.6, patched v1.28.1) + CVE-2026-50143 (Apify actor path injection, CVSS 8.1, patched v0.10.11) — neither affects remote-HTTP catalog; **Agent Plugins 1.0 in VS Code+Copilot CLI+Copilot app (Aug 12)**; **Adversa AI August 2026 digests** — six-stage MCP kill chain HMM + SPELLSMITH; **SEP-2127 server card audit ACTIVE**; security Day 50 clean. Prior update 2026-08-14:
@@ -799,11 +800,13 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
      (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
      some endpoints; headless-only) — verify gateway-compatible auth path before adding.
-  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger ACTIVE since 2026-08-14):**
+  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger ACTIVE since 2026-08-14) — HOLD SEP-2127 UNTIL AFTER AUG 31 WG MEETING:**
      (a) **SEP-2127 server card audit — TRIGGERED (WG closed Aug 14):** GET
      `/.well-known/mcp.json` on all 19 cataloged servers; record HTTP status, tool count,
      protocol version in `verification.notes`. Validator: agent-ready.dev/mcp-card-validator.
-     No schema migration needed; follow-on WG meetings Aug 31 + Sep 7.
+     No schema migration needed; follow-on WG meetings **Aug 31** (4 sessions: Progressive
+     Disclosure WG 8am + Security IG 10am + Auth IG 6pm + Server Card WG 8pm) + Sep 7.
+     **Wait for Aug 31 Server Card WG output before running the audit pass** (4 days).
      (b) **Update `verifiedAt` for:** `com.github/mcp` (**v1.10.1 now latest** — v1.10.0 Aug 19
      security/reliability update: repository deletion, HTTPS enforcement, symbolic link handling,
      GitHub Enterprise Server compatibility, enhanced Projects; v1.10.1 Aug 20 patch: fixes
@@ -820,12 +823,20 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
   5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
      new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
      After 6 months, flag Python-SDK vendors still on v1.x.
-  6. **MCPwned slides** — Streamly on-demand opened Aug 14 (registered attendees only); public
-     BH archive expected **~Aug 19–20**. If a cataloged server is named in the deck, trigger
-     `subregistry-audit` immediately. AWS Agent Registry: still Preview; watch for GA.
-  7. **Post-AAIF Seoul summit** — AAIF Seoul blog recap not yet published (Aug 15); monitor
-     aaif.io/blog daily. If SEP-2127 merges post-WG-close (follow-on meetings Aug 31 + Sep 7),
-     activate audit pass.
+  5b. **Track MCP Roadmap SEPs (Aug 22 roadmap — first captured today):** SEP-2575 (progressive
+      discovery — affects `tool_count` in gateway projection); SEP-2322 (agent identity / DPoP /
+      WIF — affects `required_secrets` documentation); SEP-2567/2663 (Tasks maturation — affects
+      `gateway_compatibility` readiness flags); SEP-2549 (HTTP-native transport). No catalog schema
+      change now; track when SEPs stabilize. [[MCP Roadmap blog]](https://blog.modelcontextprotocol.io/posts/mcp-roadmap/)
+  5c. **Aug 31 WG outputs to monitor (4 days):** Progressive Disclosure WG (8am, SEP-2575) +
+      MCP Security IG (10am, #security-ig — first standing security IG in MCP governance) +
+      Auth IG (6pm) + Server Card WG (8pm, SEP-2127). Check meet.modelcontextprotocol.io for
+      notes published within 1–3 days of Aug 31.
+  6. **MCPwned slides** — confirmed available on BH archive (Aug 20; 91 files; no cataloged server
+     named; watch item CLOSED). AWS Agent Registry: still Preview; watch for GA.
+  7. **Post-AAIF Seoul summit** — AAIF Seoul blog recap not yet published (Day 13; Aug 27); monitor
+     aaif.io/blog. May roll into MCPCon Shanghai (Sept 6–7) coverage. If SEP-2127 merges post-WG
+     follow-on (Aug 31 + Sep 7), activate audit pass after.
   7b. **Agent Plugins 1.0 watch:** New open standard packages MCP configs + agent skills in
      one portable plugin (GitHub, AWS, Cursor, Microsoft, OpenAI, Vercel, Google co-founders;
      VS Code + Copilot CLI + Copilot app live Aug 12). The `mcp.json` inside a plugin is a new
