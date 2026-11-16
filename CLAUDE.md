@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-08-27 (daily research pass — Glama ~78,700–79,100 (unconfirmed today; 79k crossing likely Aug 27–28 at post-spec pace; Aug 26 confirmed: 78,248); MCPToplist 108,245 cross-registry (Aug 23 snap; 4 days stale); PulseMCP ~22,000–22,070 (flat, Day 17 — ingestion-rework pause now 13 days past "until mid-August" stated end date; no step-jump); AAIF Seoul blog recap STILL NOT PUBLISHED (Day 13 post-summit; longest gap in AAIF MCP Dev Summit history — may roll into MCPCon Shanghai coverage); MCPCon Shanghai Sept 6–7, 10 days away; MCP Roadmap published Aug 22 — first captured in our trail today: 5 priorities, key SEPs 2575 (progressive discovery), 2322 (agent identity/DPoP/WIF), 2567+2663 (Tasks), 2549 (HTTP-native transport); TWO NEW WGs surfaced: Progressive Disclosure WG (SEP-2575) + MCP Security Interest Group (both Aug 31); Aug 31 now has 4 WG sessions — most governance-dense day since Aug 14; FSIG biweekly met today (4pm London; notes in 1-2 days); Aug 26 WG notes not yet published; security Day 62 clean):**
+**As of 2026-11-16 (daily research pass — Glama ~121,515 (Nov 15; +42.5k since Aug 27; 100k crossed late Sep/early Oct; 120k crossed early Nov); PulseMCP ~21,614–21,710 (flat, submissions still paused); Smithery ~26,000–27,400 (ACQUIRED BY Arcade.dev Aug 2026; count rebounded dramatically from ~7,300); Official MCP Registry ~47,267 active servers (Oct 21 est.); CVE-2026-59822 CISA KEV Sept 2 — first MCP-specific KEV entry (LiteLLM auth bypass, CVSS 8.8, patched v1.84.0; not catalog-relevant); MCPCon Shanghai (Sept 6–7) + Tokyo (Sept 10–11) + Amsterdam (Sept 17–18) all ran; MCPCon North America Oct 22–23: AAIF announced 4 new projects — Agent Skills (Anthropic), Open Responses (OpenAI), OpenEnv (Hugging Face), OpenSandbox (Alibaba); AAIF now 10 projects; MCPCon Nairobi Nov 19–20 in 3 days; MCP spec next release targeting March 30, 2027 (confirmed six-month cadence); SEP-2127 finalization unconfirmed — hold server card audit; HubSpot + Intercom confirmed curate candidates; security Day 82+ clean for cataloged servers):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -791,57 +791,43 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 - **July 30 new findings (spec post-release day 2):** (1) **SDK download milestone confirmed**: "close to half-a-billion downloads a month" across Tier 1 SDKs; TypeScript + Python each crossed **1 billion total downloads**. Anthropic separately cites 400M+ monthly (4× YoY). [[MCP release blog]](https://blog.modelcontextprotocol.io/posts/2026-07-28/) (2) **Day-zero support vendor roll-call**: AWS, Cloudflare, Figma, Google Cloud, Microsoft, Netlify, PostHog, Stripe, Supabase, Xero named in official spec launch post. Stripe (`com.stripe/mcp`) and Supabase (`com.supabase/mcp`) are catalog entries — positive trust signal; verify spec compliance in next audit. (3) **Cloudflare Agents SDK v0.20.0** (July 27): day-zero 2026-07-28 support; stateless Workers tools, `server/discover`, elicitation, backward-compat legacy initialize. Sentry + Linear named as day-zero adopters on Cloudflare infra. [[Changelog]](https://developers.cloudflare.com/changelog/post/2026-07-27-agents-sdk-v0.20.0-mcp-sdk-v2/) (4) **`server/discover` RPC (SEP-2575)**: new stateless capability discovery endpoint replacing `initialize` handshake; `_meta` per-request carries version+capabilities; v2 client falls back to v1 initialize if `server/discover` absent. (5) **AWS AgentCore Gateway blog**: published how AgentCore Gateway supports 2026-07-28 spec; Tasks extension contributed by AWS. [[AWS blog]](https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/) (6) **CVE-2026-40576** (Excel MCP Server, `excel-mcp-server` ≤0.1.7, CWE-22 path traversal, CVSS critical, fixed in v0.1.8): community STDIO PyPI package; arbitrary host filesystem read/write; not in catalog; remote-HTTP catalog structurally immune. [[SentinelOne]](https://www.sentinelone.com/vulnerability-database/cve-2026-40576/) (7) **CIMD adoption ecosystem**: WorkOS, Datawiza, Scalekit, Descope, Stytch all published CIMD implementation guides post-spec. FastMCP has open issue for CIMD support. DCR formally deprecated. [[WorkOS]](https://workos.com/blog/client-id-metadata-documents-cimd-oauth-client-registration-mcp) (8) **SDK v2 codemod**: `npx @modelcontextprotocol/codemod@beta v1-to-v2` for mechanical TS SDK migration. (9) **Registry scale**: Glama ~63,926 (+1,616); PulseMCP 22,260+ (steady); MCPToplist 81,852 (steady). (10) **Security Day 33 clean**: no new CVEs affecting cataloged servers. Microsoft July 2026 Patch Tuesday (570 flaws, 3 zero-days) — no MCP catalog CVEs. (11) **SEP-2127 WG: 15 days to close** (Aug 14).
 - **Next actions (ordered):**
   1. Seed the 19-server catalog into the live DB (`subregistry-deploy` → `seed:curated` on VPS).
-  2. Next `subregistry-curate` run: **Comms & support group** — **HubSpot** (endpoint `mcp.hubspot.com`
-     CONFIRMED READY: GA April 13, OAuth 2.1 + PKCE only, one-click Claude connector; no DCR;
-     **August 2026 capability expansion** now confirmed: Leads record read, Conversations data (multi-channel),
-     Help Desk reply ratings, conditional field logic, landing pages + content analytics, marketing email tools,
-     quotes/revenue (beta), partner client read, verified domain controls; note `no DCR` in `auth.notes`;
-     [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)).
-     Also consider Intercom and Zapier. **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity
-     (pay-per-use tiers since Feb 2026; Production env enrollment required; Enterprise-only for
-     some endpoints; headless-only) — verify gateway-compatible auth path before adding.
-  3. **NEXT: `subregistry-audit` pass (SEP-2127 trigger ACTIVE since 2026-08-14) — HOLD SEP-2127 UNTIL AFTER AUG 31 WG MEETING:**
-     (a) **SEP-2127 server card audit — TRIGGERED (WG closed Aug 14):** GET
-     `/.well-known/mcp.json` on all 19 cataloged servers; record HTTP status, tool count,
-     protocol version in `verification.notes`. Validator: agent-ready.dev/mcp-card-validator.
-     No schema migration needed; follow-on WG meetings **Aug 31** (4 sessions: Progressive
-     Disclosure WG 8am + Security IG 10am + Auth IG 6pm + Server Card WG 8pm) + Sep 7.
-     **Wait for Aug 31 Server Card WG output before running the audit pass** (4 days).
-     (b) **Update `verifiedAt` for:** `com.github/mcp` (**v1.10.1 now latest** — v1.10.0 Aug 19
-     security/reliability update: repository deletion, HTTPS enforcement, symbolic link handling,
-     GitHub Enterprise Server compatibility, enhanced Projects; v1.10.1 Aug 20 patch: fixes
-     `add_issue_comment` schema compatibility regression; no endpoint/auth changes; [[releases]](https://github.com/github/github-mcp-server/releases))
-     and `com.slack/mcp` (Slack Skills Plugin + CC v2.1.231 OAuth fix).
-     (c) **Verify TS SDK-based vendors ≥v1.26.0 or migrated to SDK v2.0.0** (CVE-2026-25536
-     data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in 2026-07-28
-     spec) for OAuth-gated catalog vendors.
-     (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950, CVSS 7.6, WebSocket CSWSH;
-     patched in v1.28.1; remote-HTTP-only catalog immune, but verify any mixed-transport vendor).
-     (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked in egress environment;
-     confirm none target a cataloged endpoint via alternative source).
-  4. Set up a weekly `subregistry-audit` cadence after #2 curate run completes.
-  5. Track vendor compliance with 2026-07-28 spec (stateless; `Mcp-Method`/`Mcp-Name` required;
-     new OAuth 2.1 resource-server model). **Spec is FINAL.** No catalog schema change needed.
-     After 6 months, flag Python-SDK vendors still on v1.x.
-  5b. **Track MCP Roadmap SEPs (Aug 22 roadmap — first captured today):** SEP-2575 (progressive
-      discovery — affects `tool_count` in gateway projection); SEP-2322 (agent identity / DPoP /
-      WIF — affects `required_secrets` documentation); SEP-2567/2663 (Tasks maturation — affects
-      `gateway_compatibility` readiness flags); SEP-2549 (HTTP-native transport). No catalog schema
-      change now; track when SEPs stabilize. [[MCP Roadmap blog]](https://blog.modelcontextprotocol.io/posts/mcp-roadmap/)
-  5c. **Aug 31 WG outputs to monitor (4 days):** Progressive Disclosure WG (8am, SEP-2575) +
-      MCP Security IG (10am, #security-ig — first standing security IG in MCP governance) +
-      Auth IG (6pm) + Server Card WG (8pm, SEP-2127). Check meet.modelcontextprotocol.io for
-      notes published within 1–3 days of Aug 31.
-  6. **MCPwned slides** — confirmed available on BH archive (Aug 20; 91 files; no cataloged server
-     named; watch item CLOSED). AWS Agent Registry: still Preview; watch for GA.
-  7. **Post-AAIF Seoul summit** — AAIF Seoul blog recap not yet published (Day 13; Aug 27); monitor
-     aaif.io/blog. May roll into MCPCon Shanghai (Sept 6–7) coverage. If SEP-2127 merges post-WG
-     follow-on (Aug 31 + Sep 7), activate audit pass after.
-  7b. **Agent Plugins 1.0 watch:** New open standard packages MCP configs + agent skills in
-     one portable plugin (GitHub, AWS, Cursor, Microsoft, OpenAI, Vercel, Google co-founders;
-     VS Code + Copilot CLI + Copilot app live Aug 12). The `mcp.json` inside a plugin is a new
-     surface that references server URLs — our catalog endpoint URL stability is a product
-     guarantee for this pattern. No code change needed; documented signal for §12.5 roadmap.
+  2. **IMMEDIATE: `subregistry-curate` run — Comms & Support group (Nov 2026)**
+     - **HubSpot** (`mcp.hubspot.com`): GA April 13, OAuth 2.1 + PKCE, no DCR — **7+ months overdue**;
+       Aug 2026 capabilities confirmed: Leads, Conversations, Help Desk, landing pages, marketing email,
+       quotes/revenue (beta). Note `no DCR` in `auth.notes`.
+       [[HubSpot GA]](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available)
+     - **Intercom** (`https://mcp.intercom.com/mcp`): Streamable HTTP, OAuth or Bearer API key; US + EU
+       (EU: `mcp.eu.intercom.com/mcp`); AU NOT supported; ~13–15 tools (conversations, contacts, Help Center).
+       [[Intercom MCP]](https://www.intercom.com/integrations/connectors/intercom-mcp-server)
+     - **Zapier MCP**: evaluate whether per-user action configuration fits catalog model (probably not —
+       no stable tool list; skip for now).
+     - **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity confirmed (pay-per-use tiers; Enterprise-only
+       for some endpoints; headless-only) — verify gateway-compatible auth path before adding.
+  3. **`subregistry-audit` pass:**
+     (a) **SEP-2127 server card audit — HOLD** (finalization status unconfirmed as of Nov 16;
+     one source says merged Final Oct 6 but paths still conflict; verify against primary spec
+     repo `seps/2127-mcp-server-cards.md` before running). Validator: agent-ready.dev.
+     (b) **Update `verifiedAt` for `com.github/mcp`**: likely v2.0.2 (Oct 8, 2026 per third-party
+     aggregator; verify at github.com/github/github-mcp-server/releases).
+     (c) **Verify TS SDK-based vendors on SDK v2.0.0** (or ≥v1.26.0 minimum; CVE-2026-25536
+     data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in spec).
+     (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950 WebSocket CSWSH).
+     (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked; confirm none target
+     a cataloged endpoint via alternative source).
+  4. Set up a weekly `subregistry-audit` cadence after curate run completes.
+  5. Track vendor compliance with 2026-07-28 spec. **Spec is FINAL.** Next spec release: March 30, 2027.
+     Flag Python-SDK vendors still on v1.x after 6-month window (~Jan 27, 2027).
+  5b. **Track MCP Roadmap SEPs:** SEP-2575 (progressive discovery → `tool_count`), SEP-2322
+      (agent identity/DPoP/WIF → `required_secrets`), SEP-2567/2663 (Tasks), SEP-2549 (HTTP transport),
+      SEP-2640 (Skills — TypeScript SDK already shipped; relevant to Agent Skills AAIF project).
+      No catalog schema change now; track when SEPs stabilize.
+  5c. **MCPCon Nairobi (Nov 19–20):** Monitor aaif.io for session outputs. Any new MCP governance
+      or spec signals → update this section.
+  6. **AAIF Agent Skills (Anthropic donation, Oct 22, 2026):** Watch for a formal Agent Skills
+     registry/index — if one launches, it becomes a potential upstream source alongside the official
+     MCP Registry. Our `.claude/skills/` already mirrors the SKILL.md folder structure.
+  7. **Smithery/Arcade.dev:** Monitor governance model and curation quality under new ownership.
+     If Arcade.dev introduces governance controls, update Smithery ranking entry.
   8. **GitHub Enterprise allowlists validation signal:** Our `GET /v0.1/gateway/catalog`
      projection (stable `remotes[].url`) is a direct input for GitHub's `allowedMcpServers`
      and Kiro IDE's HTTPS-hosted JSON allowlist. Endpoint URL stability is a product guarantee.
