@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-11-18-mcp-ecosystem-update.md](./2026-11-18-mcp-ecosystem-update.md)
-- **Last updated:** 2026-11-18 (daily research pass — **Glama ~121,515 (Nov 15 snapshot; no new data today)**; PulseMCP flat; Smithery directory-only under Arcade.dev; **TypeScript SDK CVE cluster (Oct 20 disclosures): 7 CVEs, highest CVSS 8.6, fixed in v2.3.0/v1.32.0** — CVE-2026-111770 (CVSS 7.7, race condition/session leak), CVE-2026-111769 (CVSS 6.5, header leak on redirect), CVE-2026-111771 (token substitution); v2.4.0 (Oct 23) adds 6 more fixes — **audit item: verify TS-SDK-based catalog vendors on v2.3.0+**; **Ruby SDK elevated to Tier 1** (6th Tier-1 SDK, confirmed ~Sept/Oct 2026); **MCPCon Nairobi starts tomorrow (Nov 19–20)** — event proceeding as scheduled (health/safety check passed Nov 5); **AAIF opened WGs to non-members** (Oct 2026, 305 members, 116 OS projects); **week-of-Nov-9 security incidents**: MCP server as breach entry point (German hosting provider, Nov 7) + admin workstation pivot (Nov 10) — remote-HTTP catalog structurally immune; security Day 90+ clean for cataloged servers)
+- **Latest daily update:** [2026-11-20-mcp-ecosystem-update.md](./2026-11-20-mcp-ecosystem-update.md)
+- **Last updated:** 2026-11-20 (daily research pass — **Glama ~124,500–125,000 (est., projection)**; PulseMCP flat ~21,614–21,710; Smithery directory-only under Arcade.dev; **NEW CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — audit item added; **MCPCon Nairobi concludes Day 2 (Nov 20)** — no recap yet; TS SDK v2.4.0 latest; MCP spec 2026-07-28 final; next spec March 2027; security Day 92+ clean for cataloged servers)
 
 ## Ranking criteria
 

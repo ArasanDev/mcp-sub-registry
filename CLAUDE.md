@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-11-19 (daily research pass — Glama ~123,500+ (est., projecting from Oct 28 confirmed 111,899 at ~530/day); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy + connections SHUT DOWN Oct 31** — directory-only under Arcade.dev; **MCPCon Nairobi underway Day 1 (Nov 19–20)** — no recap yet, monitor aaif.io after Nov 20; **CVE-2026-111771 formally published NVD/Red Hat Nov 5** — audience validation must be explicitly configured post-upgrade to v2.3.0 (not auto-enabled); **TS SDK v2.4.0 (Oct 23) remains latest** — no November release; **GitHub MCP server v2.0.2 (Oct 8) confirmed current**; **Intercom MCP endpoint confirmed active** (last probed Oct 9; mcp.intercom.com/mcp, Streamable HTTP, OAuth/Bearer, AU not supported); **HubSpot MCP write-access expansion confirmed Sept 15** (CRM records, campaigns, content, pipelines); security Day 91+ clean):**
+**As of 2026-11-20 (daily research pass — Glama ~124,500–125,000 (est., projection only; no new snapshot); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; **MCPCon Nairobi concludes Day 2 (Nov 20)** — no recap yet, monitor aaif.io post-Nov 20; **NEW CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — newly surfaced; audit item added; **CVE-2026-111771 NVD/Red Hat Nov 5** — audience validation must be explicitly configured post-upgrade to v2.3.0; **TS SDK v2.4.0 (Oct 23) latest** — no November release; **GitHub MCP server v2.0.2 (Oct 8) current**; **Intercom endpoint active** (mcp.intercom.com/mcp, Streamable HTTP, OAuth/Bearer); **HubSpot write-access expansion Sept 15**; security Day 92+ clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -811,7 +811,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      aggregator; verify at github.com/github/github-mcp-server/releases).
      (c) **Verify TS SDK-based vendors on SDK v2.0.0** (or ≥v1.26.0 minimum; CVE-2026-25536
      data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in spec).
-     (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950 WebSocket CSWSH).
+     (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950 WebSocket CSWSH) **and ≥v1.30.0** (CVE-2026-116686 SSRF/$ref external resolution, Oct 27, CVSS 6.5 — newly surfaced Nov 20).
      (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked; confirm none target
      a cataloged endpoint via alternative source).
   4. Set up a weekly `subregistry-audit` cadence after curate run completes.
