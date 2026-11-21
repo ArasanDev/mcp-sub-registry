@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-11-20-mcp-ecosystem-update.md](./2026-11-20-mcp-ecosystem-update.md)
-- **Last updated:** 2026-11-20 (daily research pass — **Glama ~124,500–125,000 (est., projection)**; PulseMCP flat ~21,614–21,710; Smithery directory-only under Arcade.dev; **NEW CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — audit item added; **MCPCon Nairobi concludes Day 2 (Nov 20)** — no recap yet; TS SDK v2.4.0 latest; MCP spec 2026-07-28 final; next spec March 2027; security Day 92+ clean for cataloged servers)
+- **Latest daily update:** [2026-11-21-mcp-ecosystem-update.md](./2026-11-21-mcp-ecosystem-update.md)
+- **Last updated:** 2026-11-21 (daily research pass — **Glama ~124,500–125,000 (est., homepage cached 122,052 undated)**; PulseMCP flat ~21,614–21,710; Smithery directory-only under Arcade.dev (~200+ entries still pointing at dead run.tools URLs post-Oct 31 shutdown); **TWO NEW TS SDK CVEs: CVE-2026-104850 (OAuth client cred. exposure, Oct 6, CVSS 7.5, fixed SDK 1.31.0) + CVE-2026-111768 (HTTP request-body DoS, Oct 20, CVSS 7.5, fixed SDK 1.32.0/server 2.3.0, config required)** — audit gate extended to SDK ≥1.32.0; **MCPCon Nairobi recap still pending** (event concluded Nov 20); Official MCP Registry ~59,603 distinct servers as of Nov 8 (+3,278/week); MCP server reachability census: 54–55% respond, 34–36% auth-required; TS SDK v2.4.0 latest; MCP spec 2026-07-28 final; next spec March 2027; security Day 93+ clean for cataloged servers)
 
 ## Ranking criteria
 

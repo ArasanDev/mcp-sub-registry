@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-11-20 (daily research pass — Glama ~124,500–125,000 (est., projection only; no new snapshot); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; **MCPCon Nairobi concludes Day 2 (Nov 20)** — no recap yet, monitor aaif.io post-Nov 20; **NEW CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — newly surfaced; audit item added; **CVE-2026-111771 NVD/Red Hat Nov 5** — audience validation must be explicitly configured post-upgrade to v2.3.0; **TS SDK v2.4.0 (Oct 23) latest** — no November release; **GitHub MCP server v2.0.2 (Oct 8) current**; **Intercom endpoint active** (mcp.intercom.com/mcp, Streamable HTTP, OAuth/Bearer); **HubSpot write-access expansion Sept 15**; security Day 92+ clean):**
+**As of 2026-11-21 (daily research pass — Glama ~124,500–125,000 (est.; homepage cached 122,052 undated); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; ~200+ registry entries still pointing at dead run.tools URLs; **MCPCon Nairobi recap pending** (event concluded Nov 20, no blog yet); **TWO NEW TS SDK CVEs: CVE-2026-104850 (OAuth client cred. exposure, Oct 6, CVSS 7.5, fixed SDK 1.31.0/client 2.2.0) + CVE-2026-111768 (HTTP request-body DoS, Oct 20, CVSS 7.5, fixed SDK 1.32.0/server 2.3.0, config required after upgrade)** — TS SDK audit gate extended to ≥1.32.0 (1.x) or ≥2.3.0 (2.x); **CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — audit item; **CVE-2026-111771 NVD/Red Hat Nov 5** — audience validation must be explicitly configured post-upgrade to v2.3.0; Official MCP Registry ~59,603 distinct servers (Nov 8) +3,278/week; MCP reachability: 54–55% respond, 34–36% auth-required; **TS SDK v2.4.0 (Oct 23) latest**; **GitHub MCP server v2.0.2 (Oct 8) current**; **Intercom endpoint active** (mcp.intercom.com/mcp, Streamable HTTP, OAuth/Bearer); **HubSpot write-access expansion Sept 15**; security Day 93+ clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -809,8 +809,13 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      repo `seps/2127-mcp-server-cards.md` before running). Validator: agent-ready.dev.
      (b) **Update `verifiedAt` for `com.github/mcp`**: likely v2.0.2 (Oct 8, 2026 per third-party
      aggregator; verify at github.com/github/github-mcp-server/releases).
-     (c) **Verify TS SDK-based vendors on SDK v2.0.0** (or ≥v1.26.0 minimum; CVE-2026-25536
-     data leak + CVE-2026-0621 ReDoS). Also verify CIMD compliance (DCR deprecated in spec).
+     (c) **Verify TS SDK-based vendors on FULL CVE CLUSTER (updated Nov 21):**
+         - Min gate: SDK ≥1.32.0 (1.x) or @modelcontextprotocol/server ≥2.3.0 (2.x)
+         - CVE-2026-25536 (data leak; fixed 1.26.0), CVE-2026-0621 (ReDoS; fixed 1.25.2)
+         - CVE-2026-104850 (OAuth client cred. exposure, Oct 6, CVSS 7.5; fixed SDK 1.31.0/client 2.2.0; config changes required beyond version bump — check GHSA-6qxp-vccf-f47h)
+         - CVE-2026-111771 (audience validation bypass, Nov 5, CVSS ~7.5; fixed server 2.3.0; explicit config required)
+         - CVE-2026-111768 (HTTP request-body DoS, Oct 20, CVSS 7.5; fixed SDK 1.32.0/server 2.3.0; must enable `maxToolInputElements` config after upgrade)
+         Also verify CIMD compliance (DCR deprecated in spec).
      (d) **Verify Python SDK vendors on ≥v1.28.1** (CVE-2026-59950 WebSocket CSWSH) **and ≥v1.30.0** (CVE-2026-116686 SSRF/$ref external resolution, Oct 27, CVSS 6.5 — newly surfaced Nov 20).
      (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked; confirm none target
      a cataloged endpoint via alternative source).
