@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-11-21 (daily research pass — Glama ~124,500–125,000 (est.; homepage cached 122,052 undated); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; ~200+ registry entries still pointing at dead run.tools URLs; **MCPCon Nairobi recap pending** (event concluded Nov 20, no blog yet); **TWO NEW TS SDK CVEs: CVE-2026-104850 (OAuth client cred. exposure, Oct 6, CVSS 7.5, fixed SDK 1.31.0/client 2.2.0) + CVE-2026-111768 (HTTP request-body DoS, Oct 20, CVSS 7.5, fixed SDK 1.32.0/server 2.3.0, config required after upgrade)** — TS SDK audit gate extended to ≥1.32.0 (1.x) or ≥2.3.0 (2.x); **CVE-2026-116686 (Python SDK client SSRF/$ref, Oct 27, CVSS 6.5, fixed mcp>=1.30.0/>=2.2.0)** — audit item; **CVE-2026-111771 NVD/Red Hat Nov 5** — audience validation must be explicitly configured post-upgrade to v2.3.0; Official MCP Registry ~59,603 distinct servers (Nov 8) +3,278/week; MCP reachability: 54–55% respond, 34–36% auth-required; **TS SDK v2.4.0 (Oct 23) latest**; **GitHub MCP server v2.0.2 (Oct 8) current**; **Intercom endpoint active** (mcp.intercom.com/mcp, Streamable HTTP, OAuth/Bearer); **HubSpot write-access expansion Sept 15**; security Day 93+ clean):**
+**As of 2026-11-24 (daily research pass — Glama ~125,500–126,500 (est.; homepage cached 122,052 undated, Oct 28 confirmed 111,899; ~530/day growth); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; **Official MCP Registry ~64,935 (Nov 15 snapshot), est. ~65,500–66,500 Nov 24** (+~3,166/week); **MCPCon Nairobi recap still pending (Day 4+)** — event concluded Nov 20; Gates Foundation confirmed Diamond Sponsor; no AAIF blog as of Nov 24; **Microsoft Ignite 2026 (Nov 17–21): MCP Firewall (preview) + Entra Agent Identity (preview) + ARM MCP expansion + Microsoft MCP Server for Enterprise → GA** — seventh enterprise player to enforce `discovered != approved != enabled`; **Zendesk Bridge (early access, Nov 10) added to curate queue** (400+ tools, verify endpoint + auth); **4 new community CVEs (CVE-2026-134817/125271/114494/114497)** — none in catalog; **TS SDK v2.4.0 / Python mcp>=1.30.0 latest** (no new releases); GitHub MCP v2.0.3 unconfirmed (winget listing only; v2.0.2 Oct 8 remains last confirmed); 23 of 40 tracked business systems now have official GA MCP server; security Day 97+ clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -799,6 +799,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      - **Intercom** (`https://mcp.intercom.com/mcp`): Streamable HTTP, OAuth or Bearer API key; US + EU
        (EU: `mcp.eu.intercom.com/mcp`); AU NOT supported; ~13–15 tools (conversations, contacts, Help Center).
        [[Intercom MCP]](https://www.intercom.com/integrations/connectors/intercom-mcp-server)
+     - **Zendesk Bridge** (early access, Nov 10, 2026; 400+ Zendesk tools via MCP; works with Claude +
+       ChatGPT; customer-support persona): verify stable hosted endpoint URL + auth model (OAuth or API key)
+       + whether a universal vs. org-specific endpoint; if universal GA endpoint confirmed, add to this group.
      - **Zapier MCP**: evaluate whether per-user action configuration fits catalog model (probably not —
        no stable tool list; skip for now).
      - **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity confirmed (pay-per-use tiers; Enterprise-only
@@ -807,8 +810,9 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
      (a) **SEP-2127 server card audit — HOLD** (finalization status unconfirmed as of Nov 16;
      one source says merged Final Oct 6 but paths still conflict; verify against primary spec
      repo `seps/2127-mcp-server-cards.md` before running). Validator: agent-ready.dev.
-     (b) **Update `verifiedAt` for `com.github/mcp`**: likely v2.0.2 (Oct 8, 2026 per third-party
-     aggregator; verify at github.com/github/github-mcp-server/releases).
+     (b) **Update `verifiedAt` for `com.github/mcp`**: v2.0.2 (Oct 8, 2026) last confirmed; v2.0.3
+     appeared in a Nov 2026 winget listing (unconfirmed — verify release notes at
+     github.com/github/github-mcp-server/releases before bumping verifiedAt).
      (c) **Verify TS SDK-based vendors on FULL CVE CLUSTER (updated Nov 21):**
          - Min gate: SDK ≥1.32.0 (1.x) or @modelcontextprotocol/server ≥2.3.0 (2.x)
          - CVE-2026-25536 (data leak; fixed 1.26.0), CVE-2026-0621 (ReDoS; fixed 1.25.2)
