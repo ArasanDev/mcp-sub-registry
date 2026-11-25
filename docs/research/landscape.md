@@ -5,8 +5,8 @@ by the orchestrator's daily research routine (`CLAUDE.md` §10). Update this tab
 field shifts; archive deep findings as dated reports in this folder.
 
 - **Latest deep report:** [2026-06-15-mcp-registry-landscape.md](./2026-06-15-mcp-registry-landscape.md)
-- **Latest daily update:** [2026-11-24-mcp-ecosystem-update.md](./2026-11-24-mcp-ecosystem-update.md)
-- **Last updated:** 2026-11-24 (daily research pass — **Glama ~125,500–126,500 (est.; homepage cached 122,052 undated, Oct 28 confirmed 111,899)**; PulseMCP flat ~21,614–21,710; Smithery directory-only under Arcade.dev; **Official MCP Registry ~64,935 (Nov 15 snapshot), est. ~65,500–66,500 Nov 24** (+~3,166/week); **Microsoft Ignite 2026 (Nov 17–21): MCP Firewall (preview) + Entra Agent Identity (preview) + Microsoft MCP Server for Enterprise → GA**; MCPCon Nairobi recap still pending (Day 4+; Gates Foundation confirmed as Diamond Sponsor); Zendesk Bridge (Nov 10, early access, 400+ tools) added to curate queue; **4 new community CVEs (CVE-2026-134817/125271/114494/114497) — none in catalog**; TS SDK v2.4.0 / Python mcp>=1.30.0 latest; Day 97+ clean for cataloged servers)
+- **Latest daily update:** [2026-11-25-mcp-ecosystem-update.md](./2026-11-25-mcp-ecosystem-update.md)
+- **Last updated:** 2026-11-25 (daily research pass — **Glama ~127,000–128,000 (est.; homepage cached 122,052 undated, Oct 28 confirmed 111,899; ~530/day growth)**; PulseMCP flat ~21,614–21,710; Smithery directory-only under Arcade.dev; **Official MCP Registry ~65,580 (Stork.AI Nov 16 snapshot), est. ~65,500–67,000 Nov 25** (+~3,166/week); MCPCon Nairobi recap still pending (Day 5+); **CVE-2026-123272 (mcp-go, CVSS 8.0 High, Nov 5) — OAuth resource confusion in Go client library; fixed mcp-go v1.2.1; catalog-immune**; Python SDK CVE-2026-59951/109527 in Debian tracker (details incomplete — NVD pending); TS SDK v2.4.0 (Oct 23) / Python mcp v2.3.0 (Oct 2) latest; **Day 98+ clean window** for cataloged servers)
 
 ## Ranking criteria
 
