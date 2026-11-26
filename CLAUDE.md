@@ -201,7 +201,7 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
 
 ## 13. Current state (living section — keep this honest)
 
-**As of 2026-11-25 (daily research pass — Glama ~127,000–128,000 (est.; homepage cached 122,052 undated, Oct 28 confirmed 111,899; ~530/day growth); PulseMCP flat ~21,614–21,710 (late Oct); **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; **Official MCP Registry ~65,580 (Stork.AI Nov 16 snapshot), est. ~65,500–67,000 Nov 25** (+~3,166/week); **MCPCon Nairobi recap still pending (Day 5+)** — event concluded Nov 20; Gates Foundation confirmed Diamond Sponsor; no AAIF blog as of Nov 25; Microsoft Ignite 2026 (Nov 17–21) MCP wave already captured; **CVE-2026-123272 (mcp-go, CVSS 8.0 High, Nov 5) — OAuth resource confusion in Go client library; fixed mcp-go v1.2.1; catalog-immune**; Python SDK CVE-2026-59951/109527 in Debian tracker (NVD-unconfirmed — flag for next audit); **TS SDK v2.4.0 (Oct 23) / Python mcp v2.3.0 (Oct 2) latest** (no new Nov releases); GitHub MCP v2.0.3 unconfirmed (winget only; v2.0.2 Oct 8 confirmed); security Day 98+ clean):**
+**As of 2026-11-26 (daily research pass — Glama ~127,500–128,500 (est.; Oct 28 confirmed 111,899; ~530/day growth); **PulseMCP ~21,500–21,980 (ingestion appears resumed — "updated daily" label returned; prev. flat ~21,614–21,710 late Oct)**; **Smithery proxy SHUT DOWN Oct 31** — directory-only under Arcade.dev; **Official MCP Registry ~67,000–68,000 (est.); Stork.AI Nov 16 snapshot 65,580**; **MCPCon Nairobi recap still pending (Day 6+)** — event concluded Nov 20; Gates Foundation confirmed Diamond Sponsor; no AAIF blog as of Nov 26 — longest post-event gap in AAIF history; **GitHub MCP v2.3.0 (Nov 24) CONFIRMED** — v2.0.3 (Oct 21), v2.1.0 (Nov 3), v2.2.0 (Nov 16, Skills), v2.3.0 (Nov 24, Dependabot/code scanning/secret scanning tools); **MCP release cadence formalized (blog Nov 11): next spec 2027-03-30, 6-month cycle (last Tue of Mar/Sep)**; **CVE-2026-109492 (Microsoft MCP Gateway EoP, CVSS 8.8, Nov Patch Tuesday) — CWE-639 multi-tenant isolation bypass; not in catalog; gateway operators must patch to v1.0.0**; **CVE-2026-59951 / CVE-2026-109527 (Python SDK DoS) NOW CONFIRMED** — CVE-2026-59951: session accumulation CVSS 6.9–7.5, fixed mcp≥1.30.0/≥2.2.0; CVE-2026-109527: HTTP body DoS CVSS 7.5, fixed mcp≥1.29.1/≥2.1.0; **CVE-2026-123272 (mcp-go, CVSS 8.0 High, Nov 5) — catalog-immune**; **TS SDK v2.4.0 (Oct 23) / Python mcp v2.3.0 (Oct 2) latest**; security Day 99+ clean):**
 
 - **Status:** Foundation complete and live; now self-operating via skills. Identity in this
   file, reference docs in `docs/`, maintenance processes in `.claude/skills/`, scratch out of
@@ -806,13 +806,14 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
        no stable tool list; skip for now).
      - **X (Twitter) MCP** (`api.x.com/mcp`): auth complexity confirmed (pay-per-use tiers; Enterprise-only
        for some endpoints; headless-only) — verify gateway-compatible auth path before adding.
-  3. **`subregistry-audit` pass:**
+  3. **`subregistry-audit` pass (NEXT HIGHEST PRIORITY — multiple items now executable):**
      (a) **SEP-2127 server card audit — HOLD** (finalization status unconfirmed as of Nov 16;
      one source says merged Final Oct 6 but paths still conflict; verify against primary spec
      repo `seps/2127-mcp-server-cards.md` before running). Validator: agent-ready.dev.
-     (b) **Update `verifiedAt` for `com.github/mcp`**: v2.0.2 (Oct 8, 2026) last confirmed; v2.0.3
-     appeared in a Nov 2026 winget listing (unconfirmed — verify release notes at
-     github.com/github/github-mcp-server/releases before bumping verifiedAt).
+     (b) **Update `verifiedAt` for `com.github/mcp` to Nov 24, 2026**: v2.3.0 is now confirmed
+     latest (Nov 24, 2026 release; v2.0.3 Oct 21 / v2.1.0 Nov 3 / v2.2.0 Nov 16 / v2.3.0 Nov 24).
+     The "v2.0.3 unconfirmed" flag is CLOSED. Also note: v2.2.0 ships native MCP Skills (SEP-2640).
+     [[releases]](https://github.com/github/github-mcp-server/releases)
      (c) **Verify TS SDK-based vendors on FULL CVE CLUSTER (updated Nov 21):**
          - Min gate: SDK ≥1.32.0 (1.x) or @modelcontextprotocol/server ≥2.3.0 (2.x)
          - CVE-2026-25536 (data leak; fixed 1.26.0), CVE-2026-0621 (ReDoS; fixed 1.25.2)
@@ -820,9 +821,11 @@ commits the result. Cadence and mechanism are recorded in §13 once live.
          - CVE-2026-111771 (audience validation bypass, Nov 5, CVSS ~7.5; fixed server 2.3.0; explicit config required)
          - CVE-2026-111768 (HTTP request-body DoS, Oct 20, CVSS 7.5; fixed SDK 1.32.0/server 2.3.0; must enable `maxToolInputElements` config after upgrade)
          Also verify CIMD compliance (DCR deprecated in spec).
-     (d) **Verify Python SDK vendors on ≥v2.3.0** (or ≥v1.30.0 on 1.x line): CVE-2026-59950 (WebSocket CSWSH, fixed 1.28.1), CVE-2026-116686 (SSRF/$ref, Oct 27, CVSS 6.5, fixed 1.30.0/2.2.0), **CVE-2026-59951 and CVE-2026-109527** (Debian tracker entries, Nov 2026, NVD-unconfirmed — verify fixed version before bumping; Python SDK v2.3.0 is Oct 2, 2026 latest).
+     (d) **Verify Python SDK vendors on ≥v2.3.0** (or ≥v1.30.0 on 1.x line): CVE-2026-59950 (WebSocket CSWSH, fixed 1.28.1), CVE-2026-116686 (SSRF/$ref, Oct 27, CVSS 6.5, fixed 1.30.0/2.2.0), **CVE-2026-59951** (session accumulation DoS, CVSS 6.9–7.5, **CONFIRMED** fixed ≥1.30.0/≥2.2.0), **CVE-2026-109527** (HTTP body DoS, CVSS 7.5, **CONFIRMED** fixed ≥1.29.1/≥2.1.0; use ≥1.30.0/≥2.2.0 to cover both). Python SDK v2.3.0 (Oct 2) is latest stable.
      (e) **Spot-check CVE-2026-55604/55605/58446/39313** (NVD blocked; confirm none target
      a cataloged endpoint via alternative source).
+     (f) **CVE-2026-134817 (mcp-server-kubernetes) and CVE-2026-125271 (AWS API MCP)** both
+     confirmed not-in-catalog. CLOSED from Nov 21 "unconfirmed" flag.
   4. Set up a weekly `subregistry-audit` cadence after curate run completes.
   5. Track vendor compliance with 2026-07-28 spec. **Spec is FINAL.** Next spec release: March 30, 2027.
      Flag Python-SDK vendors still on v1.x after 6-month window (~Jan 27, 2027).
